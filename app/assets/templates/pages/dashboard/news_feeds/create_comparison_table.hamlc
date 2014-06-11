@@ -1,0 +1,56 @@
+- eventPrefix = if @news_feed.get('vehicles').size() > 1 then 'create' else 'start'
+%span.dashboard-event-type= I18n.t("#{eventPrefix}_comparison_table", scope: 'dashboard_content.newsfeed_events')
+
+- @vehicles = @news_feed.get('vehicles').filter (v) -> not v.hasDefaultSideView()
+.dashboard-comparison-images.go-to-comparison{:data => {'last-vehicle-num' => @vehicles.length}}
+  - @vehicles = _.clone(@vehicles).reverse()
+  - i = @vehicles.length
+  - _.each @vehicles, (vehicle) =>
+    - j = i--;
+    - if j > 2
+      - mult = Math.pow(0.75, 2)
+    - else if j is 2
+      - mult = 0.75
+    - else if j is 1
+      - mult = 1
+
+    - if vehicle.hasDefaultSideView()
+      - imgWidth  = Models.SideView.defaultSizeFor(vehicle.get('type'), 'large')[0] * mult
+      - imgHeight = Models.SideView.defaultSizeFor(vehicle.get('type'), 'large')[1] * mult
+    - else
+      - imgWidth  = vehicle.get('side_view').get('image_dimensions')['large']['width']  * mult
+      - imgHeight = vehicle.get('side_view').get('image_dimensions')['large']['height'] * mult
+
+    - if j is 1
+      - style = "left: #{if imgWidth >= 85 then 85 - imgWidth else Math.abs(85 - imgWidth)}px; bottom: 0;"
+    - else if j is 2
+      - style = "left: #{if imgWidth >= 135 then 135 - imgWidth else Math.abs(135 - imgWidth)}px; bottom: 25px;"
+    - else
+      - style = "left: #{if imgWidth >= 175 then 175 - imgWidth else Math.abs(175 - imgWidth)}px; bottom: 40px; display: none;"
+
+    .dashboard-comparison-image{:class => "vehicle-#{j}", :style => "#{style}", :data => {'orig-pos' => j}}
+
+      - if vehicle.hasDefaultSideView()
+        %img{:src => vehicle.sideViewUrl('large'), :style => "width: #{Models.SideView.defaultSizeFor(vehicle.get('type'), 'large')[0] * mult}px; height: #{Models.SideView.defaultSizeFor(vehicle.get('type'), 'large')[1] * mult}px"}
+      - else
+        %img{:src => vehicle.sideViewUrl('large'), :style => "width: #{vehicle.get('side_view').get('image_dimensions')['large']['width'] * mult}px; height: #{vehicle.get('side_view').get('image_dimensions')['large']['height'] * mult}px"}
+
+    - infoClass = if j is 1
+      - ' current-info-bottom'
+    - else if j is 2
+      - ' current-info-top'
+    - else
+      - ''
+
+    - hp = @extra['hps'][vehicle.id]
+    - infoClass2 = if hp
+      - ' long'
+    - else
+      - ' short'
+
+    %span.dashboard-comparison-vehicle-info{:class => "vehicle-#{j}-info#{infoClass}#{infoClass2}"}
+      %span.vehicle-label
+        = vehicle.longLabel()
+
+      %div.vehicle-stats
+        = "#{parseInt(hp)} hp" if hp

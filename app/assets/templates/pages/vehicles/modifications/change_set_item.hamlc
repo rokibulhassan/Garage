@@ -1,0 +1,17 @@
+-if @showControls
+  .pull-right
+    %button.btn.btn-danger.delete-change-set
+      %i.icon-trash
+      = I18n.t('delete', scope: 'tabs.modifications_content')
+
+  .control-group
+    .controls
+      %select.chosen{ name: 'modifications', id: "change_set_#{@change_set.id}_modifications", multiple: 'multiple' }
+        %option{ value: '' }
+        - @modifications.each (modification)=>
+          %option{ value: modification.id, selected: @change_set.get('modifications').include(modification) }= modification.get('label')
+
+  %button.btn.btn-primary.combine-mods= I18n.t('combine_mods', scope: 'tabs.modifications_content')
+  %a.set-current-change-set{ href: '#' }= I18n.t('set_current', scope: 'tabs.modifications_content')
+
+.change-set-modification

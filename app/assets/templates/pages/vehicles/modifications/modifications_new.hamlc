@@ -1,0 +1,15 @@
+%form.form-horizontal
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3 Add a modification
+
+    .modal-body
+      .control-group
+        %label.control-label{ for: 'new-modification-name' } Modification name
+        .controls
+          %input#new-modification-name{ name: 'name', type: 'text' }
+
+    .modal-footer
+      %a.btn.btn-primary.save-modification{ href: '#' } Add the modification
+      %a.btn{ data: { dismiss: 'modal' } }= I18n.t('cancel')

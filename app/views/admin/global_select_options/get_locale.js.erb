@@ -1,0 +1,24 @@
+var lang_class_nme = $("table#global_select_options th:eq(3)").attr('class')
+$("table#global_select_options th:eq(3)").text("options (<%=params[:locale] %>)")
+
+var data = <%=raw @global.map(&:options).compact.map {|option| option[params[:locale]] }.compact %> ;
+var id = <%=raw @global.map(&:id) %> ;
+var counter = 0;
+var data_to_send = "";
+
+var params_locale = "<%=params[:locale] %>";
+$("table#global_select_options tr").each(function(i,val){ 
+  $(this).children('td').each(function(index,value){
+    if($(this).attr('class')==lang_class_nme){
+      data_to_send = "<ul>";
+      if(counter<data.length){
+        for(var i=0;i<data[counter].length;i++){
+          data_to_send = data_to_send + inline_edit_create(id[counter],data[counter][i],params_locale,i) ;
+        }        
+      }
+      $(this).html(data_to_send+"</ul>");
+      counter++;
+    }        
+  })
+})
+

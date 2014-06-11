@@ -1,0 +1,32 @@
+%form.form-horizontal
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3 Unbind Facebook account
+
+    .modal-body
+      %p
+        In order to use your account without Facebook, you must fill in some informations:
+
+
+        .control-group
+          %label.control-label{ for: 'email' } Email
+          .controls
+            %input#email{ type: 'email', value: @user.get('email') }
+
+
+        .control-group
+          %label.control-label{ for: 'password' } Password
+          .controls
+            %input#password{ type: 'password' }
+
+        .control-group
+          %label.control-label{ for: 'password_confirmation' } Password
+          .controls
+            %input#password_confirmation{ type: 'password' }
+
+
+
+    .modal-footer
+      %a.btn{ data: { dismiss: 'modal' } } Cancel
+      %button.btn.btn-primary Unbind my Facebook account!

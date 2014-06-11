@@ -1,0 +1,20 @@
+<h3><%= conversation.subject %></h3>
+
+<%= render 'messages/form', conversation: conversation %>
+<br>
+<div class="div1">
+  <% conversation.receipts_for(current_user).each do |receipt| %>
+      <div class="div3">
+        <% message = receipt.message %>
+        <% if message.sender.id == current_user.id %>
+            <div class="div2 div_v"><%= image_tag message.sender.avatar_url, size: '45x45' %></div>
+            <div class="div2 div_t pull_right"><%= message.body %></div>
+        <% else %>
+            <div class="div2 div_v"></div>
+            <div class="div2 div_u"><%= message.body %></div>
+            <div class="div2 div_v pull_right"><%= image_tag message.sender.avatar_url, size: '45x45' %></div>
+        <% end %>
+      </div>
+  <% end %>
+</div>
+

@@ -1,0 +1,8 @@
+%span.dashboard-event-type= I18n.t('create_gallery', scope: 'dashboard_content.newsfeed_events')
+%a.go-to-gallery{ href: '#gallery' }
+  .main-info
+    %img{ src: @extra['cover_picture_url'], alt: @extra['cover_picture_alt'] }
+
+  .gallery-pictures
+    - _.each @extra['pictures_extra'], (extra)=>
+      %img{ src: extra['image_url'], alt: extra['image_alt'] }

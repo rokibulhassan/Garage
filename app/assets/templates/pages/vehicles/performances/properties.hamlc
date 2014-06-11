@@ -1,0 +1,9 @@
+%table.table.table-striped.table-condensed{:class => "#{@column} #{_.classify(@group)}"}
+  %thead
+  %tbody
+    %tr
+      %th= @group
+      -if @showCurrent
+        %th= I18n.t('current', scope: 'tabs.performances_content')
+        %th= I18n.t('gain', scope: 'tabs.performances_content')
+      %th= I18n.t('stock', scope: 'tabs.performances_content')

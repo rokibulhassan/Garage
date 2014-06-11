@@ -1,0 +1,57 @@
+#breadcrumb
+
+#user-information.pull-right
+  .avatar
+    - avatarUrl = @user.get('avatarUrl') || @user.get('gravatarUrl')
+    %img.edit-avatar{ src: avatarUrl, width: 100, height: 100 }
+
+  .information
+    %div.name= "#{@user.fullName()} (#{@user.get('country_code')})"
+    %div.counters= "#{@user.get('modifications_count')} #{I18n.t('mods', scope: 'tabs.profile_content')} - #{@user.get('pictures_count')} #{I18n.t('photos', scope: 'tabs.profile_content')}"
+    #follow
+    -if !@canManage and @canAddToOpposers
+      = "-"
+      %a.add-opposer{ href: '#' }= I18n.t('block_comments', scope: 'tabs.profile_content')
+
+.clearfix
+
+.navigation
+  %ul#tabs-bar.nav.nav-tabs
+    %li.active
+      %a{ href: '#', data: { target: '#wall' } }=I18n.t('wall', scope: 'tabs.profile_content')
+    %li
+      %a{ href: '#', data: { target: '#vehicles' } }=I18n.t('vehicles', scope: 'tabs.profile_content')
+    -unless @canManage
+      %li
+        %a{ href: '#', data: { target: '#comparisons' } }=I18n.t('comparisons', scope: 'tabs.profile_content')
+
+  %ul#silhouettes-bar.nav.nav-tabs{style: "width: #{if @canManage then 80 else 70}%;", 'class': "#{if @canManage then 'can-manage' else 'cannot-manage'}"}
+    - @user.get('vehicles').last(@amountVehiclesSilhouettes).each (vehicle) =>
+      %li
+        %a.silhouettes-bar-link{href: "#"}
+          %img.silhouettes-bar-image{src: vehicle.sideViewUrl(), alt: vehicle.get('label'), width: "#{vehicle.sideViewWidth()}", height: "#{vehicle.sideViewHeight()}", data: {id: vehicle.id}}
+        - comment = vehicle.get('version')?.get('random_user_comment')
+        - if comment
+          .bubble-comment
+            .bubble-comment-avatar{data: { content: comment.comment["body_#{I18n.locale}"], placement: 'top', trigger: 'manual' }}
+              %a.bubble-comment-avatar-link{href: '#', data: { 'user-id': comment.user_id }}
+                %img.bubble-comment-avatar-img{src: comment.user_avatar_url, width: '20px'}
+            .bubble-comment-amt-comments
+              %a.bubble-comment-amt-comments-link{href: '#', data: {'vehicle-id': vehicle.id}}= "+#{comment.amt_comments}"
+
+
+.tab-content
+  #wall.tab-pane.active
+    .btn-toolbar
+      - if @canManage
+        .btn-group.enter-edit
+          %a.edit-collages.btn.btn-warning{ href: '#' }
+            %i.icon-edit
+            =I18n.t('edit_collages', scope: 'tabs.profile_content')
+        .btn-group.exit-edit{ style: 'display: none;' }
+          %a.edit-collages-out.btn.btn-warning{ href: '#' }
+            %i.icon-arrow-left
+            =I18n.t('exit_edit_collages', scope: 'tabs.profile_content')
+    #collages
+  #vehicles.tab-pane
+  #comparisons.tab-pane

@@ -1,0 +1,14 @@
+.navigation
+  %ul#tabs-bar.nav.nav-tabs
+    %li.active
+      %a{ href: '#', data: { target: '#followings' } }= I18n.t('followings', scope: 'tabs.people_content')
+    %li
+      %a{ href: '#', data: { target: '#followers' } }= I18n.t('followers', scope: 'tabs.people_content')
+    %li
+      %a{ href: '#', data: { target: '#blocked' } }= I18n.t('blocked', scope: 'tabs.people_content')
+
+.tab-content
+  #followings.tab-pane.active
+  #followers.tab-pane
+  #blocked.tab-pane Blocked will be implemented soon.
+

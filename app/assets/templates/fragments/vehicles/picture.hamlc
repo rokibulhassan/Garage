@@ -1,0 +1,7 @@
+-if @showPicture
+  %img.change{ src: @vehicle.normalAvatarUrl(), alt: "#{@vehicle.get('label')} picture" }
+  -if @showControls
+    %p
+      %a.change{ href: '' }= I18n.t('change_vehicle_picture', scope: 'tabs.identification_content')
+      - url = "/vehicles/#{@vehicle.get('id')}/update_avatar"
+      %input{ type: 'file', name: 'avatar', style: "visibility: hidden;", data: { url: url, type: 'PUT' } }

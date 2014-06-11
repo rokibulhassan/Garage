@@ -1,0 +1,11 @@
+.modal#delete-gallery.hide
+  .modal-header
+    %a.close{ data: { dismiss: 'modal' } } ×
+    %h3 Delete the gallery
+
+  .modal-body
+    Do you really want to delete this gallery?
+
+  .modal-footer
+    %a.btn{ data: { dismiss: 'modal' } } Cancel
+    = link_to 'Delete the gallery', user_gallery_path(current_user, @gallery), class: 'btn btn-danger', method: :delete

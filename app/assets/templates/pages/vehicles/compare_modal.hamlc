@@ -1,0 +1,39 @@
+.modal
+  .modal-header
+    %button{ class: 'close', data: { dismiss: 'modal' } } ×
+    %h3= I18n.t('comparison_tables.compare_the_vehicle')
+
+  .modal-body
+    %ul.actions
+      %li
+        %a.compare-later{ href: '' }
+          = I18n.t('comparison_tables.create_comparison_for_later')
+      %li
+        %a.compare-now{ href: '' }
+          = I18n.t('comparison_tables.create_comparison_for_now')
+      %li= I18n.t('comparison_tables.add_to_existing_comparison')
+
+    %h3= I18n.t('comparison_tables.add_to_existing_comparison')
+    %table.table.table-striped.comparison-tables
+      %thead
+        %tr
+          %th= I18n.t('comparison_tables.label')
+          %th= I18n.t('comparison_tables.vehicles')
+          %th= I18n.t('comparison_tables.comparison_modes')
+      %tbody
+        - @comparisonTables.each (comparisonTable)->
+          %tr{ data: { id: comparisonTable.id } }
+            %td= comparisonTable.get('label') || "##{comparisonTable.id}"
+            %td
+              %ul.unstyled
+                - comparisonTable.get('vehicles').each (vehicle)->
+                  %li= vehicle.get('label')
+
+            %td
+              %a.compare-now{ href: '' }
+                = I18n.t('comparison_tables.now')
+
+              = I18n.t('comparison_tables.or')
+
+              %a.compare-later{ href: '' }
+                = I18n.t('comparison_tables.later')

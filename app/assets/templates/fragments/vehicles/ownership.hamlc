@@ -1,0 +1,28 @@
+%th.general-info.status-text= I18n.t 'status', scope: 'tabs.identification_content'
+%td.general-info.status
+  - if @showControls
+    %select.ownership-attribute#ownership_status_id.chosen{ name: 'ownership_status', data: {placeholder: select_placeholder}}
+      %option
+      - for status in @statuses
+        %option{ value: status, selected: @ownership.get('status') is status }= I18n.t(status, scope: 'models.ownership.status')
+  - else
+    = I18n.t(@ownership.get('status'), scope: 'models.ownership.status')
+  - if @showControls
+    - if @ownership.get('status') in @ownership.get('year_dependence')
+      %select.ownership-attribute#ownership_year.chosen{name: 'ownership_year', data: {placeholder: 'YYYY'}}
+        %option
+        - for year in @ownershipYears
+          %option{ value: year, selected: @ownership.get('year')?.toString() is year.toString() }= year
+  - else
+    .year= @ownership.get('year')
+
+-select_placeholder = I18n.t 'select_placeholder', scope: 'tabs.identification_content'
+%th.main-info.driver_info= I18n.t 'driver', scope: 'tabs.identification_content'
+%td.main-info.driver_info
+  - if @showControls
+    %select.ownership-attribute#ownership_owner_name_id.chosen{ name: 'ownership_owner_name', data: {placeholder: select_placeholder}}
+      %option
+      - for name in @owner_names
+        %option{ value: name, selected: @ownership.get('owner_name') is name }= I18n.t(name, scope: 'models.ownership.owner_name')
+  - else
+    = @ownership.get('owner_name')

@@ -1,0 +1,11 @@
+.btn-toolbar
+  - if @canManage
+    .btn-group
+      %a.add-vehicle.btn.btn-success{ href: '#add-vehicle' }
+        %i.icon-plus
+        = I18n.t('add_vehicle', scope: 'vehicles.vehicles')
+
+%ul.thumbnails
+
+%p
+  %a.all-vehicles{ href: '#all_vehicles' }= I18n.t 'all_vehicles', scope: 'vehicles.vehicles'

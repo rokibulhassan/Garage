@@ -1,0 +1,10 @@
+.control-group.text-with-unit
+  %label.control-label{ for: "input_#{@name}" }= @label
+  .controls
+    %input{ name: @name, value: @value, id: "input_#{@name}" }
+
+    %select{ name: '' }
+      %option{ value: '' }
+      - _(@units).each (unit)=>
+        - selected = @unit is unit.value
+        %option{ value: unit.value, selected: selected }= unit.text

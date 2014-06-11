@@ -1,0 +1,7 @@
+= simple_form_for :conversation, url: :conversations do |f|
+  = f.input :recipients
+  = f.input :subject
+  = f.text_area :body, :rows => 10
+  .form-actions
+    = f.button :submit, class: 'btn-primary', value: "Send"
+    = submit_tag 'Cancel', type: :reset, class: 'btn btn-danger'

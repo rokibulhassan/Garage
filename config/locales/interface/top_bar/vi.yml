@@ -1,0 +1,38 @@
+vi:
+  top_bar:
+    home: quê hương
+    vehicles: Phương tiện đi lại
+    bookmarked_vehicles: đánh dấu
+    all_vehicles: tất cả Phương tiện đi lại
+    all_cars: tất cả các xe
+    all_bikes: tất cả các xe đạp
+    albums: album
+    myy_garage: MYY Nhà để xe
+    my_vehicles: Xe của tôi
+    my_cars: xe ô tô của tôi
+    my_bikes: xe đạp của tôi
+    myy_cloud: MYY Mây
+    imported_content: nội dung nhập khẩu
+    my_public_albums: Album công khai của tôi
+    my_private_albums: Album riêng của tôi
+    forgotten_password: Quên mật khẩu?
+    new_member_signup: Thành viên đăng ký mới
+    facebook_signup: Facebook đăng ký
+    people: nhân dân
+    edit_profile: Hồ sơ của tôi
+    sign_out: Đăng xuất
+    comparisons: so sánh
+    my_comparisons: So sánh của tôi
+    recent_comparisons: So sánh gần đây
+    function_unavailable: Bạn phải được kết nối để truy cập chức năng này. Vui lòng đăng nhập!
+    all_news: Tất cả tin tức
+    my_news: tin tức của tôi
+    followings: sau
+    followers: Người theo dõi
+    blocked: bị chặn
+    me: tôi
+    units: đơn vị
+    change_unit_system:
+      EU: Châu Âu - hệ thống số liệu - km / h - l/100 km
+      UK: Vương quốc Anh - mã lực - mph - mpg hoàng
+      US: Mỹ - hp - ft.lbs - mph - mpg chúng tôi

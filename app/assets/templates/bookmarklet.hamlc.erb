@@ -1,0 +1,13 @@
+javascript:( function () {
+  if (window.myyGarageDVRT === undefined) {
+    window.myyGarageDVRT = {
+      run: function(){
+        js = document.createElement('script');
+        js.src = 'http://#{@srcHost}<%= asset_path('bookmarklet/myygarage.js', digest: false) %>?#{@userIdParam}&#{@srcHostParam}&r=' + Math.random() * 99999999;
+        document.body.appendChild(js);
+      }
+    };
+  }
+  void(0);
+})();
+window.myyGarageDVRT.run();

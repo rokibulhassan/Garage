@@ -1,0 +1,106 @@
+#user-information.pull-right
+  .avatar
+    - avatarUrl = @user.get('avatarUrl') || @user.get('gravatarUrl')
+    %img.edit-avatar{ src: avatarUrl, width: 100, height: 100 }
+
+  .information
+    %div.name= "#{@user.fullName()} (#{@user.get('country_code')})"
+    %div.counters= "#{@user.get('modifications_count')} #{I18n.t('mods', scope: 'tabs.profile_content')} - #{@user.get('pictures_count')} #{I18n.t('photos', scope: 'tabs.profile_content')}"
+    #follow
+    - if !@canManage and @canAddToOpposers
+      = "-"
+      %a.add-opposer{ href: '#' }= I18n.t('block_comments', scope: 'tabs.profile_content')
+
+
+%h4
+  - if @canManage
+    %input.label{ type: 'text', value: @comparisonTable.get('label'), placeholder: I18n.t('comparison_tables.untitled_comparison'), style: 'display: block;' }
+  - else
+    = @comparisonTable.get('label') || I18n.t('comparison_tables.untitled_comparison')
+
+.span2
+  %ul.unstyled.change-set-checkbox
+    - @vehicles.each (vehicle) =>
+      %li
+        %div{:class => "vehicle-side-view", :data => { 'vehicle-id' => vehicle.get('id') }}
+          - if (url = vehicle.sideViewUrl('large')) && (not vehicle.hasDefaultSideView('large'))
+            %a.vehicle-link{:href => '#', :data => { 'vehicle-id' => vehicle.get('id') } }
+              %img{:src => url, :width => vehicle.get('side_view').get('image_dimensions').large.width}
+        %b= vehicle.get 'label'
+        - if @canManage
+          %a.icon-trash.remove-vehicle{href: "#", data: {id: vehicle.id}}
+        - vehicle.get('change_sets').each (changeSet) =>
+          %label.checkbox
+            - if @canManage
+              - checked = @checkAllChangeSets || _.include(@selectedChangeSetIds, changeSet.id.toString())
+              %input.change-set{type: 'checkbox', name: "change_set_#{changeSet.id}", checked: checked, value: changeSet.id}
+            - else
+              - checked = _.include(@selectedChangeSetIds, changeSet.id.toString())
+              %input.toggle-show-properties{type: 'checkbox', name: "show_properties_#{changeSet.id}", checked: checked, value: changeSet.id}
+            = changeSet.get('name')
+
+#comparisons.span8
+  .tabbable
+    %ul.nav.nav-tabs
+      - _.each @comparisonAttributes, (attribute_names, name) =>
+        %li
+          %a.tab-switch{href: "##{name}_comparison_attributes_set", data: {toggle: 'tab', 'tab-name': "#{name}_comparison_attributes_set"}}= I18n.t(name, scope: "data_sheets_new.tabs")
+
+      %li.users-tab
+        %a.tab-switch.has-subtabs{href: "#users", data: {toggle: 'tab', 'tab-name': 'users'}}= I18n.t('users', scope: "data_sheets_new.tabs")
+
+    .tab-content
+      - _.each @comparisonAttributes, (attribute_names, name) =>
+        .tab-pane{id: "#{name}_comparison_attributes_set"}
+          %ul
+            - _.each attribute_names, (attribute_name) =>
+              %li.properties-row{class: attribute_name}
+                %b{:style => 'display: block; margin-bottom: 20px;'}= I18n.t(attribute_name, scope: 'data_sheets_new.properties')
+                - _.each @propertyValuesHash[attribute_name]['property_values'], (propertyValues) =>
+                  - return unless propertyValues.property_value
+                  - visible = @checkAllChangeSets || _.include(@selectedChangeSetIds, propertyValues['change_set_id'].toString())
+                  %div.property-cell{class: "comparison_change_set_#{propertyValues['change_set_id']}_properties", style: "display: #{if visible then "block" else "none"};" }
+                    .vehicle-row
+                      - width = 80 * propertyValues['normalized_value'] / @propertyValuesHash[attribute_name]['max_value']
+                      - unit = I18n.t(Seeds.propertyDefinitions[attribute_name], scope: 'units_new.unit_symbols') || ''
+                      - maxPxWidth = 600
+                      - vehicleRight = 600 * (width / 100)
+                      - vehicleRight = 50 if vehicleRight < 50
+                      - imgSize = if vehicleRight >= 160 then 'large' else 'small'
+                      - trackImgUrl = Models.ComparisonTable.trackImgUrl(imgSize)
+                      - trackImgWidth = Models.ComparisonTable.trackImgWidth(imgSize)
+                      - vehicle = @vehicles.get(propertyValues.vehicle_id)
+                      - sideViewWidth = if (width = vehicle.get('side_view').get('image_dimensions')?.thumb.width)
+                        -  width
+                      - else
+                        - Models.SideView.defaultSizeFor(vehicle.get('type'))[0]
+                      - barLeft = Math.abs(trackImgWidth - vehicleRight - (sideViewWidth / 2))
+                      .bar-data{:style => "right: #{600 - vehicleRight + 5}px"}
+                        != "#{propertyValues['property_value']}&nbsp;#{unit}"
+                      .bar{data: { width: width }}
+                        %img{:src => trackImgUrl, :style => "left: -#{barLeft}px"}
+                      - src = propertyValues['side_view_url'] || Models.SideView.defaultPathFor propertyValues['vehicle_type']
+                      %a.vehicle-link{:href => '#', :data => { 'vehicle-id' => propertyValues.vehicle_id }, :style => "left: #{vehicleRight}px" }
+                        %img.vehicle-row-img{src: src, title: vehicle.get('label'), data: { toggle: 'tooltip' } }
+
+      .tab-pane{id: 'users'}
+        %ul.nav.nav-tabs
+          %li.likers-tab
+            %a.tab-switch.is-subtab{href: "#likers", data: {toggle: 'tab', 'tab-name': 'likers'}}= I18n.t('likers', scope: "data_sheets_new.tabs.sub_tabs")
+          %li.savers-tab
+            %a.tab-switch.is-subtab{href: "#savers", data: {toggle: 'tab', 'tab-name': 'savers'}}= I18n.t('savers', scope: "data_sheets_new.tabs.sub_tabs")
+
+        .tab-content
+          .tab-pane{id: "likers"}
+            - @likers.each (user) =>
+              .comparison-table-liker-saver-item
+                %img.comparison-table-liker-saver-avatar{ src: user.get('avatar_url'), width: '50' }
+                %span.comparison-table-liker-saver-username
+                  %a.comparison-table-liker-saver-username-link{ href: '#', data: { 'user-id': user.id } }= user.get('username')
+
+          .tab-pane{id: "savers"}
+            - @savers.each (user) =>
+              .comparison-table-liker-saver-item
+                %img.comparison-table-liker-saver-avatar{ src: user.get('avatar_url'), width: '50' }
+                %span.comparison-table-liker-saver-username
+                  %a.comparison-table-liker-saver-username-link{ href: '#', data: { 'user-id': user.id } }= user.get('username')

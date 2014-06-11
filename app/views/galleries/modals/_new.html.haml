@@ -1,0 +1,31 @@
+- token = UniqueToken.generate
+- url   = user_galleries_path(current_user)
+
+= simple_form_for :picture, url: url, html: { class: 'uploader form-horizontal', multipart: true, id: 'new-gallery-uploader' } do |f|
+  .modal#new-gallery.hide
+    .modal-header
+      %a.close{ data: { dismiss: 'modal' } } ×
+      %h3 New gallery
+
+    .modal-body
+      %div
+        .fileupload-buttonbar
+          .progressbar.fileupload-progressbar.nofade
+            %div{ style: 'width: 0%;' }
+
+          %span.btn.btn-success.fileinput-button
+            %span
+              %i.icon-camera.icon-white
+              Add pictures
+
+            = f.file_field :image, multiple: true
+            = hidden_field_tag :token, token, class: 'gallery-token'
+      %br
+      %div
+        %table.zebra-striped
+          %tbody.files
+        #loading
+
+    .modal-footer
+      %a.btn{ data: { dismiss: 'modal' } } Cancel
+      = f.submit 'Create the gallery', class: 'btn btn-primary', disabled: true

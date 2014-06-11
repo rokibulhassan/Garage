@@ -1,0 +1,30 @@
+.picture-info{ style: "height: #{@layout.topBar2Height-1}px;" }
+  %button{ class: 'close', data: { dismiss: 'modal' } } ×
+  %div
+    .avatar.pull-left
+      - source = @pictureUser.get('avatarUrl') || @pictureUser.get('gravatarUrl')
+      %img{ src: source }
+    %a.show-user{ href: @pictureUserPath }
+      = @pictureUser.get('username')
+    %span.comment-date.pull-right
+      - if @canManage
+        %i.edit-picture-date.icon-pencil{ data: { date: @picture.formattedCreatedAt(), date-format: 'dd/mm/yyyy' } }
+      = @picture.formattedCreatedAt()
+    .comment-body
+      .picture-title
+        != @picture.linkifiedTitle()
+        - if @canManage
+          %i.edit-title.icon-pencil
+      - if @canManage
+        %textarea.title-input{ name: 'title-inplace', style: 'display: none;' }
+          = @picture.get('title')
+
+.comments-list-wrap{ style: "height: #{@layout.commentsHeight-@layout.topBar2Height}px;" }
+  %ul.comments-list
+
+.new-comment
+  .avatar.pull-left
+    - source = @avatarUrl
+    %img{ src: source }
+  %form.form-inline.pull-left
+    %textarea.new-comment-input{ name: 'comment', placeholder: 'Comment ?' }

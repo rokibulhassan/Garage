@@ -1,0 +1,5 @@
+#top-bar
+
+.container
+  .row
+    #content.span12{:class => if @currentUser then 'signed-in' else 'signed-out'}

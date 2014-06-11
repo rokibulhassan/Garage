@@ -1,0 +1,4 @@
+%span.dashboard-event-type= I18n.t("create_#{@extra['vehicle_type']}", scope: 'dashboard_content.newsfeed_events')
+%a.go-to-new-vehicle{href: '#', data: { 'vehicle-id': @extra['vehicle_id'] }}
+  %img{ src: @extra['thumbnail_url'], alt: ''}
+.main-info

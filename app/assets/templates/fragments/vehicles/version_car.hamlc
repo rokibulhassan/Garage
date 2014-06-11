@@ -1,0 +1,193 @@
+- select_placeholder = I18n.t 'select_placeholder', scope: 'tabs.identification_content'
+- add_selects_text = I18n.t 'add_more_selects', scope: 'tabs.identification_content'
+
+%tr
+  %th.main-info= I18n.t 'brand', scope: 'tabs.identification_content'
+  %td.main-info= @brand.get('name')
+
+  %th.doors.main-info= I18n.t 'doors', scope: 'tabs.identification_content'
+  %td.doors.main-info.global-attribute
+    - if @showControls
+      %select#version_doors.chosen.attribute{ name: 'doors', data: { placeholder: select_placeholder }, :style => 'width: 110px;'}
+        %option
+        - for doorNum in @doorOptionsWithCur
+          %option{ value: doorNum, selected: @version.get('doors')?.toString() is doorNum?.toString() }
+            - if @globalSelectOptionsNeedTranslating
+              = @globalSelectOptionsTranslations['doors'][doorNum.toString()]
+            - else
+              = doorNum
+    - else
+      = @version.get('doors')
+
+    - if @showControls
+      %span.add-select-options{data: { attr: 'doors' }}= add_selects_text
+
+  - if @showBody
+    %th.body.general-info= I18n.t @aliases['body'], scope: 'tabs.identification_content'
+    %td.body.general-info.global-attribute{:style => 'width: 100px;'}
+      - if @showControls
+        %select#version_body_id.chosen.attribute{ name: 'body', data: {placeholder: select_placeholder}, :style => 'width: 100px;'}
+          %option
+          - for bodyType in @bodyOptionsWithCur
+            %option{ value: bodyType, selected: @version.get('body') is bodyType }
+              - if @globalSelectOptionsNeedTranslating
+                = @globalSelectOptionsTranslations['body'][bodyType]
+              - else
+                = bodyType
+      - else
+        - if @globalSelectOptionsNeedTranslating
+          = @globalSelectOptionsTranslations['body'][@version.get('body')] || @version.get('body')
+        - else
+          = @version.get('body')
+
+      - if @showControls
+        %span.add-select-options{data: { attr: 'body' }}= add_selects_text
+
+%tr
+  %th.main-info= I18n.t @aliases['model'], scope: 'tabs.identification_content'
+  %td.main-info
+    %span.hide-model-name
+      %input.attribute-checkbox{:type => 'checkbox', :name => 'show_model_name', :value => '1', :checked => @version.get('show_model_name')}
+    =@model.get('name')
+    %a.wiki{href: "https://www.google.com#q=wiki \"#{@brand.get('name')} #{@model.get('name')}\"", target: "_blank" } (wiki)
+  - if @showModelVersionData
+    %th.name.general-info= I18n.t @aliases['version'], scope: 'tabs.identification_content'
+    %td.name.general-info
+      - if @showControls
+        %select#name_id.addable-chosen.attribute{ name: 'name', data: {placeholder: select_placeholder}}
+          %option
+          - for versionName in @attributes.get('name')
+            %option{ value: versionName, selected: @version.get('name') is versionName }= versionName
+      - else
+        =@version.get('name')
+      %a.wiki.car-full-name{href: "https://www.google.com#q=wiki \"#{@vehicle.longLabel()}\"", target: "_blank" } (wiki)
+
+- if @showMarketRow
+  %tr
+    %th.market_version_name.general-info= I18n.t 'market_version', scope: 'tabs.identification_content'
+    %td.market_version_name.general-info
+      - if @showControls
+        %select#market_version_name_id.chosen.production-row{ name: 'market_version_name', data: {placeholder: select_placeholder}}
+          %option
+          - for marketVersionName in @attributes.get('market_version_name')
+            - selected = if @version.get('market_version_name') then @version.get('market_version_name') is marketVersionName else @user.get('country_code') is marketVersionName
+            %option{ value: marketVersionName, selected:  selected }= marketVersionName
+      - else
+        =@version.get('market_version_name')
+    - if @showProductionCodeRow
+      %th.production_code.main-info= I18n.t 'production_code', scope: 'tabs.identification_content'
+      %td.production_code.main-info
+        - if @showControls
+          %select#production_code_id.addable-chosen.production-row{ name: 'production_code', data: {placeholder: select_placeholder}}
+            %option
+            - for productionCode in @attributes.get('production_code')
+              %option{ value: productionCode, selected: @version.get('production_code')?.toString() is productionCode?.toString() }= productionCode
+        - else
+          =@version.get 'production_code'
+- else
+  %tr
+    %th.general-info
+    %td.general-info
+
+
+- if @showProductionYearRow
+  %tr
+    %th.production_year.main-info= I18n.t 'model_year', scope: 'tabs.identification_content'
+    %td.production_year.main-info
+      - if @showControls
+        %select#production_year_id.chosen.attribute{ name: 'production_year', data: {placeholder: select_placeholder}}
+          %option
+          - for productionYear in @productionYears
+            %option{ value: productionYear, selected: @version.get('production_year') is productionYear }= productionYear
+      - else
+        =@version.get 'production_year'
+    - if @showGenerationRow
+      %th.generation.general-info= I18n.t 'generation', scope: 'tabs.identification_content'
+      %td.generation#generationContainer.general-info
+
+- if @showGearboxRow
+  %tr
+    %th.transmission_numbers.main-info= I18n.t 'transmission', scope: 'tabs.identification_content'
+    %td.transmission_numbers.main-info.global-attribute
+      - if @showControls
+        %select#version_transmission_numbers_id.chosen.attribute{ name: 'transmission_numbers', data: {placeholder: select_placeholder}}
+          %option
+          - for transmissionNumber in @transmissionNumbersOptionsWithCur
+            %option{ value: transmissionNumber, selected: @version.get('transmission_numbers') is transmissionNumber }
+              - if @globalSelectOptionsNeedTranslating
+                = @globalSelectOptionsTranslations['transmission_numbers'][transmissionNumber]
+              - else
+                = transmissionNumber
+      - else
+        = @version.get('transmission_numbers')
+
+      - if @showControls
+        %span.add-select-options{data: { attr: 'transmission_numbers' }}= add_selects_text
+
+    - if @showGearboxTypeData
+      %th.transmission_type.general-info= I18n.t 'transmission_type', scope: 'tabs.identification_content'
+      %td.transmission_type.general-info.global-attribute
+        - if @showControls
+          %select#version_transmission_type_id.chosen.attribute{ name: 'transmission_type', data: {placeholder: select_placeholder}}
+            %option
+            - for transmissionType in @transmissionTypeOptionsWithCur
+              %option{ value: transmissionType, selected: @version.get('transmission_type') is transmissionType }
+                - if @globalSelectOptionsNeedTranslating
+                  = @globalSelectOptionsTranslations['transmission_type'][transmissionType]
+                - else
+                  = transmissionType
+        - else
+          - if @globalSelectOptionsNeedTranslating
+            = @globalSelectOptionsTranslations['transmission_type'][@version.get('transmission_type')] || @version.get('transmission_type')
+          - else
+            = @version.get('transmission_type')
+
+        - if @showControls
+          %span.add-select-options{data: { attr: 'transmission_type' }}= add_selects_text
+
+- if @showTransmissionRow
+  %tr
+    %th.transmission_details.main-info= I18n.t 'transmission_details', scope: 'tabs.identification_content'
+    %td.transmission_details.main-info.global-attribute
+      - if @showControls
+        %select#version_transmission_details.chosen.attribute{ name: 'transmission_details', data: {placeholder: select_placeholder}}
+          %option
+          - for transmissionDetails in @transmissionDetailsOptionsWithCur
+            %option{ value: transmissionDetails, selected: @version.get('transmission_details') is transmissionDetails }
+              - if @globalSelectOptionsNeedTranslating
+                = @globalSelectOptionsTranslations['transmission_details'][transmissionDetails]
+              - else
+                = transmissionDetails
+      - else
+        - if @globalSelectOptionsNeedTranslating
+          = @globalSelectOptionsTranslations['transmission_details'][@version.get('transmission_details')] || @version.get('transmission_details')
+        - else
+          = @version.get('transmission_details')
+
+      - if @showControls
+        %span.add-select-options{data: { attr: 'transmission_details' }}= add_selects_text
+
+- if @showEnergyRow
+  %tr.energy
+    %th.energy.main-info= I18n.t 'energy', scope: 'tabs.identification_content'
+    %td.energy.main-info.global-attribute
+      - if @showControls
+        %select#version_energy.addable-chosen.attribute{ name: 'energy', data: { placeholder: select_placeholder }, :style => 'width: 110px;'}
+          %option
+          - for energy in @energyOptionsWithCur
+            %option{ value: energy, selected: @version.get('energy')?.toString() is energy?.toString() }
+              - if @globalSelectOptionsNeedTranslating
+                = @globalSelectOptionsTranslations['energy'][energy]
+              - else
+                = energy
+      - else
+        - if @globalSelectOptionsNeedTranslating
+          = @globalSelectOptionsTranslations['energy'][@version.get('energy')] || @version.get('energy')
+        - else
+          = @version.get('energy')
+
+      - if @showControls
+        %span.add-select-options{data: { attr: 'energy' }}= add_selects_text
+
+- if @showOwnershipRows
+  %tr#ownership

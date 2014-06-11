@@ -1,0 +1,7 @@
+.version-comment-item
+  %img.version-commenter-avatar{ src: @comment.get('commenter').avatar_url, width: '50' }
+  %span.version-commenter-username
+    %a.version-commenter-username-link{ href: '#', data: { 'user-id': @comment.get('commenter').id } }= @comment.get('commenter').username
+  %span.version-comment-body= @comment.get('comment')["body_#{I18n.locale}"]
+  - if @canManage
+    %a.btn.btn-danger.delete-version-comment{href: '#', data: { 'comment-id': @comment.id }} Delete

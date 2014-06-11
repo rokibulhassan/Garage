@@ -1,0 +1,16 @@
+#comparison-search
+  %a.custom-search{ href: '#' }= I18n.t 'custom_search', scope: 'vehicles.search'
+  %form#vehicles-search.well.form-horizontal{ style: 'display: none;'}
+    .control-group
+      %label.control-label= I18n.t 'text_search_field', scope: 'vehicles.search'
+      .controls
+        %input{ type: 'text', name: 'query' }
+    .control-group
+      %label.control-label= I18n.t 'brand_select', scope: 'vehicles.search'
+      .controls
+        %select.chosen{ name: 'brand_id' }
+          %option
+          - for brand in @brands
+            %option{ value: brand.id }= brand.get('name')
+    .form-actions{ style: 'padding-bottom: 0px; margin-bottom: 0px;' }
+      %button.btn.btn-primary= I18n.t 'search_btn', scope: 'vehicles.search'

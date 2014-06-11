@@ -1,0 +1,56 @@
+.modal-body
+  .picture-top{ style: "line-height: #{ if @picture.bigHeight == @layout.pictureMaxHeight then 1 else @layout.pictureMaxHeight}px;" }
+    %div
+      .gallery-info{ style: "width: #{@layout.pictureMaxWidth}px;" }
+        .title= @picture.galleryTitle()
+        .counter= "#{@counter.current()}/#{@counter.total}"
+        %a.toggle-full{ href: '#' }
+          - if @layout.fullScreen
+            %i.icon-resize-small.icon-white{ style: 'position: absolute; top: 7px; right: 7px;' }
+          - else
+            %i.icon-resize-full.icon-white{ style: 'position: absolute; top: 7px; right: 7px;' }
+      .picture-nav{ style: "left: 0; margin-top: #{(-46-@layout.bottomBarHeight)/2}px;" }
+        %a.prev-picture{ href: '#' }
+          %img{ src: "<%= image_path('galleries/prev-pic.png') %>" }
+      .picture-nav{ style: "right: 0; margin-top: #{(-46-@layout.bottomBarHeight)/2}px;" }
+        %a.next-picture{ href: '#' }
+          %img{ src: "<%= image_path('galleries/next-pic.png') %>" }
+      .picture-image{ style: "width: #{@layout.pictureMaxWidth}px;" }
+        - source = @picture.get('big_url')
+        - if @picture.get('type') == 'picture'
+          %img{ src: source, alt: @picture.altText(), style: "width: #{@picture.bigWidth}px; height: #{@picture.bigHeight}px;" }
+        - else if @picture.get('type') == 'youtube'
+          - source = source + '&wmode=transparent&autoplay=0'
+          %iframe{ src: source, type: 'text/html', frameborder: 0, width: @picture.get('big_width'), height: @picture.get('big_height'), style: 'vertical-align: middle;' }
+    .picture-comments{ style: "width: #{@layout.commentsWidth}px; height: #{@layout.commentsHeight+@layout.bottomBarHeight}px;" }
+  .picture-bar{ style: "width: #{@layout.pictureMaxWidth}px; height: #{@layout.bottomBarHeight}px;" }
+    .picture-bar-fade{ style: "width: #{@layout.pictureMaxWidth}px; height: #{@layout.bottomBarHeight}px;" }
+    .picture-nav{ style: 'left: 0' }
+      %a.prev-picture{ href: '#' }
+        %img{ src: "<%= image_path('galleries/prev-pic.png') %>", height: 24 }
+    .thumb-scroller-wrapper.jThumbnailScroller
+      .thumb-scroller.jTscrollerContainer
+    .picture-nav{ style: 'right: 0' }
+      %a.next-picture{ href: '#' }
+        %img{ src: "<%= image_path('galleries/next-pic.png') %>", height: 24 }
+    .picture-options
+      .btn-toolbar{ style: 'margin: -96px 0 0;' }
+        - if @canManage
+          - if @layout.mode == 'pictures_show'
+            %a.edit-image.btn{ href: '#' }
+              Blur area
+            %a.remove-blurs.btn{ href: '#' }
+              Remove blurs
+            %a.rotate-left.btn{ href: '#' }
+              Rotate left
+            %a.rotate-right.btn{ href: '#' }
+              Rotate right
+            %a.edit-info.profile-picture-action.btn{ href: '#' }
+              Edit info
+            %a.set-as-cover.btn{ href: '#' }
+              Set as cover
+            %a.delete.profile-picture-action.btn{ href: '#' }
+              Delete
+          - else
+            %a.crop-cutout.btn{ href: '#' }
+              Crop cutout

@@ -1,0 +1,55 @@
+#performances{
+  tr{
+    vertical-align: bottom;
+    height: 16px;
+    td.property{
+      width: 25%;
+    }
+    td.value{
+      width: 25%;
+    }
+    td.modded{
+      width: 25%;
+    }
+    input{
+      width: 40px;
+      height: 14px
+    }
+    .dependent-property-value{
+      margin-left: 30px;
+    }
+  }
+
+  .table.left,
+  .table.right {
+    width: 47.5%;
+  }
+  .table.left {
+    float: left;
+    margin-right: 5%;
+  }
+  .table.right {
+    float: right;
+  }
+  .table.top-speed {
+    float: none;
+  }
+}
+#vehicle-top_speed-specs {
+  margin-top: 20px;
+}
+
+.property-source {
+  position: absolute;
+  padding: 5px;
+  background: #cccccc;
+  right: -50px;
+  top: 0;
+  z-index: 5;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+#performances table .value {
+  position: relative;
+}

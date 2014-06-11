@@ -1,0 +1,3 @@
+%a.show-gallery.thumbnail{ href: '#gallery' }
+  %img{ class: @hasUrl, src: @source, alt: @altText, style: 'width: 180px; height: 135px;' }
+  %h5{ style: "text-align: center" }= @title

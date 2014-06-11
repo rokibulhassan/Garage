@@ -1,0 +1,19 @@
+.row
+  .span12
+    .tabbable.change-set-tabs
+      %ul.nav.nav-pills
+        %li
+          %a{href: "#all-modifications", data: {toggle: 'tab'}}= I18n.t('all_mods', scope: 'tabs.modifications_content')
+        -@changeSets.each (changeSet)->
+          %li
+            %a.change-set-nav{href: "#change_set_#{changeSet.id}", data: {id: changeSet.id}}= changeSet.get 'name'
+        %li.add-new-change-set
+          %a{href: "#add-new-change-set", data: {toggle: 'tab'}}= I18n.t('new_change_set', scope: 'tabs.modifications_content')
+      .tab-content
+        #all-modifications.tab-pane.tabs-left
+          %ul.nav.nav-tabs
+            %li#new-modification-item
+              %a{href: "#", data: {toggle: 'tab'}}= I18n.t('add_new_modification', scope: 'tabs.modifications_content')
+            -@modifications.each (modification)->
+              %li
+                %a{href: "#modification_item_#{modification.id}", data: {toggle: 'tab'}}= modification.get 'label'

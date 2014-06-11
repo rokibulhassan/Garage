@@ -1,0 +1,242 @@
+cs:
+  tabs:
+    galleries:      Galleries
+    galleries_content:
+      collages_list: Collages list
+      private: Private
+      add_pictures: Add pictures
+      delete_gallery: Delete gallery
+      edit_collages: Edit collages
+      exit_edit_collages: Exit edit collages
+      mosaic_label: Mosaic
+      placeholders:
+        gallery_title: Edit gallery title here
+    specifications: Specifications
+    specifications_content:
+      suggest_corrections: Suggest corrections
+      edit_specs: Edit specs
+      back_to_view: Back to view
+      build_datasheet: Build of datasheet
+      choose_version: "Choose the one that corresponds to your <b>{{brand}}</b>. If necessary, you can change some datas."
+      or: Or
+      fill_own: fill your own
+      wiki: wiki
+      engine: engine
+      power: power
+      torque: torque
+      transmission: transmission
+      type: type
+      weight: weight
+      dimensions: dimensions
+      version: version
+      model_year: model year
+      market: market
+      import_datasheet: Import Datasheet
+      see: see
+    performances:   Performances
+    performances_content:
+      current: Current
+      gain: Gain
+      stock: Stock
+      suggest_corrections: Suggest corrections
+      back_to_view: Back to view
+    modifications:  Modifications
+    version_comments: Comments
+    modifications_content:
+      delete: Delete
+      combine_mods: Combine mods
+      set_current: Set current
+      add_change_set: Add a change set
+      change_set_name: Change set name
+      all_mods: All mods
+      new_change_set: New change set
+      add_new_modification: Add new modification
+    expenses:       Expenses
+    identification_show: Identification
+    identification: Identification (edit)
+    identification_content:
+      brand: Brand
+      doors: Doors
+      category: Category
+      body: Body
+      model: Model
+      second_model_name: 2nd name
+      version: Version
+      category: Category
+      engine: Engine
+      energy: Energy
+      model_year: Model Year
+      generation: Generation
+      transmission: Gearbox
+      transmission_type: Type
+      selector: Selector
+      model_type: Model
+      transmission_details: Transmission
+      transmission_numbers: Gearbox
+      production_code: Production code
+      market_version: Origin
+      generation_from: from
+      generation_to: to
+      owner_name: Driver
+      driver: Driver
+      status: Status
+      select_placeholder: Select...
+      switch_to_identification_show_mode: back to display mode
+      change_vehicle_picture: Change picture
+      add_more_selects: +Add
+      choose_comment: Add Comment
+    identification_show_content:
+      editing: Editing
+      data_link: Data
+      photos_link: Photos
+      silhouette_link: Silhouette
+      thumbnail_link: Thumbnail
+      delete_link: Delete
+    profile_content:
+      mods: mods
+      photos: photos
+      block_comments: Block
+      wall: Wall
+      vehicles: Vehicles
+      comparisons: Comparisons
+      edit_collages: Edit collages
+      exit_edit_collages: Exit edit collages
+      follow: Follow
+      unfollow: Unfollow
+      delete: delete
+      add_bookmark: Fav.
+      delete_bookmark: Fav.
+      change_side_view: 'Change&nbsp;silhouette'
+    imported_content: Imported content
+    public_galleries: Public galleries
+    private_galleries: Private galleries
+    software_setup: Software setup
+    my_profile:
+      informations: Informations
+      information_content:
+        change_avatar: Change avatar
+        placeholders:
+          first_name: First name
+          last_name: Last name
+          email: Email
+      geolocation: Geolocation
+      geolocation_content:
+        geolocation: Geolocation
+        placeholders:
+          country: Country
+          biggest_town: Biggest town nearby
+          locale: Locale
+          currency: Currency
+          system_of_units: System of units
+        regions_and_languages: Regions and languages
+      privacy_settings: Privacy settings
+      privacy_settings_content:
+        informations: Informations
+        first_name: First name
+        last_name: Last name
+        public: Public
+        contact_me: Allow people to contact me
+        geolocation: Geolocation
+        nearby_location: Nearby location
+    people_content:
+      followings: Followings
+      followers: Followers
+      blocked: Blocked
+  modals:
+    side_views:
+      no_more_available: 'No more item available!'
+    signup:
+      signup: Signup
+      username: Username
+      email: Email
+      password: Password
+      password_confirmation: Password confirmation
+      terms_of_service: Terms of service
+      cancel: Cancel
+      register: Register
+      placeholders:
+        username: Fill in username, please
+        email: Fill in email, please
+        password: Fill in password, please
+        password_confirmation: Fill in password confirmation, please
+  performances:
+    table:
+      top_speed:    Top speed
+      acceleration: Acceleration
+      deceleration: Deceleration
+      emissions:    Emissions
+      consumption:  Consumption
+  vehicles:
+    search:
+      custom_search: '[custom search]'
+      text_search_field: 'Free text search field:'
+      brand_select: 'Brand if selected:'
+      exclude_brand_select: 'Excluded brand(s):'
+      country_select: 'Country if selected:'
+      exclude_country_select: 'Excluded country(ies):'
+      search_btn: Search
+    vehicles:
+      all_vehicles: All vehicles
+      add_vehicle: Add a vehicle
+    new:
+      new_vehicle: New vehicle
+      automobile: Automobile
+      motorcycle: Motorcycle
+      brand: Brand
+      model: Model
+      engine: Engine
+      create_vehicle: Create the vehicle
+    bookmarked_vehicles: Bookmarked vehicles
+    galleries:
+      add_gallery: Add gallery
+      gallery: Gallery
+      untitled_gallery: Untitled gallery
+  dashboard_content:
+    newsfeed: Newsfeed
+    my_newsfeed: My Newsfeed
+    photo: photo
+    newsfeed_events:
+      create_gallery: created a new gallery
+      create_modification: created a new modification
+      create_part_purchase: bought %{label} from %{vendor}
+      create_gallery_picture: added a new %{photo_link}
+      create_comment: created a new comment
+      create_comparison_table: created a new comparison
+      start_comparison_table: started a comparison
+      add_pictures_to_gallery: added new pictures to a gallery
+      create_motorcycle: has added a motorcycle
+      create_automobile: has added a car
+      add_comments_to_picture: picture received %{num_comments} new comments
+      add_comment_to_picture: picture received a new comment
+
+  breadcrumb:
+    garage: Garage
+    myy_garage: Myy Garage
+    myy_vehicles: My Vehicles
+    cars: Cars
+    automobiles: Cars
+    bikes: Bikes
+    motorcycles: Bikes
+    myy_cars: Myy Cars
+    myy_automobiles: Myy Cars
+    myy_bikes: Myy Bikes
+    myy_motorcycles: Myy Bikes
+    wall: Wall
+    myy_wall: Wall
+    vehicles: Vehicles
+    comparisons: Comparaisons
+    me: Me
+    myy_cloud: Myy Cloud
+    imported_content: Inported Content
+    public_galleries: Public Galleries
+    private_galleries: Private Galleries
+    software_setup: Software Setup
+    galleries: Galleries 12
+    albums: Albums
+    untitled_gallery: Untitled gallery
+    version_comments: Comments
+  pages:
+    new_profile_pictures:
+      cancel: Cancel
+      confirm_import: Confirm Import Pictures
+      caption: Adjust legend of each picture and then confirm import

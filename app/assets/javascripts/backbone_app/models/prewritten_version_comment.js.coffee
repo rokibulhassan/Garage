@@ -1,0 +1,1 @@
+class Models.PrewrittenVersionComment extends Backbone.Model

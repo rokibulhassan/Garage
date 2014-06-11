@@ -1,0 +1,25 @@
+class Models.SideView extends Backbone.RelationalModel
+  urlRoot: '/api/side_views'
+
+  @defaultPaths:
+    thumb:
+      <%= Vehicle::AUTOMOBILE %>: '<%= image_path "side_views/thumbs/default_#{Vehicle::AUTOMOBILE}.png" %>'
+      <%= Vehicle::MOTORCYCLE %>: '<%= image_path "side_views/thumbs/default_#{Vehicle::MOTORCYCLE}.png" %>'
+    large:
+      <%= Vehicle::AUTOMOBILE %>: '<%= image_path "side_views/large/default_#{Vehicle::AUTOMOBILE}.png" %>'
+      <%= Vehicle::MOTORCYCLE %>: '<%= image_path "side_views/large/default_#{Vehicle::MOTORCYCLE}.png" %>'
+
+  @defaultSizes:
+    thumb:
+      <%= Vehicle::AUTOMOBILE %>: [89, 30]
+      <%= Vehicle::MOTORCYCLE %>: [64, 37]
+    large:
+      # TODO: make these larger
+      <%= Vehicle::AUTOMOBILE %>: [89, 30]
+      <%= Vehicle::MOTORCYCLE %>: [64, 37]
+
+  @defaultPathFor: (vehicleType, imageType = 'thumb') ->
+    @defaultPaths[imageType]?[vehicleType]
+
+  @defaultSizeFor: (vehicleType, imageType = 'thumb') ->
+    @defaultSizes[imageType]?[vehicleType]

@@ -1,0 +1,21 @@
+.tabbable.tabs-left
+  %ul.nav.nav-tabs
+    - if @showAdminControls
+      %li
+        %a{ href: '#new_revision', data: { toggle: 'tab' } }
+          %span.icon-plus
+          Add
+
+    - @revisions.each (revision, index)=>
+      - anchor    = "#revision_#{revision.get('index')}"
+      - className = if index == 0 then 'active' else null
+      %li{ class: className }
+        %a{ href: anchor, data: { toggle: 'tab' } }
+          Revision
+          = revision.get('index')
+
+  .tab-content
+    / Revisions are rendered here.
+
+    #new_revision.tab-pane
+      %h3 New revision

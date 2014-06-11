@@ -1,0 +1,27 @@
+.modal
+  .modal-header
+    %button{ class: 'close', data: { dismiss: 'modal' } } ×
+    %h3 Crop mosaic image
+
+  .modal-body
+    %form.form-horizontal
+      .control-group
+        %label.control-label Image style
+        .controls
+          %label.radio.inline
+            %input{ type: 'radio' name: 'style', value: 'narrow', checked: true }
+            Narrow
+
+          %label.radio.inline
+            %input{ type: 'radio' name: 'style', value: 'large' }
+            Large
+
+
+
+
+    %p
+      - source = @vehicle.get('avatarMediumUrl')
+      %img#image-to-crop{ src: source }
+
+    %p
+      %a.btn.btn-primary Use the selection as mosaic image

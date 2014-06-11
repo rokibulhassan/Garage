@@ -1,0 +1,9 @@
+%h4 My favorites images
+
+%table.table.table-bordered.table-striped.favorites
+  %thead
+    %tr
+      %th{ style: 'width: 220px;' } Thumbnail
+      %th Label
+
+  %tbody

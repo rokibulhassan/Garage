@@ -1,0 +1,8 @@
+-if @picking
+  %button.pick-off.btn.btn-warning Cancel selecting
+  %button.transfert.btn.btn-primary{disabled: true} Transfert
+  %button.delete.btn.btn-danger{disabled: true} Delete
+-else
+  %button.pick-on.btn.btn-warning Select, move or delete pictures
+
+#profile-pictures

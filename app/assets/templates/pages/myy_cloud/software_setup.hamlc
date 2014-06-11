@@ -1,0 +1,20 @@
+%p
+  %strong What is the import tool about?
+  %br
+  When you are visiting a webpage, you can pick up pictures that you want to save inside your dedicated storing spacein myy garage.
+%p
+  %strong How to install the import tool?
+  %br
+  With your mouse, drag the green button to the menu bar of your browser (firefox, chrome, ...).You can then see it in your menu bar. It is the icon named “myy garage”. (you can rename it if you wish)
+%p
+  %strong How to use the import tool
+  When you’re on a website where you want to pick up pictures, just click on myy garage icon in your browser menu bar.You then have a list of the pictures displayed on the webpage you are visiting.Just select the pictures you’re interested in.you can also add description text for each picture you pick up if you like.
+  %br
+  Now, click on import button and your selected pictures are saved in your import content directory.
+%p
+  %strong Ready?
+    %br
+  Now install the importing tool by dragging the green button below in your browser bar up top.
+
+#bookmarklet
+  %a.btn.btn-success{ href: @bookmarklet } Myy Garage

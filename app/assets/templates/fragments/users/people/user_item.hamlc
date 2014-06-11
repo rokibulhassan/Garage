@@ -1,0 +1,2 @@
+%img.avatar{ src: @user.get('avatar_url'), alt: "#{@user.get('username')} avatar" }
+%a.name{ href: "#"}="#{@user.get('username')}"

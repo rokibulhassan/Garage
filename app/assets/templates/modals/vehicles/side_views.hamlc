@@ -1,0 +1,14 @@
+.modal-header
+  %button{:class => "close", 'data-dismiss' => 'modal', 'data-target' => '#myModal'}
+    ×
+  %h4= I18n.t('vehicle.side_views.modal_header')
+
+.modal-body
+  - if @side_views.length == 0
+    %p= I18n.t('no_more_available', scope: 'modals.side_views')
+
+  - else
+    %ul.side_views
+      - @side_views.each (side_view) =>
+        %li.picture.pull-left.span3{id: "side_view_#{side_view.id}"}
+          %img.side_view{ src: side_view.get 'thumb_url', data: { side_view_id: side_view.id } }

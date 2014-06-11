@@ -1,0 +1,11 @@
+%h4= @title
+
+#search-area
+
+%table.table.table-striped.comparison-tables.table-bordered
+  %thead
+    %tr
+      %th= I18n.t('comparison_tables.label')
+      %th= I18n.t('comparison_tables.vehicles')
+      %th= I18n.t('comparison_tables.stats')
+  %tbody

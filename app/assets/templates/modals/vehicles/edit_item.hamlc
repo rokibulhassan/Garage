@@ -1,0 +1,19 @@
+%form.form-horizontal
+  .control-group
+    %label.control-label{ for: 'input' }
+      = @item.label
+
+    .controls
+      - switch @item.type
+        - when 'static_choice'
+          %select#input
+            %option
+            - _.each @item.values, (value)=>
+              %option{ value: value.name }
+                = value.label
+
+        - else
+          %input#input
+
+  .form-actions
+    %button.btn.btn-primary Add this item

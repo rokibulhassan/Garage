@@ -1,0 +1,63 @@
+fr:
+  modifications:
+    modifications:         Modifications
+    untitled:              Modification sans titre
+    filter:                Filtrer
+    created_modifications: Modifications
+    add_modification:      Ajouter une modification
+    add_the_modification:  Ajouter la modification
+    save_modification:     Sauvegarder la modification
+    back_to_listing:       Retour à la liste
+    remove:                Supprimer la modification
+
+    revisions:
+      none:               Modifications sans révision
+      modifications:      Modifications
+      remove:             Supprimer la révision
+      revision:           Révision
+      revisions:          Révisions
+      no_revision:        Aucune révision
+      attach_to_revision: Attacher à une révision
+      or_add_revision:    ou ajouter une révision
+
+    parts:
+      parts:           Pièces
+      add_part:        Ajouter une pièce
+      main_part:       Principale
+      vendor:          Vendor
+      part:            Pièce
+      quantity:        Quantité
+      price:           Prix unitaire
+      create_new_part: ou créer une nouvelle pièce
+      remove:          Supprimer
+      optional_price:  Optionnel
+
+    services:
+      services:          Prestations
+      add_service:       Ajouter une prestation
+      type:              Type
+      hours:             heures
+      vendor:            Garage
+      duration:          Durée
+      create_new_vendor: ou ajouter un garage
+      types:
+        part_removal:      Démontage
+        part_installation: Installation
+        preparation:       Préparation
+        bodywork:          Carrosserie
+
+    changes:
+      property: Propriété
+      value:    Nouvelle valeur
+
+    advantages:
+      advantages:    Bénéfices
+      add_advantage: Ajouter un bénéfice
+
+    disadvantages:
+      disadvantages:    Inconvénients
+      add_disadvantage: Ajouter un inconvénient
+
+    filters:
+      none:             Toutes les modifications
+      without_revision: Les modifications sans révision

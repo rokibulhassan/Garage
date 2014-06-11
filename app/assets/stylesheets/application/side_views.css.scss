@@ -1,0 +1,40 @@
+.side_views {
+  list-style: none;
+}
+
+.side_view {
+  cursor: pointer;
+}
+
+.bubble-comment {
+  position: absolute;
+  top: -25px;
+  left: auto;
+  .popover {
+    top: auto !important;
+    bottom: 25px !important;
+    font-size: 9px;
+    border-color: silver;
+    padding: 5px 5px;
+    .arrow {
+      -webkit-transform: skew(-40deg, 0deg);
+      -moz-transform: skew(-40deg, 0deg);
+      transform: skew(-40deg, 0deg);
+      bottom: -16px;
+      border-width: 8px !important;
+    }
+  }
+  .popover-content {
+    padding: 0 0;
+    width: 70px;
+    line-height: 12px;
+    word-wrap: break-word;
+  }
+}
+
+.bubble-comment-amt-comments {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  font-size: 11px;
+}

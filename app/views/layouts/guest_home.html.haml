@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{ charset: 'utf-8' }
+    %title MyyGarage
+
+    /[if lt IE 9]
+      = javascript_include_tag 'html5'
+
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = yield :additional_headings
+    = csrf_meta_tags
+
+  %body
+    = render 'shared/top_bar'
+
+    .container
+      = yield

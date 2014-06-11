@@ -1,0 +1,52 @@
+%form.form-horizontal
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3 Add a new vendor
+
+    .modal-body
+      .control-group
+        %label.control-label{ for: 'vendor-name' } Name
+        .controls
+          %input#vendor-name{ type: 'text', name: 'name', value: @vendor.get('name') }
+
+
+      .control-group
+        %label.control-label{ for: 'vendor-website' } Website URL
+        .controls
+          %input#vendor-website{ type: 'text', name: 'website', value: @vendor.get('website') }
+
+      %fieldset
+        %legend Address
+
+        .control-group
+          %label.control-label{ for: 'vendor-street'} Street
+          .controls
+            %input#vendor-street{ type: 'text', name: 'address_street', value: @vendor.get('street') }
+
+
+        .control-group
+          %label.control-label{ for: 'vendor-zipcode'} Zipcode
+          .controls
+            %input#vendor-zipcode{ type: 'text', name: 'address_zipcode', value: @vendor.get('zipcode') }
+
+
+        .control-group
+          %label.control-label{ for: 'vendor-city'} City
+          .controls
+            %input#vendor-city{ type: 'text', name: 'address_city', value: @vendor.get('city') }
+
+
+        .control-group
+          %label.control-label{ for: 'vendor-country'} Country
+          .controls
+            %select#vendor-country{ name: 'address_country' }
+              %option
+              - _.each @countries, (country)=>
+                %option{ value: country.code }
+                  = country.label
+
+
+    .modal-footer
+      %button.btn.btn-primary Add the vendor
+      %a.btn{ data: { dismiss: 'modal' } } Cancel

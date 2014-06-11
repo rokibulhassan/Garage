@@ -1,0 +1,2 @@
+%span.dashboard-event-type= I18n.t('create_part_purchase', scope: 'dashboard_content.newsfeed_events', label: @extra['label'], vendor: @extra['vendor'] )
+.main-info

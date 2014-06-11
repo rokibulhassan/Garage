@@ -1,0 +1,3 @@
+%span.dashboard-event-type= I18n.t('create_profile_picture', scope: 'dashboard_content.newsfeed_events')
+.main-info
+  %img{ src: @extra['image_url'], alt: @extra['image_alt'] }

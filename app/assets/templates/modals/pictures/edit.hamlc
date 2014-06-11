@@ -1,0 +1,21 @@
+%form.form-horizontal
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3 Edit picture info
+    .modal-body
+      .control-group
+        %label.control-label{ for: 'picture-title' } Description
+        .controls
+          %textarea#picture-title{ name: 'title', style: 'resize: vertical; width: 239px; line-height: 18px;' }
+            = @picture.get('title')
+      .control-group
+        %label.control-label{ for: 'created_at' } Date
+        .controls
+          .input-append.date{ data: { date-format: 'dd/mm/yyyy' } }
+            %input.span2#picture-date{ type: 'text', name: 'created_at', value: @picture.formattedCreatedAt(), readonly: true }
+            %span.add-on{ style: 'margin-left: -5px;' }
+              %i.icon-th
+    .modal-footer
+      %button.btn.btn-primary Update picture
+      %a.btn{ data: { dismiss: 'modal' } } Cancel

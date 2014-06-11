@@ -1,0 +1,153 @@
+#collages-carousel {
+  .carousel-control { top: 50%; }
+}
+
+ul.collages {
+  margin: 0;
+  list-style: none;
+
+  > li {
+    position: relative;
+    margin-bottom: 6px;
+
+    .btn-toolbar {
+      .move-lower, .move-higher {
+        span {
+          font-family: FontAwesome;
+          font-size: 48px;
+          color: white;
+          opacity: 0.6;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  > li:first-child .move-higher { display: none; }
+  > li:last-child .move-lower { display: none; }
+}
+
+.cutouts {
+  > ul { margin: 0; }
+}
+
+.cutouts ul {
+  list-style: none;
+  position: relative;
+
+  > li {
+    position: absolute;
+
+    .picture-bar-fade { opacity: 0; }
+    .picture-bar { display: none; }
+
+    a { display: block; }
+  }
+
+  &[data-layout="sample-1"] {
+    [data-row="1"] { top: 0px; }
+    [data-row="2"] { top: 195px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 570px; }
+  }
+  &[data-layout="sample-2"] {
+    [data-row="1"] { top: 0px; }
+    [data-row="2"] { top: 205px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 380px; }
+  }
+  &[data-layout="layout-v1"] {
+    [data-row="1"] { top: 0px; }
+    [data-row="2"] { top: 192px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 646px; }
+  }
+  &[data-layout="layout-01"] {
+    [data-row="1"] { top: 0px; }
+    [data-row="2"] { top: 196px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 253px; }
+    [data-col="3"] { left: 500px; }
+  }
+  &[data-layout="layout-02"] {
+    [data-row="1"] { top: 0px; }
+    [data-row="2"] { top: 200px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 446px; }
+    [data-col="3"] { left: 693px; }
+  }
+  &[data-layout="layout-03"] {
+    [data-row="1"] { top: 0px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 394px; }
+  }
+  &[data-layout="layout-04"] {
+    [data-row="1"] { top: 0px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 552px; }
+  }
+  &[data-layout="layout-05"] {
+    [data-row="1"] { top: 0px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 306px; }
+    [data-col="3"] { left: 552px; }
+  }
+  &[data-layout="layout-06"] {
+    [data-row="1"] { top: 0px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 306px; }
+    [data-col="3"] { left: 552px; }
+    [data-col="4"] { left: 763px; }
+  }
+  &[data-layout="layout-07"] {
+    [data-row="1"] { top: 0px; }
+    [data-col="1"] { left: 0px; }
+  }
+  &[data-layout="layout-08"] {
+    [data-row="1"] { top: 0px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 436px; }
+  }
+  &[data-layout="layout-09"] {
+    [data-row="1"] { top: 0px; }
+    [data-row="2"] { top: 204px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 436px; }
+    [data-col="3"] { left: 686px; }
+  }
+  &[data-layout="layout-10"] {
+    [data-row="1"] { top: 0px; }
+    [data-row="2"] { top: 204px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 436px; }
+  }
+  &[data-layout="layout-11"] {
+    [data-row="1"] { top: 0px; }
+    [data-row="2"] { top: 182px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 436px; }
+    [data-col="3"] { left: 585px; }
+    [data-col="4"] { left: 646px; }
+    [data-col="5"] { left: 764px; }
+  }
+  &[data-layout="layout-12"] {
+    [data-row="1"] { top: 0px; }
+    [data-row="2"] { top: 204px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 526px; }
+  }
+  &[data-layout="layout-13"] {
+    [data-row="1"] { top: 0px; }
+    [data-row="2"] { top: 200px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 253px; }
+    [data-col="3"] { left: 500px; }
+  }
+  &[data-layout="layout-14"] {
+    [data-row="1"] { top: 0px; }
+    [data-row="2"] { top: 204px; }
+    [data-col="1"] { left: 0px; }
+    [data-col="2"] { left: 326px; }
+  }
+  
+}

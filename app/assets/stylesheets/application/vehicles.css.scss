@@ -1,0 +1,184 @@
+#vehicles-new-page {
+  .vehicle-type.vehicle-type-active { border-color: #04C; }
+}
+
+table.datasheet-properties {
+  tr {
+    height: 33px;
+
+    td.value {
+      input {
+        width: 80px;
+        height: 14px;
+        line-height: 14px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+.vehicle-tabs,
+.gallery-show-tabs {
+  position: relative;
+  .vehicle-side-view{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    img{max-height: 38px;}
+    .change_side_view{
+      position: absolute;
+      right: 0;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.delete-vehicle{
+  font-size: smaller;
+  color: #333;
+}
+
+#side_view{
+  .change_side_view{
+    font-size: smaller;
+  }
+
+  .add-bookmark,
+  .remove-bookmark,
+  .compare {
+    width: 70px;
+    height: 20px;
+    position: absolute;
+    bottom: -20px;
+    font-size: 11px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .compare {
+    right: 0;
+    color: #333;
+    background-color: #eee;
+  }
+
+  .add-bookmark,
+  .remove-bookmark {
+    color: #fff;
+    right: 75px;
+
+  }
+
+  .add-bookmark {
+    background-color: #11cc11;
+  }
+
+  .remove-bookmark {
+    background-color: orange;
+  }
+
+  .btn-tab-text {
+    position: relative;
+    top: -3px;
+    vertical-align: middle;
+  }
+}
+.legend{
+  line-height: 16px;
+  font-size: 12px;
+  text-align: center;
+  span {
+    display: block;
+  }
+}
+
+table#version {
+  position: relative;
+}
+
+#identification #version {
+  td.doors.main-info {
+    width: 60px;
+  }
+  td {
+    min-width: 301px;
+  }
+  th {
+    min-width: 120px;
+    max-width: 120px;
+  }
+  #version_doors_chzn,
+  &.motorcycle #name_id_chzn {
+    &, a, input {
+      width: 60px;
+    }
+    z-index: 100;
+    .chzn-drop {
+      width: 68px !important;
+      .chzn-search input {
+        width: 33px !important;
+      }
+    }
+  }
+  &.motorcycle {
+    th.second_name {
+      position: relative;
+      left: -200px;
+    }
+    td.second_name {
+      position: relative;
+      left: -240px;
+    }
+    .hide-model-name input {
+      left: 170px;
+      top: 8px;
+    }
+  }
+  th.body.general-info {
+    position: relative;
+    left: -168px;
+  }
+  td.body.general-info {
+    position: relative;
+    left: -250px;
+    width: 140px;
+  }
+  #version_body_id_chzn,
+  &.motorcycle #second_name_id_chzn {
+    & a {
+      width: 140px !important;
+    }
+    & .chzn-drop {
+      width: 148px !important;
+    }
+    & .chzn-search input {
+      width: 112px !important;
+    }
+  }
+}
+
+#vehicles-new-page .vehicle-type > img {
+  cursor: pointer;
+}
+
+#vehicles .thumbnails > li,
+#vehicles-search-results .thumbnails > li {
+  min-height: 177px;
+}
+
+#expenses {
+  margin-top: 50px;
+}
+
+#version_comments li {
+  list-style-type: none;
+}
+
+.version-comment-body {
+  margin-left: 100px;
+}
+
+.delete-version-comment {
+  margin-top: 10px;
+  float: right;
+}

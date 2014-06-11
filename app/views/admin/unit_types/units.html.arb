@@ -1,0 +1,8 @@
+table_for assigns[:unit_type].units do
+  column :name do |unit|
+    link_to unit.name, [ :admin, unit ]
+  end
+  column :label_fr
+  column :label_en
+  column :unit_type
+end

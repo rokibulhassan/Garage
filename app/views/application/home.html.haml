@@ -1,0 +1,39 @@
+.row
+  .span12
+    .well
+      %h1 Lorem ipsum dolor sit amet
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      %p= link_to 'Sign in with Facebook', facebook_sessions_path, class: 'btn btn-primary', method: :post
+
+.row
+  .span12
+    - if current_user
+      .row
+        .span12
+          %p You are signed in.
+
+    - else
+      .row
+        .sign-up.span6
+          %h3 Sign up the old way
+
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+
+          = simple_form_for User.new, html: { class: 'form-horizontal' } do |f|
+            = f.input :username
+            = f.input :email, required: true
+            = f.input :password
+            = f.input :password_confirmation
+            = f.input :terms_of_service, as: :boolean
+
+            .form-actions
+              = f.button :submit, class: 'btn-primary'

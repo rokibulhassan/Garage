@@ -1,0 +1,47 @@
+%h4 Save an image in MyyGarage!
+
+%div.image
+  = image_tag @url, style: 'height: 200px;'
+  %div
+    Real size:
+    %span.image-size ? × ?
+
+
+- if current_user.blank?
+  %p
+    You are not signed in on MyyGarage. Please sign in either with your facebook account or your MyyGarage account.
+
+  %h3 With your MyyGarage account
+
+  = form_tag bookmarklet_favorites_path, method: 'post' do
+    = hidden_field_tag :return_url, request.url
+
+    %p
+      = fields_for :session do |f|
+        = f.text_field :identifier, placeholder: 'Username or email…', autofocus: true
+        = f.password_field :password, placeholder: 'Password…'
+
+    %p
+      = fields_for :favorite do |f|
+        = f.hidden_field :url, value: @url
+        = f.hidden_field :page_url, value: @page_url
+        = f.text_field :label, placeholder: 'Short description of this image…'
+
+    %p= submit_tag 'Sign in and add the image!'
+
+
+  %h3 With your Facebook account
+
+  %p Don't worry, you will not loose your image.
+  %p= link_to 'Sign in with Facebook', facebook_sessions_path(return_url: request.url), class: 'btn btn-primary', method: :post
+
+
+- else
+  = form_tag bookmarklet_favorites_path, method: 'post' do
+    %p
+      = fields_for :favorite do |f|
+        = f.hidden_field :url, value: @url
+        = f.hidden_field :page_url, value: @page_url
+        = f.text_field :label, placeholder: 'Short description of this image…', autofocus: true
+
+    %p= submit_tag 'Add the image!'

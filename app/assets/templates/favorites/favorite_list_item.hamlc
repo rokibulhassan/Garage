@@ -1,0 +1,17 @@
+%td{ style: 'text-align: center' }
+  %div
+    %a{ href: @urls.original }
+      %img{ src: @urls.thumbnail, width: 220, height: 140 }
+
+%td
+  %div{ style: 'overflow: hidden;' }
+    .pull-right
+      %button.delete.btn.btn-danger
+        %i.icon-trash.icon-white
+        Remove
+
+    .pull-left
+      %h3= @label
+
+  %p
+    %a{ href: @urls.source }= @urls.source

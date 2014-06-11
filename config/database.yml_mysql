@@ -1,0 +1,16 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: garrage_development
+  pool: 5
+  username: root
+  password: root
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: garrage_production
+  pool: 5
+  username: root
+  password: root

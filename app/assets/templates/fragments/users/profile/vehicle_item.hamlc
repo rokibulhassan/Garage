@@ -1,0 +1,6 @@
+%a.thumbnail{ href: '#' }
+  - source = @vehicle.normalAvatarUrl()
+  %img{ src: source, alt: '180x135', style: 'width: 180px; height: 135px;' }
+  .legend
+    %span= @caption
+    %span= @subcaption

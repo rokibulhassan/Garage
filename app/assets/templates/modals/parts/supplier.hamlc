@@ -1,0 +1,10 @@
+%tr{ id: "supplier_#{@id}" }
+  %td.name= @supplier.name
+  %td.reference= @supplier.reference
+
+  %td
+    %input{ type: 'checkbox', checked: @supplier.obsolete, disabled: true }
+
+  %td
+    - if @showControls
+      %a.remove-reference Remove

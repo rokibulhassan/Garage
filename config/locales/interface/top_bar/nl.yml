@@ -1,0 +1,38 @@
+nl:
+  top_bar:
+    home: Home
+    vehicles: Vehicles
+    bookmarked_vehicles: Bookmarked
+    all_vehicles: All Vehicles
+    all_cars: All cars
+    all_bikes: All bikes
+    albums: Albums
+    myy_garage: Myy Garage
+    my_vehicles: My Vehicles
+    my_cars: My cars
+    my_bikes: My bikes
+    myy_cloud: Myy Cloud
+    imported_content: Imported Content
+    my_public_albums: My Public Albums
+    my_private_albums: My Private Albums
+    forgotten_password: Forgotten password?
+    new_member_signup: New member signup
+    facebook_signup: Facebook signup
+    people: People
+    edit_profile: My profile
+    sign_out: Sign out
+    comparisons: Comparisons
+    my_comparisons: My Comparisons
+    recent_comparisons: Recent Comparisons
+    function_unavailable: You have to be connected to access this function. Please sign in!
+    all_news: All news
+    my_news: My news
+    followings: Followings
+    followers: Followers
+    blocked: Blocked
+    me: Me
+    units: Units
+    change_unit_system:
+      EU: Europe - metric system - km/h - l/100 km
+      UK: UK - bhp - mph - imperial mpg
+      US: US - hp - ft.lbs - mph - mpg us

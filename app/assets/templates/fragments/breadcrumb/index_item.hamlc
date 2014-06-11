@@ -1,0 +1,5 @@
+%a{ href: '#' }= @breadcrumb.get('text')
+  - if @isActive and @breadcrumb.get('editable')?
+    %i.icon-pencil
+- unless @isActive
+  %span.divider >

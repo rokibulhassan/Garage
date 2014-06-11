@@ -1,0 +1,25 @@
+- source = @cutout.get('url')
+- hasUrl = if @cutout.get('url') then 'has-url' else 'no-url'
+%a.cutout{ href: '#', style: "height: #{@cutout.get('height')}px;"}
+  - if @cutout.get('type') == 'picture' or @cutout.isNew()
+    %img{ class: hasUrl, src: source, alt: @cutout.altText(), style: "width: #{@cutout.get('width')}px; height: #{@cutout.get('height')}px;" }
+
+    - commented = @cutout.get('picture')? && (@cutout.get('picture').get('comments_size') > 0)
+    - liked = commented
+    - if liked or commented
+      .picture-bar-fade
+      .picture-bar
+        - if commented
+          %img.pull-right{ src: "<%= image_path('galleries/icon-comment.png') %>" }
+          %span.pull-right
+            = @cutout.get('picture').get('comments_size')
+        - if liked
+          %img.pull-right{ src: "<%= image_path('galleries/icon-like.png') %>" }
+          %span.pull-right
+            = @cutout.get('picture').get('comments_size')
+  - else if @cutout.get('type') == 'video'
+    %div{ style: 'position: relative;' }
+      - source = source + '&wmode=transparent&autoplay=0'
+      %iframe{ class: hasUrl, src: source, type: 'text/html', frameborder: 0, width: @cutout.get('width'), height: @cutout.get('height') }
+      - displayStyle = if @modeEdit then 'block' else 'none'
+      %div{ style: "display: #{displayStyle}; position: absolute; top: 0; width: #{@cutout.get('width')}px; height: #{@cutout.get('height')}px;" }

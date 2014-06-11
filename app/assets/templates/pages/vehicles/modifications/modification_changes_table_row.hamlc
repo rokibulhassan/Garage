@@ -1,0 +1,21 @@
+- if @showControls and @property.isNew()
+  %td.property
+    %select.property-name{ name: 'property_name', data: { placeholder: I18n.t('modifications.changes.property') } }
+      %option
+      - for definitionName of @propertyDefinitions
+        %option{ value: definitionName, selected: @property.get('name') == definitionName }
+          = I18n.t(definitionName, scope: 'data_sheets_new.properties')
+- else
+  %td.property= I18n.t(@property.get('name'), scope: 'data_sheets_new.properties')
+
+%td.value
+  - if @showControls
+    %input.property-value{type: 'text', name: @property.get 'name', value: @property.get 'value'}
+  - else
+    = @property.get('value')
+  %span.unit!= @unit
+
+- if @showControls
+  %td.actions
+    %button.remove.btn
+      %i.icon-trash

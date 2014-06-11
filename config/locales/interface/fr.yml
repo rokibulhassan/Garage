@@ -1,0 +1,240 @@
+fr:
+  tabs:
+    galleries:      Galeries
+    galleries_content:
+      collages_list: Format album
+      private: Privé
+      add_pictures: Ajouter des photos
+      delete_gallery: Effacer la galerie
+      edit_collages: "Modifier l'album"
+      exit_edit_collages: Enregistrer les modifications
+      mosaic_label: Mosaic
+      placeholders:
+        gallery_title: Modifier le titre de la galerie
+    specifications: Spécifications
+    specifications_content:
+      suggest_corrections: Suggérer corrections
+      edit_specs: Modifier spécifications
+      back_to_view: Enregistrer corrections
+      build_datasheet: Créer la fiche technique
+      choose_version: "Choisissez celle qui correspond à votre <b>{{brand}}</b>. Si nécessaire, vous pourrez changer certaines données."
+      or: Ou
+      fill_own: créer la votre
+      wiki: wiki
+      engine: moteur
+      power: puissance
+      torque: couple
+      transmission: transmission
+      type: type
+      weight: poids
+      dimensions: dimensions
+      version: version
+      model_year: année modèle
+      market: marché
+      import_datasheet: importer la fiche technique
+      see: consulter le
+    performances:   Performances
+    performances_content:
+      current: Version actuelle
+      gain: Gain
+      stock: Origine
+      suggest_corrections: Suggérer corrections
+      back_to_view: Enregistrer corrections
+    modifications:  Modifications
+    version_comments: Commentaires
+    modifications_content:
+      delete: Supprimer
+      combine_mods: Combiner modifications
+      set_current: Configuration actuelle
+      add_change_set: Ajouter un kit
+      change_set_name: Changer le nom du kit
+      all_mods: Toutes modifications
+      new_change_set: Nouveau kit
+      add_new_modification: Ajouter une modification
+    expenses:       Dépenses
+    identification: Identification (edit)
+    identification_show: Identification
+    identification_content:
+      brand: Marque
+      body: Carrosserie
+      doors: Portes
+      model: Modèle
+      second_model_name: 2eme nom
+      version: Version
+      category: Catégorie
+      engine: Moteur
+      energy: Énergie
+      model_year: Année modèle
+      model_type: Modèle
+      generation: Génération
+      transmission: Boite
+      transmission_type: Type
+      selector: Sélecteur
+      transmission_details: Transmission
+      transmission_numbers: Boite
+      production_code: Code de production
+      market_version: Origine
+      generation_from: de
+      generation_to: à
+      driver: Utilisateur
+      owner_name: Utilisateur
+      status: Statut
+      select_placeholder: Choisir...
+      switch_to_identification_show_mode: retour mode affichage
+      change_vehicle_picture: "Changer l'image"
+      add_more_selects: +Ajouter
+      choose_comment: Commenter
+    identification_show_content:
+      editing: Editer
+      data_link: Données
+      photos_link: Photos
+      silhouette_link: Silhouette
+      thumbnail_link: Vignette
+      delete_link: Supprimer
+    profile_content:
+      mods: mods
+      photos: photos
+      block_comments: Bloquer
+      wall: Mur
+      vehicles: Véhicules
+      comparisons: Comparaisons
+      edit_collages: Editer le mur
+      exit_edit_collages: Sortir
+      follow: Suivre
+      unfollow: Ne plus suivre
+      delete: supprimer
+      add_bookmark: Fav.
+      delete_bookmark: Fav.
+      change_side_view: 'Changer&nbsp;Silhouette'
+    imported_content: Contenu importé
+    public_galleries: Galeries publiques
+    private_galleries: Galeries privées
+    software_setup: Installation du logiciel
+    my_profile:
+      informations: Informations
+      information_content:
+        change_avatar: Changer avatar
+        placeholders:
+          first_name: Prénom
+          last_name: Nom
+          email: Email
+      geolocation: Géolocalisation
+      geolocation_content:
+        geolocation: Géolocalisation
+        placeholders:
+          country: Pays
+          biggest_town: Plus grande ville à proximité
+          locale: Localisation
+          currency: Monnaie
+          system_of_units: "Système d'unités"
+        regions_and_languages: Région et langue
+      privacy_settings: Vie privée
+      privacy_settings_content:
+        informations: Informations
+        first_name: Prénom
+        last_name: Nom
+        public: Publique
+        contact_me: Permettre aux autres de me contacter
+        geolocation: Géolocalisation
+        nearby_location: Ville proche
+    people_content:
+      followings:  Mes suivis
+      followers: Mes suiveurs
+      blocked: Bloqués
+  modals:
+    side_views:
+      no_more_available: Pas d’élément disponible.
+    signup:
+      signup: Inscription
+      username: "nom d'utilisateur"
+      email: e-mail
+      password: Mot de passe
+      password_confirmation: Confirmer mot de passe
+      terms_of_service: "Conditions Générales d'utilisation"
+      cancel: Annuler
+      register: "S'inscrire"
+      placeholders:
+        username: ''
+        email: ''
+        password: ''
+        password_confirmation: ''
+  performances:
+    table:
+      top_speed:    Vitesse maximale
+      acceleration: Accélération
+      deceleration: Décélération
+      emissions:    Emissions
+      consumption:  Consommation
+  vehicles:
+    search:
+      custom_search: '[recherche personnalisée]'
+      text_search_field: 'mots clés:'
+      brand_select: 'Marque:'
+      exclude_brand_select: 'Sauf:'
+      country_select: 'Pays:'
+      exclude_country_select: 'Sauf:'
+      search_btn: Chercher
+    vehicles:
+      all_vehicles: Tous véhicules
+      add_vehicle:  Ajouter un véhicule
+    new:
+      new_vehicle: Nouveau véhicule
+      automobile: Auto
+      motorcycle: Moto
+      brand: Marque
+      model: Modèle
+      engine: Moteur
+      create_vehicle: Créer le véhicule
+    bookmarked_vehicles: Véhicules en favoris
+    galleries:
+      add_gallery: Créer une galerie
+      gallery: Galerie
+      untitled_gallery: Galerie sans titre
+  dashboard_content:
+    newsfeed: Fil d’actualité
+    my_newsfeed: Mon fil d’actualité
+    photo: photo
+    newsfeed_events:
+      create_gallery: a créé une nouvelle galerie
+      create_modification: a créé une nouvelle modification
+      create_part_purchase: a acheté %{label} de %{vendor}
+      create_gallery_picture: a ajouté une nouvelle photo
+      create_comment: a ajouté une nouvelle commentaire
+      create_comparison_table: a créé une nouvelle comparaison
+      start_comparison_table: a comencé une nouvelle comparison
+      add_pictures_to_gallery: a ajouté des nouvelles photos dans une galerie
+      create_motorcycle: "vient d'ajouter un 2 roues"
+      create_automobile: "vient d'ajouter une auto"
+      add_comments_to_picture: a reçu %{num_comments} nouveaux commentaires
+      add_comment_to_picture: a reçu un nouveau commentaire
+  breadcrumb:
+    garage: Garage
+    myy_garage: Mon garage
+    myy_vehicles: Mes véhicules
+    cars: Autos
+    automobiles: Autos
+    bikes: Motos
+    motorcycles: Motos
+    myy_cars: Mes Autos
+    myy_automobiles: Mes Autos
+    myy_bikes: Mes Motos
+    myy_motorcycles: Mes Motos
+    wall: Mur
+    myy_wall: Mur
+    vehicles: Véhicules
+    comparisons: Comparaisons
+    me: Me
+    myy_cloud: Myy Dossier
+    imported_content: Contenu Importé
+    public_galleries: Mes Albums Publiques
+    private_galleries: Mes Albums Privés
+    software_setup: Installation du logiciel
+    galleries: Galeries
+    albums: Albums
+    untitled_gallery: galerie sans nom
+    version_comments: Commentaires
+  pages:
+    new_profile_pictures:
+      cancel: Annuler
+      confirm_import: Confirmer l’import de photo(s)
+      caption: Corriger la légende de chaque photo puis confirmer l’import de photos

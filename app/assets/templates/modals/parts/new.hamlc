@@ -1,0 +1,48 @@
+%form.form-horizontal
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3 Add a new part
+
+    .modal-body
+      .control-group
+        %label.control-label{ for: 'label' } Label
+        .controls
+          %input#label{ type: 'text', name: 'label', value: @part.get('label') }
+
+
+      .control-group
+        %label.control-label{ for: 'reference' } Manufacturer reference
+        .controls
+          %input#reference{ type: 'text', name: 'manufacturer_reference', value: @part.get('manufacturer_reference'), placeholder: "Part reference at #{@brand.get('label')}, if any." }
+          .help-block Only for parts bought from the vehicle manufacturer.
+
+
+      .control-group
+        %label.control-label{ for: 'category' } Category
+        .controls
+          %select#category{ name: 'category' }
+            %option
+
+
+      %fieldset
+        %legend Suppliers
+
+        %table.table.table-striped
+          %thead
+            %tr
+              %td.span2 Supplier
+              %td.span2 Reference
+              %td Obsolete
+
+          %tbody
+
+
+        %button.btn.add-supplier
+          %i.icon-plus
+          Add supplier
+
+
+    .modal-footer
+      %button.btn.btn-primary Add the part
+      %button.btn{ data: { dismiss: 'modal' } } Cancel

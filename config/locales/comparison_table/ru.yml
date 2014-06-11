@@ -1,0 +1,39 @@
+ru:
+  comparison_tables:
+    untitled_comparison:         Untitled comparison
+    comparison_tables:           Comparison tables
+    my_comparison_tables_title:  "My comparisons"
+    comparison_tables_title_for_name: "{{name}}'s comparisons"
+    comparison_tables_recent_title: "Recent Comparisons"
+    all:                         Comparisons
+    stats:                       Stats
+
+    compare:                     Compare
+    compare_short:               Comp.
+    add_vehicle:                 Add a vehicle
+    save_it:                     Save it
+    like_it:                     Like it
+    num_saves:                   "({{num}} saves)"
+    num_likes:                   "({{num}} likes)"
+    import:                      Import from another vehicle comparison
+
+    compare_the_vehicle:         Compare the vehicle
+    create_comparison_for_later: Save for a future comparison
+    create_comparison_for_now:   Compare now in a new comparison
+    add_to_existing_comparison:  Add to an existing comparison
+    label:                       Num
+    vehicles:                    Vehicles
+    saves:                       Saves
+    likes:                       Likes
+    comparison_modes:            Compare…
+    now:                         now
+    later:                       later
+    or:                          or
+
+
+    import_vehicles_from_comparison: Import vehicle comparisons
+    import_chosen_vehicles:          Import selected vehicles
+
+    metrics_types:
+      performance:      Performance
+      fuel_consumption: Consumption

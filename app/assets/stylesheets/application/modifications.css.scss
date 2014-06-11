@@ -1,0 +1,51 @@
+#modifications-dashboard {
+  .change-set-tabs > .tab-content{
+    overflow: initial;
+  }
+  .tab-content{
+    overflow: hidden;
+    .modifications-container{
+      display: inline-block;
+    }
+    .parts, .services{
+      .actions {
+        text-align: center;
+        width: 40px;
+      }
+    }
+    .parts{
+      .main-part{
+        text-align: center;
+        width: 60px;
+      }
+      .quantity{
+        input{ width: 50px;}
+      }
+      .part{
+        select{ width: 200px;}
+      }
+      .vendor{
+        width: 150px;
+        input{width: 210px}
+      }
+      .price{
+        width: 80px;
+        input{ width: 30px; }
+      }
+    }
+    .services{
+      .type{
+        width: 130px;
+        select{ width: 130px; }
+      }
+
+      .vendor{
+        width: 340px;
+        select{ width: 340px;}
+      }
+      .duration{
+        input{ width: 50px;}
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+%span.dashboard-event-type= I18n.t('create_modification', scope: 'dashboard_content.newsfeed_events')
+.main-info

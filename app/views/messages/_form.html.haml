@@ -1,0 +1,7 @@
+= simple_form_for :message, url: [:reply, conversation], remote: true do |f|
+  -#= f.input :subject
+  = image_tag current_user.avatar_url, size: '45x45'
+  = f.text_area :body, :rows => 3, :style => "width: 571px;"
+  .form-actions_off
+    = f.button :submit, class: 'btn-primary', value: "Send"
+    = submit_tag 'Cancel', type: :reset, class: 'btn btn-danger'

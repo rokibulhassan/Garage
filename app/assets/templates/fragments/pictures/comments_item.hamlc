@@ -1,0 +1,22 @@
+.avatar.pull-left
+  %img{ src: @comment.get('user').get('avatar_url') }
+- if @canAddToOpposers
+  %button.add-opposer.close.pull-left{ value: 'block-user', style: 'margin-top: -3px;' }×
+%a.show-user{ href: @commentUserPath }
+  = @comment.get('user').get('username')
+- if @comment.get('edited')
+  %span{ style: 'font-size: 10px;' }
+    (edited)
+- if @canManageVehicle
+  %button.delete-comment.close.pull-right{ value: 'delete-comment', style: 'margin-top: -8px; margin-right: -14px;' }×
+%span.comment-date.pull-right
+  = @comment.formattedCreatedAt()
+.comment-body
+  .picture-comment
+    != @comment.linkifiedBody()
+    - if @canManage
+      %button.edit-comment{ value: 'edit-comment', style: 'border: 0; background: transparent; padding: 0;' }
+        %i.icon-pencil
+  - if @canManage
+    %textarea.comment-input{ name: 'comment-inplace', style: 'display: none;' }
+      = @comment.get('body')

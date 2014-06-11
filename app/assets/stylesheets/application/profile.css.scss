@@ -1,0 +1,49 @@
+#user-information{
+  height: 90px;
+  .avatar {
+    width: 50px;
+    float: left;
+  }
+  .information {
+    float: left;
+    margin-left: 15px;
+    line-height: 18px;
+    .name{
+      font-weight: bold;
+    }
+    font-weight: lighter;
+    font-size: x-small;
+  }
+  #follow{
+    display: inline-block;
+  }
+}
+.navigation{
+  position: relative;
+  ul{
+    display: inline-block;
+  }
+
+  #silhouettes-bar{
+    margin-bottom: 25px;
+    width: 80%;
+    padding-left: 30px;
+    position: relative;
+    vertical-align: bottom;
+    &.cannot-manage {
+      padding-left: 0;
+      left: -5px;
+    }
+    li{
+      margin-right: 20px;
+      display: inline-block;
+      float: none;
+      vertical-align: bottom;
+      a{
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+}

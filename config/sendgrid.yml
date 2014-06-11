@@ -1,0 +1,15 @@
+development:
+  username: RomainTribes
+  password: do1arobs
+
+test:
+  username:
+  password:
+
+production:
+  username:
+  password:
+
+staging:
+  username: RomainTribes
+  password: do1arobs

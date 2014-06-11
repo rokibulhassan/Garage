@@ -1,0 +1,17 @@
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %td Label
+      // TODO: there is no label attribute, figure out what this should be
+      %td #{@brand?.get('label')} reference
+      %td Quantity
+      %td Unit price
+      %td Date
+      %td Vendor
+
+
+- if @canManage
+  %p
+    %a.btn.add-purchase{href: "#"}
+      %i.icon-plus
+      Add purchase

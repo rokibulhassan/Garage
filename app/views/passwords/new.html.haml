@@ -1,0 +1,9 @@
+%h4 Forgotten my password
+
+- if flash[:alert]
+  .alert.alert-error= flash[:alert]
+
+= form_tag passwords_path, method: :post do
+  = simple_fields_for :password do |f|
+    = f.input :email
+    = f.button :submit

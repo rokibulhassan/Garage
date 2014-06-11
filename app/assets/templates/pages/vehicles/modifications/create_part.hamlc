@@ -1,0 +1,32 @@
+%form.form-horizontal
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3 Create a part
+
+    .modal-body
+      .control-group
+        %label.control-label{ for: 'category' } Category
+        .controls
+          %select#category{ name: 'category' }
+            %option
+
+
+      .control-group
+        %label.control-label{ for: 'part'} Part
+        .controls
+          %select#part{ name: 'part' }
+            %option
+            - @parts.each (part)->
+              %option{ value: part.id }= part.get('label')
+
+
+      .control-group
+        %label.control-label{ for: 'reference' } Manufacturer reference
+        .controls
+          %input#reference{ name: 'manufacturer_reference', placeholder: "Part reference at #{@brand.get('label')}, if any." }
+
+
+    .modal-footer
+      %button.btn.btn-primary.create-part Create this new piece
+      %button.btn{ data: { dismiss: 'modal' } } Cancel

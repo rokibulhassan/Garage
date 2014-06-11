@@ -1,0 +1,397 @@
+# layouts are for collages. top-level numbers are rows, inner numbers are
+# columns in that row
+default_layouts: &default_layouts
+  layout-01:
+    1:
+      1:
+        w: 494
+        h: 190
+      3:
+        w: 440
+        h: 390
+    2:
+      1:
+        w: 247
+        h: 194
+      2:
+        w: 241
+        h: 194
+  layout-02:
+    1:
+      1:
+        w: 440
+        h: 390
+      2:
+        w: 241
+        h: 194
+      3:
+        w: 247
+        h: 194
+    2:
+      2:
+        w: 494
+        h: 190
+  layout-03:
+    1:
+      1:
+        w: 388
+        h: 180
+      2:
+        w: 546
+        h: 180
+  layout-04:
+    1:
+      1:
+        w: 546
+        h: 180
+      2:
+        w: 388
+        h: 180
+  layout-05:
+    1:
+      1:
+        w: 300
+        h: 180
+      2:
+        w: 240
+        h: 180
+      3:
+        w: 388
+        h: 180
+  layout-06:
+    1:
+      1:
+        w: 300
+        h: 180
+      2:
+        w: 240
+        h: 180
+      3:
+        w: 205
+        h: 180
+      4:
+        w: 177
+        h: 180
+  layout-07:
+    1:
+      1:
+        w: 940
+        h: 390
+  layout-08:
+    1:
+      1:
+        w: 430
+        h: 390
+      2:
+        w: 504
+        h: 390
+  layout-09:
+    1:
+      1:
+        w: 430
+        h: 390
+      2:
+        w: 504
+        h: 198
+    2:
+      2:
+        w: 244
+        h: 186
+      3:
+        w: 254
+        h: 186
+  layout-10:
+    1:
+      1:
+        w: 430
+        h: 390
+      2:
+        w: 504
+        h: 198
+    2:
+      2:
+        w: 504
+        h: 186
+  layout-11:
+    1:
+      1:
+        w: 430
+        h: 390
+      2:
+        w: 143
+        h: 176
+      3:
+        w: 173
+        h: 176
+      5:
+        w: 176
+        h: 176
+    2:
+      2:
+        w: 204
+        h: 208
+      4:
+        w: 294
+        h: 208
+  layout-12:
+    1:
+      1:
+        w: 520
+        h: 390
+      2:
+        w: 414
+        h: 198
+    2:
+      2:
+        w: 414
+        h: 186
+  layout-13:
+    1:
+      1:
+        w: 247
+        h: 194
+      2:
+        w: 241
+        h: 194
+      3:
+        w: 440
+        h: 390
+    2:
+      1:
+        w: 494
+        h: 190
+  # layout for identification collage for vehicles
+  layout-14:
+    1:
+      1:
+        w: 320
+        h: 390
+      2:
+        w: 370
+        h: 198
+    2:
+      2:
+        w: 370
+        h: 186
+  layout-v1:
+    1:
+      1:
+        t: video
+        w: 640
+        h: 390
+      2:
+        w: 294
+        h: 186
+    2:
+      2:
+        w: 294
+        h: 198
+
+# layouts are for cutouts.
+test_layouts: &test_layouts
+  sample-1:
+    1:
+      1:
+        w: 560
+        h: 390
+      2:
+        w: 370
+        h: 185
+    2:
+      2:
+        w: 370
+        h: 195
+  sample-2:
+    1:
+      1:
+        w: 370
+        h: 195
+      2:
+        w: 560
+        h: 390
+    2:
+      1:
+        w: 370
+        h: 185
+
+default_unit_kinds: &default_unit_kinds
+  unitless:
+    name: unitless
+    unit: count
+  small_volume:
+    EU:
+      name: cubic_centimeter
+      unit: cm^3
+    UK:
+      name: cubic_centimeter
+      unit: cm^3
+    US:
+      name: cubic_inch
+      unit: in^3
+  power:
+    EU:
+      name: horsepower_eu
+      unit: hp-eu
+    UK:
+      name: horsepower_uk
+      unit: hp-eu
+    US:
+      name: horsepower_us
+      unit: hp
+
+  angular_velocity:
+    name: revolutions_per_min
+    unit: rpm
+  energy:
+    EU:
+      name: newton_meter
+      unit: N*m
+    UK:
+      name: foot_pound
+      unit: lb*gee*ft
+    US:
+      name: foot_pound
+      unit: lb*gee*ft
+  weight:
+    EU:
+      name: kilogram
+      unit: kg
+    UK:
+      name: pound
+      unit: lb
+    US:
+      name: pound
+      unit: lb
+  length:
+    EU:
+      name: millimeter
+      unit: mm
+    UK:
+      name: millimeter
+      unit: mm
+    US:
+      name: inch
+      unit: in
+  speed:
+    EU:
+      name: kilometer_per_hour
+      unit: km/h
+    UK:
+      name: mile_per_hour
+      unit: mph
+    US:
+      name: mile_per_hour
+      unit: mph
+  short_time:
+    name: second
+    unit: s
+  short_distance:
+    EU:
+      name: meter
+      unit: m
+    UK:
+      name: foot
+      unit: ft
+    US:
+      name: foot
+      unit: ft
+  fuel_consumption:
+    EU:
+      name: liter_per_100_km
+      unit: fuel
+    UK:
+      name: mile_per_imp_gallon
+      unit: fuel-uk
+      inverse:
+    US:
+      name: mile_per_gallon
+      unit: fuel-us
+      inverse:
+
+  emissions:
+    EU:
+      name: gr_per_kilometer
+      unit: g/km
+    UK:
+      name: gr_per_kilometer
+      unit: g/km
+    US:
+      name: gr_per_kilometer
+      unit: g/km
+
+  currency:
+    EU:
+      name: euro
+      unit: EUR$
+    UK:
+      name: pound
+      unit: UK$
+    US:
+      name: usd
+      unit: $
+
+test:
+  fixable:
+    minimal_upvotes_count: 2
+
+  unit_kinds:
+    <<: *default_unit_kinds
+
+  collage_layouts:
+    <<: *test_layouts
+
+development:
+  fixable:
+    minimal_upvotes_count: 2
+
+  unit_kinds:
+    <<: *default_unit_kinds
+
+  collage_layouts:
+    <<: *test_layouts
+    layout-v1:
+      1:
+        1:
+          t: video
+          w: 640
+          h: 390
+        2:
+          w: 294
+          h: 186
+      2:
+        2:
+          w: 294
+          h: 198
+    # layout for identification collage for vehicles
+    layout-14:
+      1:
+        1:
+          w: 320
+          h: 390
+        2:
+          w: 370
+          h: 198
+      2:
+        2:
+          w: 370
+          h: 186
+staging:
+  fixable:
+    minimal_upvotes_count: 2
+
+  unit_kinds:
+    <<: *default_unit_kinds
+
+  collage_layouts:
+    <<: *default_layouts
+
+
+production:
+  fixable:
+    minimal_upvotes_count: 5
+
+  unit_kinds:
+    <<: *default_unit_kinds
+
+  collage_layouts:
+    <<: *default_layouts

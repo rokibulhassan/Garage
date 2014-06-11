@@ -1,0 +1,32 @@
+- if @showControls
+  %td.type
+    %select.type.service-attribute{ data: { placeholder: I18n.t('modifications.services.type') } }
+      %option
+      - _.each @types, (type)=>
+        %option{ value: type, selected: @type == type }= I18n.t([ 'modifications', 'services', 'types', type ])
+  %td.vendor
+    %select.vendor.service-attribute{ data: { placeholder: I18n.t('modifications.services.vendor') } }
+      %option
+      - @vendors.each (vendor)=>
+        %option{ value: vendor.id, selected: @vendor == vendor }= vendor.get('name')
+    %div
+      %a.create-new-vendor{ href: '' }= I18n.t('modifications.services.create_new_vendor')
+  %td.duration
+    %input.duration.service-attribute{ type: 'text', value: @duration }
+    = I18n.t('modifications.services.hours')
+
+  %td.actions
+    %button.remove.btn
+      %i.icon-trash
+
+
+- else
+  %td.type
+    = I18n.t(['modifications', 'services', 'types', @type])
+
+  %td.vendor
+    = @vendor?.get('name')
+
+  %td.duration
+    = @duration
+    = I18n.t('modifications.services.hours')

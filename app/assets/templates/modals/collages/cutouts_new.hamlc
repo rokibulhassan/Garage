@@ -1,0 +1,10 @@
+.gallery.modal{ style: "margin-left: #{@picture.marginLeft}px; margin-top: #{@picture.marginTop}px;" }
+  .modal-body{ style: 'text-align: center;' }
+    .picture-image{ style: "width: #{@picture.bigWidth}px; display: inline-block;" }
+      - source = @picture.get('big_url')
+      %img{ src: source, alt: @picture.altText(), width: @picture.bigWidth, height: @picture.bigHeight, style: 'max-width: none;' }
+  .modal-footer.edit-picture{ style: "width: #{@picture.bigWidth}px;" }
+    .picture-options
+      .btn-toolbar
+        %button.crop-area.btn.btn-primary Crop and pick
+        %button.cancel.btn Cancel edit

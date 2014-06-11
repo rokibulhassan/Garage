@@ -1,0 +1,19 @@
+-# when a news item has comments, show the avatar of the owner of the item that was commented on
+- if @extra.comments
+  %img.avatar{ src: @extra.commentable_owner_avatar_url }
+- else
+  %img.avatar{ src: @initiator.get('avatar_url') }
+
+.item-content{:class => @event_type}
+  .newsfeed-event-first-line
+    %span.name
+      - if @extra.comments
+        %a{ href: '#', data: { 'user-id': @extra.commentable_owner_id } }= "#{@extra.commentable_owner_username}"
+      - else
+        %a{ href: '#', data: { 'user-id': @initiator.get('id') } }= "#{@initiator.get('username')}"
+    .dashboard-event-type-container
+    .updated= @last_updated
+  - if @event_type is 'create_comparison_table'
+    .dashboard-comparison-tab
+      %span.num-vehicles
+  .content

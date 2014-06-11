@@ -1,0 +1,25 @@
+%form.form-horizontal
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3 Add a new revision
+
+    .modal-body
+      .control-group
+        %label.control-label{ for: 'label' } Label
+        .controls
+          %input#label{ type: 'text' }
+
+
+      .control-group
+        %label.control-label{ for: 'base-revision' } Start from an existing revision
+        .controls
+          %select#base-revision
+            %option None
+            - @revisions.each (revision)->
+              %option{ value: revision.id }= revision.get('label')
+
+
+    .modal-footer
+      %button.btn.btn-primary.save-revision Add the revision
+      %button.btn{ data: { dismiss: 'modal' } } Cancel

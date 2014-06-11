@@ -1,0 +1,9 @@
+.btn-toolbar
+  - if @canManage
+    .btn-group
+      %span.btn.btn-success.fileinput-button
+        %i.icon-plus
+        =I18n.t('add_gallery', scope: 'vehicles.galleries')
+        %input.add-gallery{ type: 'file', name: 'pictures', multiple: true }
+
+%ul.thumbnails

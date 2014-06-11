@@ -1,0 +1,38 @@
+ar:
+  top_bar:
+    home: منزل
+    vehicles: المركبات
+    bookmarked_vehicles: إشارة مرجعية
+    all_vehicles: جميع المركبات
+    all_cars: جميع السيارات
+    all_bikes: جميع الدراجات
+    albums: البوم
+    myy_garage: MYY المرآب
+    my_vehicles: بلدي المركبات
+    my_cars: بلدي السيارات
+    my_bikes: بلدي الدراجات
+    myy_cloud: MYY الغيمة
+    imported_content: المحتوى المستوردة
+    my_public_albums: ألبوماتي العامة
+    my_private_albums: ألبوماتي الخاصة
+    forgotten_password: نسيت كلمة السر؟
+    new_member_signup: عضو جديد الاشتراك
+    facebook_signup: الفيسبوك الاشتراك
+    people: الناس
+    edit_profile: ملفي الشخصي
+    sign_out: تسجيل الخروج
+    comparisons: مقارنات
+    my_comparisons: بلدي مقارنات
+    recent_comparisons: مقارنات الأخيرة
+    function_unavailable: عليك أن تكون متصلا للوصول إلى هذه الوظيفة. يرجى تسجيل الدخول!
+    all_news: جميع الأخبار
+    my_news: أخبار بلدي
+    followings: يلي
+    followers: أتباع
+    blocked: مسدود
+    me: Me
+    units: الوحدات
+    change_unit_system:
+      EU: أوروبا - النظام المتري - كم / ساعة - l/100 كلم
+      UK: المملكة المتحدة - حصان - بالساعة - ميلا في الغالون الامبراطوري
+      US: الولايات المتحدة - حصان - ft.lbs - بالساعة - ميلا في الغالون بنا

@@ -1,0 +1,15 @@
+%form.form-horizontal
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3= I18n.t('add_change_set', scope: 'tabs.modifications_content')
+
+    .modal-body
+      .control-group
+        %label.control-label{ for: 'new-change-set-name' }= I18n.t('change_set_name', scope: 'tabs.modifications_content')
+        .controls
+          %input#new-change-set-name{ name: 'name', type: 'text' }
+
+    .modal-footer
+      %a.btn.btn-primary.save-change-set{ href: '#' }= I18n.t('add_change_set', scope: 'tabs.modifications_content')
+      %a.btn{ data: { dismiss: 'modal' } }= I18n.t('cancel')

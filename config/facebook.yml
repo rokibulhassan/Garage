@@ -1,0 +1,17 @@
+development:
+  app_id:     124632861001438
+  app_secret: 82ae2cbd15c010eb79c373007ef0cf46
+
+test:
+  app_id:
+  app_secret:
+  callback_url:
+
+production:
+  app_id:
+  app_secret:
+  callback_url:
+
+staging:
+  app_id:     124632861001438
+  app_secret: 82ae2cbd15c010eb79c373007ef0cf46

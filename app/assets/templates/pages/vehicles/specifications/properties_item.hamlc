@@ -1,0 +1,28 @@
+%td.property= I18n.t(@propertyName, scope: 'data_sheets_new.properties')
+%td.value
+  - if @showControls
+    %input.property-value{ type: 'text', name: @propertyName, value: @value }
+  - else
+    = @value || 'n/a'
+  - if @value? or @showControls
+    - if _.include(['hp', 'ch'], @unit) and @isEditing
+      %span.unit.unit-alternate{'class': if @kwShow then 'inactive' else 'active'}
+        %a.unit-alternate-link{href: '#', data: {'unit-alternate-from': 'kw', 'unit-alternate-to': 'hp'}}= @unit
+      %span.unit.unit-alternate{'class': if @kwShow then 'active' else 'inactive'}
+        \/ 
+        %a.unit-alternate-link{href: '#', data: {'unit-alternate-from': 'hp', 'unit-alternate-to': 'kw'}} kw
+    - else if _.include(['kgm', 'Nm'], @unit) and @isEditing
+      %span.unit.unit-alternate{'class': if @kgmShow then 'inactive' else 'active'}
+        %a.unit-alternate-link{href: '#', data: {'unit-alternate-from': 'kgm', 'unit-alternate-to': 'Nm'}}= @unit
+      %span.unit.unit-alternate{'class': if @kgmShow then 'active' else 'inactive'}
+        \/
+        %a.unit-alternate-link{href: '#', data: {'unit-alternate-from': 'Nm', 'unit-alternate-to': 'kgm'}} kgm
+    - else
+      %span.unit!= @unit
+      - console.log(@unit)
+%td.modded
+  - unless @showControls
+    - if @modded
+      = @modded
+      - if @value?
+        %span.unit!= @unit

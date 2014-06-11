@@ -1,0 +1,44 @@
+%div.picture
+  %img{ src: @vehicle.normalAvatarUrl(), alt: "#{@vehicle.get('label')} picture" }
+%div
+  %h4= I18n.t('build_datasheet', scope: 'tabs.specifications_content')
+  %p!= I18n.t('choose_version', scope: 'tabs.specifications_content', brand: @brand.get('name'))
+  =I18n.t('or', scope: 'tabs.specifications_content')
+  %a.fill-own{ href: "#" }=I18n.t('fill_own', scope: 'tabs.specifications_content')
+  ="( #{I18n.t('see', scope: 'tabs.specifications_content')}"
+  %a.wiki{href: "https://www.google.com#q=wiki \"#{@brand.get('name')} #{@model.get('name')}\"", target: "_blank" }=I18n.t('wiki', scope: 'tabs.specifications_content')
+  )
+  #filter
+    .name
+      %select.filter-attribute.chosen{name: 'name', data: {placeholder: 'Version'}}
+        %option
+        - for name in @versions
+          %option{ value: name }= name
+    .production_year
+      %select.filter-attribute.chosen{name: 'production_year', data: {placeholder: 'Model Year'}}
+        %option
+        - for year in @years
+          %option{ value: year }= year
+    .market_version_name
+      %select.filter-attribute.chosen{name: 'market_version_name', data: {placeholder: 'Market'}}
+        %option
+        - for market in @markets
+          %option{ value: market }= market
+
+%table
+  %thead
+    %tr
+      %th.side-view
+      %th.sortable{data: {name: 'cylinders'}}=I18n.t('engine', scope: 'tabs.specifications_content')
+      %th.sortable{data: {name: 'max_power'}}=I18n.t('power', scope: 'tabs.specifications_content')
+      %th.sortable{data: {name: 'max_torque'}}=I18n.t('torque', scope: 'tabs.specifications_content')
+      %th=I18n.t('transmission', scope: 'tabs.specifications_content')
+      %th=I18n.t('type', scope: 'tabs.specifications_content')
+      %th.sortable{data: {name: 'weight'}}=I18n.t('weight', scope: 'tabs.specifications_content')
+      %th.sortable{data: {name: 'length'}}=I18n.t('dimensions', scope: 'tabs.specifications_content')
+      %th=I18n.t('version', scope: 'tabs.specifications_content')
+      %th=I18n.t('model_year', scope: 'tabs.specifications_content')
+      %th=I18n.t('market', scope: 'tabs.specifications_content')
+  %tbody
+
+%a.import-datasheet.btn{href: '#'}=I18n.t('import_datasheet', scope: 'tabs.specifications_content')

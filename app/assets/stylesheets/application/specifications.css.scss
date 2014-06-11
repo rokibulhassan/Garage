@@ -1,0 +1,70 @@
+#specifications{
+  #vehicle-specs{
+    .datasheet-properties{
+      width: 45%;
+      float: left;
+      margin: 10px;
+      table{
+        th{
+          text-transform: capitalize;
+        }
+        .property-value{
+          width: 75px;
+        }
+      }
+    }
+  }
+
+  .picture{
+    float: left;
+    margin: 10px;
+  }
+  #import-tool{
+    #filter{
+      padding-top: 10px;
+      .market_version_name, .production_year, .name{
+        float: left;
+        text-transform: capitalize;
+        margin: 0 20px 0 30px;
+        select{
+          width: 140px;
+        }
+      }
+    }
+
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      th, td {
+        padding: 4px 5px;
+        border: 1px solid gray;
+      }
+      th{
+        background-color: #d3d3d3;
+        font-weight: bold;
+      }
+      .side-view{
+        background-color: transparent;
+        border: none;
+      }
+      .selected{
+        td{
+          background-color: #e0ffff;
+        }
+        .side-view{
+          background-color: transparent;
+        }
+      }
+    }
+    .import-datasheet{
+      display: block;
+      float: right;
+      margin: 20px;
+    }
+  }
+}
+
+.active.unit-alternate .unit-alternate-link {
+  color: inherit;
+  font-weight: bold;
+}

@@ -1,0 +1,54 @@
+#breadcrumb
+
+#user-information.pull-right
+  .avatar
+    - avatarUrl = @user.get('avatarUrl') || @user.get('gravatarUrl')
+    %img.edit-avatar{ src: avatarUrl, width: 100, height: 100 }
+
+  .information
+    %div.name= "#{@user.fullName()} (#{@user.get('country_code')})"
+    %div.counters= "#{@user.get('modifications_count')} #{I18n.t('mods', scope: 'tabs.profile_content')} - #{@user.get('pictures_count')} #{I18n.t('photos', scope: 'tabs.profile_content')}"
+    #follow
+    - if !@canManage and @canAddToOpposers
+      = "-"
+      %a.add-opposer{ href: '#' }= I18n.t('block_comments', scope: 'tabs.profile_content')
+
+.clearfix
+%br
+
+.tabbable
+  %ul.nav.nav-tabs.vehicle-tabs
+    - for tabName in @tabNames
+      - klass = (if Models.Ability.canGetToTab(@vehicle, tabName) then '' else "disabled")
+      - if (_.include(['identification', 'identification_show'], tabName) && this["hide_#{tabName}"]) || (_.include(@soloTabNames, tabName) && !_.include(@soloTabNames, @currentTab)) || (!_.include(@soloTabNames, tabName) && _.include(@soloTabNames, @currentTab))
+        %li{'class': klass, style: 'display: none;'}
+          %a{ href: "##{tabName}", 'class': "show-#{tabName}", data: { toggle: 'tab' } }=I18n.t tabName, scope: 'tabs'
+      - else
+        %li{'class': klass}
+          %a{ href: "##{tabName}", 'class': "show-#{tabName}", data: { toggle: 'tab' } }=I18n.t tabName, scope: 'tabs'
+
+    %li#side_view
+      - if @canShowSideView
+        .vehicle-side-view{id: "side_view_#{@vehicle.sideViewId()}"}
+          %img{ src: @vehicle.sideViewUrl() }
+
+      - if @canEditBookmarks
+        - if @canAddToBookmarks
+          .add-bookmark.btn-tab
+            %span.btn-tab-text
+              %i.icon-plus
+              = I18n.t('add_bookmark', scope: 'tabs.profile_content')
+        - else
+          .remove-bookmark.btn-tab
+            %span.btn-tab-text
+              %i.icon-minus
+              = I18n.t('delete_bookmark', scope: 'tabs.profile_content')
+      - if @currentUser and @vehicle.get('approved')
+        .compare.btn-tab
+          %span.btn-tab-text
+            %i.icon-plus
+            = I18n.t('comparison_tables.compare_short')
+
+  .tab-content{ style: 'overflow: inherit;' }
+    - for tabName in @tabNames
+      .tab-pane{ id: tabName }

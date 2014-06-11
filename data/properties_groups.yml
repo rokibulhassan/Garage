@@ -1,0 +1,1865 @@
+---
+# NOTE: this is no longer used!
+# Automobile
+- name: electric_powertrain
+  vehicle_type: automobile
+  position: 1
+  properties:
+  - format_string: '{1}'
+    name: electric_propulsion_system
+    position: 0
+    property_attributes:
+    - name: electric_propulsion_system
+      position: 1
+      values:
+      - electric
+      - hybrid
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: electric_motors_count
+    position: 1
+    property_attributes:
+    - name: electric_motors_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: total_power_output
+    position: 2
+    property_attributes:
+    - name: total_power_output
+      position: 1
+      values:
+      type: PropertyAttribute::ElectricPower
+  - format_string: '{1}'
+    name: battery_technology
+    position: 3
+    property_attributes:
+    - name: battery_technology
+      position: 1
+      values:
+      - lithium_ion
+      - lead
+      - gel
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: motor_battery_capacity
+    position: 4
+    property_attributes:
+    - name: motor_battery_capacity
+      position: 1
+      values:
+      type: PropertyAttribute::BatteryCapacity
+  - format_string: '{1}'
+    name: quick_charge_duration
+    position: 5
+    property_attributes:
+    - name: quick_charge_duration
+      position: 1
+      values:
+      type: PropertyAttribute::Duration
+  - format_string: '{1}'
+    name: quick_charge_autonomy
+    position: 6
+    property_attributes:
+    - name: quick_charge_autonomy
+      position: 1
+      values:
+      type: PropertyAttribute::Distance
+  - format_string: '{1}'
+    name: slow_charge_duration
+    position: 7
+    property_attributes:
+    - name: slow_charge_duration
+      position: 1
+      values:
+      type: PropertyAttribute::Duration
+  - format_string: '{1}'
+    name: slow_charge_autonomy
+    position: 8
+    property_attributes:
+    - name: slow_charge_autonomy
+      position: 1
+      values:
+      type: PropertyAttribute::Distance
+  - format_string: '{1}'
+    name: capacitor
+    position: 9
+    property_attributes:
+    - name: capacitor
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: kinetic_energy_recovery_system
+    position: 10
+    property_attributes:
+    - name: kinetic_energy_recovery_system
+      position: 1
+      values:
+      - mechanical
+      - electro_mechanical
+      type: PropertyAttribute::Static
+
+- name: internal_combustion_engine
+  vehicle_type: automobile
+  position: 2
+  properties:
+  - format_string: '{1}'
+    name: fuel_type
+    position: 0
+    property_attributes:
+    - name: fuel_type
+      position: 1
+      values:
+      - diesel
+      - petrol
+      - bio_ethanol_e85
+      - lpg
+      - natural_gas
+      - hydrogen
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: cycle
+    position: 1
+    property_attributes:
+    - name: cycle
+      position: 1
+      values:
+      - 2_stroke
+      - 4_stroke
+      - rotary
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: engine_code
+    position: 2
+    property_attributes:
+    - name: engine_code
+      position: 1
+      values:
+      type: PropertyAttribute::Text
+  - format_string: '{1}'
+    name: cylinders_count
+    position: 3
+    property_attributes:
+    - name: cylinders_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: displacement
+    position: 4
+    property_attributes:
+    - name: displacement
+      position: 1
+      values:
+      type: PropertyAttribute::Displacement
+  - format_string: '{1} × {2}'
+    name: bore_and_stroke
+    position: 5
+    property_attributes:
+    - name: bore
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+    - name: stroke
+      position: 2
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: compression_ratio
+    position: 6
+    property_attributes:
+    - name: compression_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: valves_count_per_cylinder
+    position: 7
+    property_attributes:
+    - name: valves_count_per_cylinder
+      position: 1
+      values:
+      type: PropertyAttribute::Text
+  - format_string: '{1}'
+    name: camshaft
+    position: 8
+    property_attributes:
+    - name: camshaft
+      position: 1
+      values:
+      - ohv
+      - sohc
+      - dohc
+      - desmodromic
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: fuel_injection
+    position: 9
+    property_attributes:
+    - name: fuel_injection
+      position: 1
+      values:
+      - mechanical_indirect
+      - electronic_indirect
+      - electronic_direct
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: diesel_injection
+    position: 10
+    property_attributes:
+    - name: diesel_injection
+      position: 1
+      values:
+      - mechanical_indirect
+      - electronic_indirect
+      - common_rail_electronic_direct
+      - direct_pump_electronic_injector
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: throttle_bodies_count
+    position: 11
+    property_attributes:
+    - name: throttle_bodies_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: throttle_body_diameter
+    position: 12
+    property_attributes:
+    - name: throttle_body_diameter
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: carburetor
+    position: 13
+    property_attributes:
+    - name: carburetor
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: carburetors_count
+    position: 14
+    property_attributes:
+    - name: carburetors_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: carburetor_diameter
+    position: 15
+    property_attributes:
+    - name: carburetor_diameter
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: carburetor_brand
+    position: 16
+    property_attributes:
+    - name: carburetor_brand
+      position: 1
+      values:
+      - bendix
+      - dell_orto
+      - hitachi
+      - weber
+      - solex
+      - holley
+      - edelbrock
+      - pierburg
+      - rochester
+      - amal
+      - mikuni
+      - keihin
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: carburetor_cubic_feet_per_minute
+    position: 17
+    property_attributes:
+    - name: carburetor_cubic_feet_per_minute
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: reed_valve
+    position: 18
+    property_attributes:
+    - name: reed_valve
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: rotary_disc
+    position: 19
+    property_attributes:
+    - name: rotary_disc
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: turbocharged
+    position: 20
+    property_attributes:
+    - name: turbocharged
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: turbochargers_count
+    position: 21
+    property_attributes:
+    - name: turbochargers_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: variable_turbine_geometry
+    position: 22
+    property_attributes:
+    - name: variable_turbine_geometry
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: supercharged
+    position: 23
+    property_attributes:
+    - name: supercharged
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: intercooler
+    position: 24
+    property_attributes:
+    - name: intercooler
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: ignition_timing
+    position: 25
+    property_attributes:
+    - name: ignition_timing
+      position: 1
+      values:
+      - vacuum_assist
+      - electronic_control_module
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: knock_sensor
+    position: 26
+    property_attributes:
+    - name: knock_sensor
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: spark_coils_count
+    position: 27
+    property_attributes:
+    - name: spark_coils_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: spark_plugs_count_per_cylinder
+    position: 28
+    property_attributes:
+    - name: spark_plugs_count_per_cylinder
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+
+- name: electricity_system
+  vehicle_type: automobile
+  position: 3
+  properties:
+  - format_string: '{1}'
+    name: voltage
+    position: 0
+    property_attributes:
+    - name: voltage
+      position: 1
+      values:
+      - 6v
+      - 12v
+      - 24v
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: battery_capacity
+    position: 1
+    property_attributes:
+    - name: battery_capacity
+      position: 1
+      values:
+      type: PropertyAttribute::LittleBatteryCapacity
+  - format_string: '{1}'
+    name: alternator_power
+    position: 2
+    property_attributes:
+    - name: alternator_power
+      position: 1
+      values:
+      type: PropertyAttribute::ElectricPower
+  - format_string: '{1}'
+    name: alternator_energy_saving
+    position: 3
+    property_attributes:
+    - name: alternator_energy_saving
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: start_and_stop
+    position: 4
+    property_attributes:
+    - name: start_and_stop
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+
+- name: exhaust_system
+  vehicle_type: automobile
+  position: 4
+  properties:
+  - format_string: '{1}'
+    name: catalysators_count
+    position: 0
+    property_attributes:
+    - name: catalysators_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: oxygen_sensors_count
+    position: 1
+    property_attributes:
+    - name: oxygen_sensors_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: variable_exhaust_system
+    position: 2
+    property_attributes:
+    - name: variable_exhaust_system
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: electric_exhaust_cutout
+    position: 3
+    property_attributes:
+    - name: electric_exhaust_cutout
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: diesel_particulate_filter
+    position: 4
+    property_attributes:
+    - name: diesel_particulate_filter
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+
+- name: dyno_figures
+  vehicle_type: automobile
+  position: 5
+  properties:
+  - format_string: '{1} @ {2}'
+    name: maximal_power
+    position: 0
+    property_attributes:
+    - name: maximal_power
+      position: 1
+      values:
+      type: PropertyAttribute::Power
+    - name: maximal_power_speed
+      position: 2
+      values:
+      type: PropertyAttribute::RotationSpeed
+  - format_string: '{1} @ {2}'
+    name: maximal_torque
+    position: 1
+    property_attributes:
+    - name: maximal_torque
+      position: 1
+      values:
+      type: PropertyAttribute::Torque
+    - name: maximal_torque_speed
+      position: 2
+      values:
+      type: PropertyAttribute::RotationSpeed
+
+- name: transmission
+  vehicle_type: automobile
+  position: 6
+  properties:
+  - format_string: '{1}'
+    name: transmission
+    position: 0
+    property_attributes:
+    - name: transmission
+      position: 1
+      values:
+      - front_wheel_drive
+      - rear_wheel_drive
+      - all_wheel_drive
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: transmission_type
+    position: 1
+    property_attributes:
+    - name: transmission_type
+      position: 1
+      values:
+      - manual
+      - mechanic_sequential
+      - mechanic_robotised
+      - automatic_double_clutch
+      - automatic_torque_converter
+      - continuous_variable_transmission
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: coupler
+    position: 2
+    property_attributes:
+    - name: coupler
+      position: 1
+      values:
+      - mono_disc_dry
+      - dual_disc_dry
+      - multi_plate_dry
+      - multi_plate
+      - wet
+      - centrifugal
+      - hydraulic_converter
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: clutch_actuation
+    position: 3
+    property_attributes:
+    - name: clutch_actuation
+      position: 1
+      values:
+      - cable
+      - hydraulic
+      - robotised
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: gears_count
+    position: 4
+    property_attributes:
+    - name: gears_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: gear_1_ratio
+    position: 5
+    property_attributes:
+    - name: gear_1_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: gear_2_ratio
+    position: 6
+    property_attributes:
+    - name: gear_2_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: gear_3_ratio
+    position: 7
+    property_attributes:
+    - name: gear_3_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: gear_4_ratio
+    position: 8
+    property_attributes:
+    - name: gear_4_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: gear_5_ratio
+    position: 9
+    property_attributes:
+    - name: gear_5_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: gear_6_ratio
+    position: 10
+    property_attributes:
+    - name: gear_6_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: gear_7_ratio
+    position: 11
+    property_attributes:
+    - name: gear_7_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: gear_8_ratio
+    position: 12
+    property_attributes:
+    - name: gear_8_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: low_range_gears
+    position: 13
+    property_attributes:
+    - name: low_range_gears
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+
+- name: differential
+  vehicle_type: automobile
+  position: 7
+  properties:
+  - format_string: '{1}'
+    name: differential
+    position: 0
+    property_attributes:
+    - name: differential
+      position: 1
+      values:
+      - standard
+      - limited_slip
+      - torsen
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: electronically_controlled_differential
+    position: 1
+    property_attributes:
+    - name: electronically_controlled_differential
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: force_vectoring_system
+    position: 2
+    property_attributes:
+    - name: force_vectoring_system
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+
+- name: final_drive
+  vehicle_type: automobile
+  position: 8
+  properties:
+  - format_string: '{1}'
+    name: final_drive_type
+    position: 0
+    property_attributes:
+    - name: final_drive_type
+      position: 1
+      values:
+      - shaft_drive
+      - chain
+      - belt
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: final_drive_ratio
+    position: 1
+    property_attributes:
+    - name: final_drive_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+
+- name: body
+  vehicle_type: automobile
+  position: 9
+  properties:
+  - format_string: '{1}'
+    name: shape
+    position: 0
+    property_attributes:
+    - name: shape
+      position: 1
+      values:
+      - limousine
+      - small_car
+      - estate_car
+      - roadster
+      - sports_car
+      - suv
+      - pick_up
+      - mpv
+      - hatchback
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: construction
+    position: 1
+    property_attributes:
+    - name: construction
+      position: 1
+      values:
+      - unibody
+      - frame_body
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: material
+    position: 2
+    property_attributes:
+    - name: material
+      position: 1
+      values:
+      - steel
+      - aluminium_steel
+      - aluminium
+      - composite
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: doors_count
+    position: 3
+    property_attributes:
+    - name: doors_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: seats_count
+    position: 4
+    property_attributes:
+    - name: seats_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: length
+    position: 5
+    property_attributes:
+    - name: length
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: width
+    position: 6
+    property_attributes:
+    - name: width
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: height
+    position: 7
+    property_attributes:
+    - name: height
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: wheelbase
+    position: 8
+    property_attributes:
+    - name: wheelbase
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: front_track
+    position: 9
+    property_attributes:
+    - name: front_track
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: rear_track
+    position: 10
+    property_attributes:
+    - name: rear_track
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+
+- name: steering
+  vehicle_type: automobile
+  position: 10
+  properties:
+  - format_string: '{1}'
+    name: steering_architecture
+    position: 0
+    property_attributes:
+    - name: steering_architecture
+      position: 1
+      values:
+      - front_wheels
+      - front_and_rear_wheels
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: steering_turning_circle
+    position: 1
+    property_attributes:
+    - name: steering_turning_circle
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: steering_power_assist
+    position: 2
+    property_attributes:
+    - name: steering_power_assist
+      position: 1
+      values:
+      - hydraulic
+      - electrohydraulic
+      - electric
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: steering_variable_assist
+    position: 3
+    property_attributes:
+    - name: steering_variable_assist
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: steering_variable_ratio
+    position: 4
+    property_attributes:
+    - name: steering_variable_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+
+- name: suspensions
+  vehicle_type: automobile
+  position: 11
+  properties:
+  - format_string: '{1}'
+    name: suspension_front_type
+    position: 0
+    property_attributes:
+    - name: suspension_front_type
+      position: 1
+      values:
+      - mc_pherson
+      - a_arms
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: suspension_front_springs_type
+    position: 1
+    property_attributes:
+    - name: suspension_front_springs_type
+      position: 1
+      values:
+      - helicoidal
+      - coil_overs
+      - leaf
+      - hydropneumatic
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: suspension_front_leaf_type
+    position: 2
+    property_attributes:
+    - name: suspension_front_leaf_type
+      position: 1
+      values:
+      - steel
+      - transversal_composite
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: suspension_front_dampers
+    position: 3
+    property_attributes:
+    - name: suspension_front_dampers
+      position: 1
+      values:
+      - standard
+      - manually_adjustable
+      - electronically_adjustable
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: suspension_front_roll_bars_type
+    position: 4
+    property_attributes:
+    - name: suspension_front_roll_bars_type
+      position: 1
+      values:
+      - manually_adjustable
+      - electronically_adjustable
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: suspension_rear_type
+    position: 5
+    property_attributes:
+    - name: suspension_rear_type
+      position: 1
+      values:
+      - trailing_arms
+      - multi_link
+      - a_arms
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: suspension_rear_springs_type
+    position: 6
+    property_attributes:
+    - name: suspension_rear_springs_type
+      position: 1
+      values:
+      - helicoidal
+      - coil_overs
+      - leaf
+      - hydropneumatic
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: suspension_rear_leaf_type
+    position: 7
+    property_attributes:
+    - name: suspension_rear_leaf_type
+      position: 1
+      values:
+      - steel
+      - transversal_composite
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: suspension_rear_dampers
+    position: 8
+    property_attributes:
+    - name: suspension_rear_dampers
+      position: 1
+      values:
+      - standard
+      - manually_adjustable
+      - electronically_adjustable
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: suspension_rear_roll_bars_type
+    position: 9
+    property_attributes:
+    - name: suspension_rear_roll_bars_type
+      position: 1
+      values:
+      - manually_adjustable
+      - electronically_adjustable
+      type: PropertyAttribute::Static
+
+- name: brakes
+  vehicle_type: automobile
+  position: 12
+  properties:
+  - format_string: '{1}'
+    name: brake_front_type
+    position: 0
+    property_attributes:
+    - name: brake_front_type
+      position: 1
+      values:
+      - drum
+      - disc
+      - ventilated_disc
+      - disc_inboard
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: brake_front_count
+    position: 1
+    property_attributes:
+    - name: brake_front_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: brake_front_diameter
+    position: 2
+    property_attributes:
+    - name: brake_front_diameter
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: brake_front_drum_command
+    position: 3
+    property_attributes:
+    - name: brake_front_drum_command
+      position: 1
+      values:
+      - simple_cam
+      - double_cam
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: brake_front_disc_material
+    position: 4
+    property_attributes:
+    - name: brake_front_disc_material
+      position: 1
+      values:
+      - steel
+      - iron
+      - ceramic
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: brake_front_disc_thickness
+    position: 5
+    property_attributes:
+    - name: brake_front_disc_thickness
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: brake_front_disc_pistons_count
+    position: 6
+    property_attributes:
+    - name: brake_front_disc_pistons_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: brake_rear_type
+    position: 7
+    property_attributes:
+    - name: brake_rear_type
+      position: 1
+      values:
+      - drum
+      - disc
+      - ventilated_disc
+      - disc_inboard
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: brake_rear_count
+    position: 8
+    property_attributes:
+    - name: brake_rear_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: brake_rear_diameter
+    position: 9
+    property_attributes:
+    - name: brake_rear_diameter
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: brake_rear_drum_command
+    position: 10
+    property_attributes:
+    - name: brake_rear_drum_command
+      position: 1
+      values:
+      - simple_cam
+      - double_cam
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: brake_rear_disc_material
+    position: 11
+    property_attributes:
+    - name: brake_rear_disc_material
+      position: 1
+      values:
+      - steel
+      - iron
+      - ceramic
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: brake_rear_disc_thickness
+    position: 12
+    property_attributes:
+    - name: brake_rear_disc_thickness
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: brake_rear_disc_pistons_count
+    position: 13
+    property_attributes:
+    - name: brake_rear_disc_pistons_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: abs
+    position: 14
+    property_attributes:
+    - name: abs
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: stability_control
+    position: 15
+    property_attributes:
+    - name: stability_control
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+
+- name: wheels
+  vehicle_type: automobile
+  position: 13
+  properties:
+  - format_string: '{1}'
+    name: wheel_construction
+    position: 0
+    property_attributes:
+    - name: wheel_construction
+      position: 1
+      values:
+      - wire_wheel
+      - steel
+      - aluminium
+      - composite
+      - magnesium_alloy
+      type: PropertyAttribute::Static
+  - format_string: '{1} × {2}'
+    name: rim_bolt
+    position: 1
+    property_attributes:
+    - name: rim_bolt_pattern
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+    - name: rim_bolt_circle
+      position: 2
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: tubeless
+    position: 2
+    property_attributes:
+    - name: tubeless
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: centerbore
+    position: 3
+    property_attributes:
+    - name: centerbore
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: tire_speed_index
+    position: 4
+    property_attributes:
+    - name: tire_speed_index
+      position: 1
+      values:
+      - m
+      - n
+      - p
+      - q
+      - r
+      - s
+      - t
+      - u
+      - h
+      - v
+      - z
+      - w
+      - w_plus
+      - y
+      - y_plus
+      type: PropertyAttribute::Static
+  - format_string: '{1}/{2}'
+    name: tire_front
+    position: 5
+    property_attributes:
+    - name: tire_front_width
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+    - name: tire_front_height
+      position: 2
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: tire_front_load_index
+    position: 6
+    property_attributes:
+    - name: tire_front_load_index
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1} × {2}'
+    name: rim_front
+    position: 7
+    property_attributes:
+    - name: rim_front_diameter
+      position: 1
+      values:
+      type: PropertyAttribute::WheelLength
+    - name: rim_front_width
+      position: 2
+      values:
+      type: PropertyAttribute::WheelLength
+  - format_string: '{1}'
+    name: rim_front_offset
+    position: 8
+    property_attributes:
+    - name: rim_front_offset
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}/{2}'
+    name: tire_rear
+    position: 9
+    property_attributes:
+    - name: tire_rear_width
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+    - name: tire_rear_height
+      position: 2
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: tire_rear_load_index
+    position: 10
+    property_attributes:
+    - name: tire_rear_load_index
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1} × {2}'
+    name: rim_rear
+    position: 11
+    property_attributes:
+    - name: rim_rear_diameter
+      position: 1
+      values:
+      type: PropertyAttribute::WheelLength
+    - name: rim_rear_width
+      position: 2
+      values:
+      type: PropertyAttribute::WheelLength
+  - format_string: '{1}'
+    name: rim_rear_offset
+    position: 12
+    property_attributes:
+    - name: rim_rear_offset
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+
+- name: consumption
+  vehicle_type: automobile
+  position: 14
+  properties:
+  - format_string: '{1}'
+    name: consumption_city
+    position: 0
+    property_attributes:
+    - name: consumption_city
+      position: 1
+      values:
+      type: PropertyAttribute::FuelConsumption
+  - format_string: '{1}'
+    name: consumption_highway
+    position: 1
+    property_attributes:
+    - name: consumption_highway
+      position: 1
+      values:
+      type: PropertyAttribute::FuelConsumption
+  - format_string: '{1}'
+    name: consumption_combined
+    position: 2
+    property_attributes:
+    - name: consumption_combined
+      position: 1
+      values:
+      type: PropertyAttribute::FuelConsumption
+
+- name: gas_emissions
+  vehicle_type: automobile
+  position: 15
+  properties:
+  - format_string: '{1}'
+    name: emissions_nox
+    position: 0
+    property_attributes:
+    - name: emissions_nox
+      position: 1
+      values:
+      type: PropertyAttribute::GasEmission
+  - format_string: '{1}'
+    name: emissions_co2
+    position: 1
+    property_attributes:
+    - name: emissions_co2
+      position: 1
+      values:
+      type: PropertyAttribute::GasEmission
+  - format_string: '{1}'
+    name: emission_standards
+    position: 2
+    property_attributes:
+    - name: emission_standards
+      position: 1
+      values:
+      - euro1
+      - euro2
+      - euro3
+      - euro4
+      - euro5
+      - euro6
+      type: PropertyAttribute::Static
+
+- name: performances
+  vehicle_type: automobile
+  position: 16
+  properties:
+  - format_string: '{1}'
+    name: top_speed
+    position: 0
+    property_attributes:
+    - name: top_speed
+      position: 1
+      values:
+      type: PropertyAttribute::Speed
+
+- name: accelerations
+  vehicle_type: automobile
+  position: 17
+  properties:
+  - format_string: '{1}'
+    name: acceleration_0_100_kmh_duration
+    position: 0
+    property_attributes:
+    - name: acceleration_0_100_kmh_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: acceleration_0_100_kmh_distance
+    position: 1
+    property_attributes:
+    - name: acceleration_0_100_kmh_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: acceleration_100_200_kmh_duration
+    position: 2
+    property_attributes:
+    - name: acceleration_100_200_kmh_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: acceleration_100_200_kmh_distance
+    position: 3
+    property_attributes:
+    - name: acceleration_100_200_kmh_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: acceleration_0_160_kmh_duration
+    position: 4
+    property_attributes:
+    - name: acceleration_0_160_kmh_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: acceleration_0_160_kmh_distance
+    position: 5
+    property_attributes:
+    - name: acceleration_0_160_kmh_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: acceleration_0_200_kmh_duration
+    position: 6
+    property_attributes:
+    - name: acceleration_0_200_kmh_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: acceleration_0_200_kmh_distance
+    position: 7
+    property_attributes:
+    - name: acceleration_0_200_kmh_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: acceleration_0_300_kmh_duration
+    position: 8
+    property_attributes:
+    - name: acceleration_0_300_kmh_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: acceleration_0_300_kmh_distance
+    position: 9
+    property_attributes:
+    - name: acceleration_0_300_kmh_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: acceleration_0_60_mph_duration
+    position: 10
+    property_attributes:
+    - name: acceleration_0_60_mph_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: acceleration_0_60_mph_distance
+    position: 11
+    property_attributes:
+    - name: acceleration_0_60_mph_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: acceleration_60_130_mph_duration
+    position: 12
+    property_attributes:
+    - name: acceleration_60_130_mph_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: acceleration_60_130_mph_distance
+    position: 13
+    property_attributes:
+    - name: acceleration_60_130_mph_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: acceleration_1_4_mile_duration
+    position: 14
+    property_attributes:
+    - name: acceleration_1_4_mile_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: acceleration_1_4_mile_speed
+    position: 15
+    property_attributes:
+    - name: acceleration_1_4_mile_speed
+      position: 1
+      values:
+      type: PropertyAttribute::Speed
+  - format_string: '{1}'
+    name: acceleration_1000_metre_duration
+    position: 16
+    property_attributes:
+    - name: acceleration_1000_metre_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: acceleration_1000_metre_speed
+    position: 17
+    property_attributes:
+    - name: acceleration_1000_metre_speed
+      position: 1
+      values:
+      type: PropertyAttribute::Speed
+  - format_string: '{1}'
+    name: acceleration_mile_duration
+    position: 18
+    property_attributes:
+    - name: acceleration_mile_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: acceleration_mile_speed
+    position: 19
+    property_attributes:
+    - name: acceleration_mile_speed
+      position: 1
+      values:
+      type: PropertyAttribute::Speed
+
+- name: braking_distances
+  vehicle_type: automobile
+  position: 18
+  properties:
+  - format_string: '{1}'
+    name: braking_60_0_mph_distance
+    position: 0
+    property_attributes:
+    - name: braking_60_0_mph_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: braking_60_0_mph_duration
+    position: 1
+    property_attributes:
+    - name: braking_60_0_mph_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: braking_100_0_mph_distance
+    position: 2
+    property_attributes:
+    - name: braking_100_0_mph_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: braking_100_0_mph_duration
+    position: 3
+    property_attributes:
+    - name: braking_100_0_mph_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: braking_100_0_kmh_distance
+    position: 4
+    property_attributes:
+    - name: braking_100_0_kmh_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: braking_100_0_kmh_duration
+    position: 5
+    property_attributes:
+    - name: braking_100_0_kmh_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: braking_200_0_kmh_distance
+    position: 6
+    property_attributes:
+    - name: braking_200_0_kmh_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: braking_200_0_kmh_duration
+    position: 7
+    property_attributes:
+    - name: braking_200_0_kmh_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+  - format_string: '{1}'
+    name: braking_300_0_kmh_distance
+    position: 8
+    property_attributes:
+    - name: braking_300_0_kmh_distance
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDistance
+  - format_string: '{1}'
+    name: braking_300_0_kmh_duration
+    position: 9
+    property_attributes:
+    - name: braking_300_0_kmh_duration
+      position: 1
+      values:
+      type: PropertyAttribute::ShortDuration
+
+
+# Motorcycle
+- name: internal_combustion_engine
+  vehicle_type: motorcycle
+  position: 2
+  properties:
+  - format_string: '{1}'
+    name: fuel_type
+    position: 0
+    property_attributes:
+    - name: fuel_type
+      position: 1
+      values:
+      - diesel
+      - petrol
+      - bio_ethanol_e85
+      - lpg
+      - natural_gas
+      - hydrogen
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: cycle
+    position: 1
+    property_attributes:
+    - name: cycle
+      position: 1
+      values:
+      - 2_stroke
+      - 4_stroke
+      - rotary
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: engine_code
+    position: 2
+    property_attributes:
+    - name: engine_code
+      position: 1
+      values:
+      type: PropertyAttribute::Text
+  - format_string: '{1}'
+    name: cylinders_count
+    position: 3
+    property_attributes:
+    - name: cylinders_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: displacement
+    position: 4
+    property_attributes:
+    - name: displacement
+      position: 1
+      values:
+      type: PropertyAttribute::Displacement
+  - format_string: '{1} × {2}'
+    name: bore_and_stroke
+    position: 5
+    property_attributes:
+    - name: bore
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+    - name: stroke
+      position: 2
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: compression_ratio
+    position: 6
+    property_attributes:
+    - name: compression_ratio
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: valves_count_per_cylinder
+    position: 7
+    property_attributes:
+    - name: valves_count_per_cylinder
+      position: 1
+      values:
+      type: PropertyAttribute::Text
+  - format_string: '{1}'
+    name: camshaft
+    position: 8
+    property_attributes:
+    - name: camshaft
+      position: 1
+      values:
+      - ohv
+      - sohc
+      - dohc
+      - desmodromic
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: fuel_injection
+    position: 9
+    property_attributes:
+    - name: fuel_injection
+      position: 1
+      values:
+      - mechanical_indirect
+      - electronic_indirect
+      - electronic_direct
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: diesel_injection
+    position: 10
+    property_attributes:
+    - name: diesel_injection
+      position: 1
+      values:
+      - mechanical_indirect
+      - electronic_indirect
+      - common_rail_electronic_direct
+      - direct_pump_electronic_injector
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: throttle_bodies_count
+    position: 11
+    property_attributes:
+    - name: throttle_bodies_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: throttle_body_diameter
+    position: 12
+    property_attributes:
+    - name: throttle_body_diameter
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: carburetor
+    position: 13
+    property_attributes:
+    - name: carburetor
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: carburetors_count
+    position: 14
+    property_attributes:
+    - name: carburetors_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: carburetor_diameter
+    position: 15
+    property_attributes:
+    - name: carburetor_diameter
+      position: 1
+      values:
+      type: PropertyAttribute::Length
+  - format_string: '{1}'
+    name: carburetor_brand
+    position: 16
+    property_attributes:
+    - name: carburetor_brand
+      position: 1
+      values:
+      - bendix
+      - dell_orto
+      - hitachi
+      - weber
+      - solex
+      - holley
+      - edelbrock
+      - pierburg
+      - rochester
+      - amal
+      - mikuni
+      - keihin
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: carburetor_cubic_feet_per_minute
+    position: 17
+    property_attributes:
+    - name: carburetor_cubic_feet_per_minute
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: reed_valve
+    position: 18
+    property_attributes:
+    - name: reed_valve
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: rotary_disc
+    position: 19
+    property_attributes:
+    - name: rotary_disc
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: turbocharged
+    position: 20
+    property_attributes:
+    - name: turbocharged
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: turbochargers_count
+    position: 21
+    property_attributes:
+    - name: turbochargers_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: variable_turbine_geometry
+    position: 22
+    property_attributes:
+    - name: variable_turbine_geometry
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: supercharged
+    position: 23
+    property_attributes:
+    - name: supercharged
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: intercooler
+    position: 24
+    property_attributes:
+    - name: intercooler
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: ignition_timing
+    position: 25
+    property_attributes:
+    - name: ignition_timing
+      position: 1
+      values:
+      - vacuum_assist
+      - electronic_control_module
+      type: PropertyAttribute::Static
+  - format_string: '{1}'
+    name: knock_sensor
+    position: 26
+    property_attributes:
+    - name: knock_sensor
+      position: 1
+      values:
+      type: PropertyAttribute::Boolean
+  - format_string: '{1}'
+    name: spark_coils_count
+    position: 27
+    property_attributes:
+    - name: spark_coils_count
+      position: 1
+      values:
+      type: PropertyAttribute::Integer
+  - format_string: '{1}'
+    name: spark_plugs_count_per_cylinder
+    position: 28
+    property_attributes:
+    - name: spark_plugs_count_per_cylinder
+      position: 1
+      values:
+      type: PropertyAttribute::Integer

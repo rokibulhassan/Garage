@@ -1,0 +1,61 @@
+%form.form-horizontal
+  .control-group
+    %label.control-label{ for: 'vendor' } Vendor
+    .controls
+      %select#vendor{ name: 'vendor_id', data: { placeholder: 'Vendor' } }
+        %option
+        - @vendors.each (vendor)=>
+          - selected = vendor == @purchase.get('vendor')
+          %option{ value: vendor.id, selected: selected }
+            = vendor.get('name')
+      or
+      %a.add-vendor add a new vendor
+
+
+  .control-group
+    %label.control-label{ for: 'part' } Part
+    .controls
+      %select#part{ name: 'part_id', data: { placeholder: 'Part' } }
+        %option
+        - @parts.each (part)=>
+          - selected = part == @purchase.get('part')
+          %option{ value: part.id, selected: selected }
+            = part.get('label')
+      or
+      %a.add-part add a new part
+
+
+  .control-group
+    %label.control-label{ for: 'special' } Not standard
+    .controls
+      %input#special{ type: 'checkbox', name: 'special' }
+      %span.help-inline Check if the part is not standard on this vehicle.
+
+
+  .control-group
+    %label.control-label{ for: 'price' } Unit price
+    .controls
+      %input#price{ name: 'price', value: @purchase.get('price') }
+      €
+
+
+  .control-group
+    %label.control-label{ for: 'quantity' } Quantity
+    .controls
+      %input#quantity{ name: 'quantity', value: @purchase.get('quantity') }
+
+
+  .control-group
+    %label.control-label{ for: 'date' } Date
+    .controls
+      %input{ name: 'date', placeholder: 'DD-MM-YYYY' }
+
+
+  .form-actions
+    %button.btn.btn-primary
+      %i.icon-plus.icon-white
+      Add the part purchase
+
+    %a.btn.show-listing
+      %i.icon-circle-arrow-left
+      Return to the listing

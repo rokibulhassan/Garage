@@ -1,0 +1,63 @@
+zh:
+  modifications:
+    modifications:         Modifications
+    untitled:              Untitled modification
+    filter:                Filter
+    created_modifications: Modifications
+    add_modification:      Add a modification
+    add_the_modification:  Add modifications
+    save_modification:     Save modifications
+    back_to_listing:       Back to list
+    remove:                Remove the modification
+
+    revisions:
+      none:               Modifications without revision
+      modifications:      Modifications
+      remove:             Delete a revision
+      revision:           Revision
+      revisions:          Revisions
+      no_revision:        No revisions
+      attach_to_revision: Attach a revision
+      or_add_revision:    or add a revision
+
+    parts:
+      parts:           Parts
+      add_part:        Add a part
+      main_part:       Main
+      part:            Part
+      quantity:        Quantity
+      price:           Price
+      vendor:          Vendor
+      create_new_part: or create a new part
+      remove:          Delete
+      optional_price:  Optional
+      create_new_vendor: or add new vendor
+    services:
+      services:          Services
+      add_service:       Add a service
+      type:              Type
+      hours:             hours
+      vendor:            Garage
+      duration:          Duration
+      create_new_vendor: or add a garage
+      types:
+        part_removal:      Dismantling
+        part_installation: Installation
+        preparation:       Preparation
+        bodywork:          Body
+
+    changes:
+      property: Property
+      value:    New value
+
+    advantages:
+      advantages:    Advantages
+      add_advantage: Add an advantage
+
+    disadvantages:
+      disadvantages:    Disadvantages
+      add_disadvantage: Add a disadvantage
+
+    filters:
+      none:             All changes
+      without_revision: Changes without revision

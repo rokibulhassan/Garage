@@ -1,0 +1,8 @@
+- if @items.length == 0
+  %p No more item available!
+
+- else
+  %ul
+    - _(@items).each (item)=>
+      %li
+        %a{ href: '', data: { item: item.name } }= item.label

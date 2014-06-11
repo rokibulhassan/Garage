@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %meta{ charset: 'utf-8' }
+    %title MyyGarage
+
+    /[if lt IE 9]
+      = javascript_include_tag 'html5'
+
+    = stylesheet_link_tag 'application', 'jquery-file-upload'
+    = javascript_include_tag 'application', 'jquery-file-upload'
+    = yield :additional_headings
+    = csrf_meta_tags
+
+  %body
+    #application{'class' => I18n.locale.to_s}
+
+    - if current_user
+      = seed_data('currentUser', 'users/seeds/current_user', user: current_user)
+      = javascript_tag "window.unreadMessages = #{current_user.mailbox.inbox(:unread => false).count}"
+    - else
+      = javascript_tag "window.unreadMessages = 0"
+    - system_of_units = current_user ? current_user.system_of_units_code : 'EU'
+    = javascript_tag "window.Seeds.systemOfUnitsNew = #{UnitSystem.units_for(system_of_units).to_json}"
+
+    = javascript_tag "window.Seeds.allLayoutNames = #{Settings.collage_layouts.keys.to_json}"
+    = javascript_tag "window.Seeds.galleryLayoutNames = #{(Settings.collage_layouts.keys - ['layout-14']).to_json}"
+    = javascript_tag "window.Seeds.picLayoutNames = #{(Settings.collage_layouts.keys - ['layout-v1', 'layout-14']).to_json}"
+    = javascript_tag "window.Seeds.defaultVehicleLayoutNames = #{['layout-14'].to_json}"
+
+    = javascript_tag "window.Seeds.propertyDefinitions = #{PropertyDefinition.for(system_of_units).to_json}"
+
+    = yield
+
+    #modal
+    #inner-modal

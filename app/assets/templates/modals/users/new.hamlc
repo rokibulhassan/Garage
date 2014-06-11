@@ -1,0 +1,35 @@
+%form#new-user.form-horizontal{method: 'POST', action: '/users', data: {remote: true} }
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3= I18n.t 'signup', scope: 'modals.signup'
+
+    .modal-body
+      .control-group
+        %label.control-label{ for: 'username' }= I18n.t 'username', scope: 'modals.signup'
+        .controls
+          %input#username{ type: 'text', name: 'user[username]', placeholder: I18n.t('username', scope: 'modals.signup.placeholders'), required: true }
+
+      .control-group
+        %label.control-label{ for: 'email' }= I18n.t 'email', scope: 'modals.signup'
+        .controls
+          %input#email{ type: 'email', name: 'user[email]', placeholder: I18n.t('email', scope: 'modals.signup.placeholders'), required: true }
+
+      .control-group
+        %label.control-label{ for: 'password' }= I18n.t 'password', scope: 'modals.signup'
+        .controls
+          %input#password{ type: 'password', name: 'user[password]', placeholder: I18n.t('password', scope: 'modals.signup.placeholders'), required: true }
+
+      .control-group
+        %label.control-label{ for: 'password_confirmation' }= I18n.t 'password_confirmation', scope: 'modals.signup'
+        .controls
+          %input#password_confirmation{ type: 'password', name: 'user[password_confirmation]', placeholder: I18n.t('password_confirmation', scope: 'modals.signup.placeholders'), required: true }
+
+      .control-group
+        %label.control-label{ for: 'terms_of_service' }= I18n.t 'terms_of_service', scope: 'modals.signup'
+        .controls
+          %input#terms_of_service{ type: 'checkbox', name: 'user[terms_of_service]', value: '1', required: true }
+
+    .modal-footer
+      %input#register.btn.btn-primary{ type: 'submit', value: I18n.t('register', scope: 'modals.signup') }
+      %a.btn{ data: { dismiss: 'modal' } }= I18n.t 'cancel', scope: 'modals.signup'

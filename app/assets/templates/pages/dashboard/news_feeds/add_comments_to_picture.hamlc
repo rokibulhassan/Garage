@@ -1,0 +1,8 @@
+- if @extra.comments.length is 1
+  %span.dashboard-event-type= I18n.t('add_comment_to_picture', scope: 'dashboard_content.newsfeed_events')
+- else
+  %span.dashboard-event-type= I18n.t('add_comments_to_picture', num_comments: @extra['comments'].length, scope: 'dashboard_content.newsfeed_events')
+.main-info
+  %a.go-to-gallery{href: '#'}
+    %img{ src: @extra['image_url'], alt: @extra['image_alt'] }
+    %p.first-comment= @extra['comments'].slice(-1)[0].body

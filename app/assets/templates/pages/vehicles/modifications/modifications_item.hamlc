@@ -1,0 +1,63 @@
+-if @showControls && @ableToDelete
+  .pull-right
+    %button.btn.btn-danger.delete-modification
+      %i.icon-trash
+      Delete
+
+%h4= @label
+
+
+- @controlsClass = if @showControls then 'show-controls' else ''
+
+%h4= I18n.t('modifications.parts.parts')
+%table.table.table-bordered.table-striped.table-condensed.parts{class: @controlsClass}
+  %thead
+    %tr
+      %th.main-part= I18n.t('modifications.parts.main_part')
+      %th.quantity= I18n.t('modifications.parts.quantity')
+      %th.part= I18n.t('modifications.parts.part')
+      %th.price= I18n.t('modifications.parts.price')
+      %th.vendor= I18n.t('modifications.parts.vendor')
+      -if @showControls
+        %th.actions
+
+  %tbody
+
+-if @showControls
+  %button.btn.add-part
+    %i.icon-plus
+    = I18n.t('modifications.parts.add_part')
+
+%hr
+%h4= I18n.t('modifications.services.services')
+%table.table.table-bordered.table-striped.table-condensed.services{class: @controlsClass}
+  %thead
+    %tr
+      %th.type= I18n.t('modifications.services.type')
+      %th.vendor= I18n.t('modifications.services.vendor')
+      %th.duration= I18n.t('modifications.services.duration')
+      -if @showControls
+        %th.actions
+
+  %tbody
+-if @showControls
+  %button.btn.add-service
+    %i.icon-plus
+    = I18n.t('modifications.services.add_service')
+
+%hr
+%h4 Spec changes
+%table.table.table-bordered.table-striped.table-condensed.changes.show-controls
+  %thead
+    %tr
+      %th.property= I18n.t('modifications.changes.property')
+      %th.value= I18n.t('modifications.changes.value')
+      -if @showControls
+        %th.actions
+
+  %tbody
+
+-if @showControls
+  %button.btn.add-change
+    %i.icon-plus
+    Add a change

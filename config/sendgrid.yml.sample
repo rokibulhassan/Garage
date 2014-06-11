@@ -1,0 +1,11 @@
+development:
+  username: foo
+  password: bar
+
+test:
+  username:
+  password:
+
+production:
+  username:
+  password:

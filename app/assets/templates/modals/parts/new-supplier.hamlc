@@ -1,0 +1,12 @@
+%tr.new-supplier
+  %td
+    %input.name{ type: 'text', style: 'width: 110px;' }
+
+  %td
+    %input.reference{ type: 'text', style: 'width: 110px;' }
+
+  %td
+    %input.obsolete{ type: 'checkbox' }
+
+  %td
+    %button.btn Add

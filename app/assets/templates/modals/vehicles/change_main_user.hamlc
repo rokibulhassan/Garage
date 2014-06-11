@@ -1,0 +1,36 @@
+.modal
+  .modal-header
+    %button{ class: 'close', data: { dismiss: 'modal' } } ×
+    %h3 Change main user
+
+  .modal-body
+    %ul.thumbnails{ style: "text-align: center;" }
+      %li.span2
+        %a.thumbnail{ href: '', data: { user: 'me' } }
+          %img{ src: "http://placehold.it/130x130" }
+          %h5 Me
+
+      %li.span2
+        %a.thumbnail{ href: '', data: { user: 'my_wife' } }
+          %img{ src: "http://placehold.it/130x130" }
+          %h5 My wife
+
+      %li.span2
+        %a.thumbnail{ href: '', data: { user: 'my_son' } }
+          %img{ src: "http://placehold.it/130x130" }
+          %h5 My son
+
+      %li.span2
+        %a.thumbnail{ href: '', data: { user: 'my_daughter' } }
+          %img{ src: "http://placehold.it/130x130" }
+          %h5 My daughter
+
+      %li.span2
+        %a.thumbnail{ href: '', data: { user: 'my_husband' } }
+          %img{ src: "http://placehold.it/130x130" }
+          %h5 My husband
+
+      %li.span2
+        %a.thumbnail{ href: '', data: { user: 'other' } }
+          %img{ src: "http://placehold.it/130x130" }
+          %h5 Other

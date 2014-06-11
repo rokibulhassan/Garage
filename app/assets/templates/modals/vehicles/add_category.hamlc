@@ -1,0 +1,16 @@
+.modal
+  .modal-header
+    %button{ class: 'close', data: { dismiss: 'modal' } } ×
+    %h3 Add a specifications category to your vehicle
+
+  .modal-body
+    - if @categories.length == 0
+      %p No more category!
+
+    - else
+      %table.table.table-striped
+        %tbody
+          - _(@categories).each (category)=>
+            %tr
+              %td
+                %a{ href: '', data: { category: category.name } }= category.label

@@ -1,0 +1,61 @@
+%td.property= I18n.t(@propertyName, scope: 'data_sheets_new.properties')
+
+- if @showCurrent
+  %td.current
+    = @currentPropertyValue || "-"
+    %span.unit!= @currentPropertyUnit
+    - if @currentDependantPropertyValue?
+      = "(#{@currentDependantPropertyValue}"
+      %span.unit!= "#{@currentDependantPropertyUnit})"
+
+  %td.gain
+    - unless @showControls
+      -if @propertyValue? and @currentPropertyValue?
+        = @currentPropertyValue - @propertyValue
+        %span.unit!= @propertyUnit
+      -else
+        = "-"
+
+      - if @currentDependantPropertyValue? and @stockDependantPropertyValue?
+        = " (#{@currentDependantPropertyValue - @stockDependantPropertyValue}"
+        %span.unit!= "#{@stockDependantPropertyUnit})"
+
+%td.value
+  - if @showControls
+    %input.property-value{ type: 'text', name: @propertyName, value: @propertyValue }
+    %span.unit!= @propertyUnit
+  - else
+    - if @valueAccepted or @showValueValidationHover or @showCorrectionsPendingHover
+      = @propertyValue
+      - if @propertyValue?
+        %span.unit!= @propertyUnit
+
+  - if @stockDependantPropertyName?
+    - if @showControls
+      %input.dependent-property-value{ type: 'text', name: @stockDependantPropertyName, value: @stockDependantPropertyValue }
+      %span.unit!= @stockDependantPropertyUnit
+    - else if @stockDependantPropertyValue?
+      = "(#{@stockDependantPropertyValue}"
+      %span.unit!= "#{@stockDependantPropertyUnit})"
+
+  - if @myPendingCorrection
+    .my-value-pending{:style => 'color: gray;'}
+      = @myPendingCorrection.get('value')
+      %span!= @propertyUnit
+
+  - if @showValueValidationHover or @showValueSuggestedHover or @showCorrectionsPendingHover
+    .property-source.property-validation{:style => 'display: none;'}
+      .property-source-suggested-on
+        suggested on
+        = @propertyCreatedAt
+      .property-source-details
+        %span.by
+          by
+          %img.property-source-img{src: @propertySourceAvatarUrl, :style => "width: 25px; height: 25px;"}
+          = "[#{@propertySourceName}]"
+      - if @showValueValidationHover or @showCorrectionsPendingHover
+        .property-validation-action
+          %a.property-validation-action-accept{:href => '#accept'}
+            Accept
+          %a.property-validation-action-reject{:href => '#reject'}
+            Reject

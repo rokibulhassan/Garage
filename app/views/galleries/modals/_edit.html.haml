@@ -1,0 +1,12 @@
+= simple_form_for [ current_user, @gallery ], html: { class: 'form-horizontal' } do |f|
+  .modal#edit-gallery.hide
+    .modal-header
+      %a.close{ data: { dismiss: 'modal' } } ×
+      %h3 Edit gallery
+
+    .modal-body
+      = f.input :title, input_html: { maxlength: 40 }
+
+    .modal-footer
+      %a.btn{ data: { dismiss: 'modal' } } Cancel
+      = f.submit 'Update the gallery', class: 'btn btn-primary'

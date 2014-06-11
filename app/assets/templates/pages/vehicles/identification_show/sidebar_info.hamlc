@@ -1,0 +1,52 @@
+- for rowGroup in @rowGroups
+  .vehicle-rowgroup
+    - for attr, data of rowGroup
+      - continue if !data || data == 'null'
+      - if attr is 'status' && (_.isEmpty(data) || _.isEmpty(data.text))
+        - continue
+      %span.data-label-sidebar
+        - if _.include(_.keys(@aliases), attr)
+          = I18n.t(@aliases[attr], scope: 'tabs.identification_content')
+        - else
+          = I18n.t(attr, scope: 'tabs.identification_content')
+
+      %span.data
+        %span.colon-data-separator
+          :
+        - if _.include ['owner_name', 'status'], attr
+          - if attr is 'status'
+            = I18n.t(data.text, scope: "models.ownership.#{attr}")
+            = if data.year then data.year else ''
+          - else if attr is 'owner_name'
+            = I18n.t(data, scope: "models.ownership.#{attr}")
+        - else if _.include(@version.globalAttributes, attr)
+          = @translateGlobalAttr(attr, data) 
+        - else
+          = data
+
+// edit links
+- if @canManage
+  .vehicle-rowgroup.last
+    %span.data-label-sidebar
+      = I18n.t('editing', scope: 'tabs.identification_show_content')
+    %span.data.vehicle-info-row.editable
+      %span.colon-data-separator
+        :
+      .data-link-container
+        %a.data-link.edit-data{ href: '#identification' }
+          = I18n.t('data_link', scope: 'tabs.identification_show_content')
+      .data-link-container
+        %a.photos-link.edit-photos{ href: @photosLinkPath }
+          = I18n.t('photos_link', scope: 'tabs.identification_show_content')
+      .data-link-container
+        %a.change_side_view{ href: @silhouetteLinkPath }
+          = I18n.t('silhouette_link', scope: 'tabs.identification_show_content')
+      .data-link-container
+        %a.thumbnail-link.edit-thumbnail{ href: @thumbnailLinkPath }
+          = I18n.t('thumbnail_link', scope: 'tabs.identification_show_content')
+      .data-link-container
+        %a.delete-link.delete-vehicle{ href: @deleteLinkPath }
+          = I18n.t('delete_link', scope: 'tabs.identification_show_content')
+
+- if @currentUser && not @canManage
+  .version-add-prewritten-comment

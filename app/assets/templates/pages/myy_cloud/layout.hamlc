@@ -1,0 +1,31 @@
+-if @user?
+-  klass = ''
+-  title = ''
+-else
+-  klass = 'disabled'
+-  title = I18n.t('function_unavailable', scope: 'top_bar')
+
+#breadcrumb
+
+.clearfix
+%br
+
+.navigation
+  %ul#tabs-bar.nav.nav-tabs
+    %li
+      %a.simple-tab{ href: '#', data: { target: '#imported_content' } }= I18n.t('imported_content', scope: 'tabs')
+    %li
+      %a.simple-tab{ href: '#', data: { target: '#public_galleries' } }= I18n.t('public_galleries', scope: 'tabs')
+    %li
+      %a.simple-tab{ href: '#', data: { target: '#private_galleries' } }= I18n.t('private_galleries', scope: 'tabs')
+    %li
+      %a.simple-tab{ href: '#', data: { target: '#software_setup' } }= I18n.t('software_setup', scope: 'tabs')
+
+.tab-content
+  #imported_content.tab-pane
+    .pull-right
+      %a.load-more{ href: "#"} Load more
+    #profile_pictures
+  #public_galleries.tab-pane
+  #private_galleries.tab-pane
+  #software_setup.tab-pane

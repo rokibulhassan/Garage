@@ -1,0 +1,71 @@
+id:
+    units:
+      kilowatt: kilowatts
+      newton_metre: Newton metre
+      kilometre_per_hour: kilometres per hour
+      litre: litres
+      cubic_centimetre: cubic centimetres
+      kilogram: kilograms
+      litres_per_100_kilometres: litres per 100 kilometres
+      kilometre: kilometres
+      bar: bar
+      millimetre: millimetres
+      horsepower_eu: horsepower (EU)
+      horsepower_uk: horsepower (UK)
+      horsepower_us: horsepower (US)
+      foot_pounds: foot pounds
+      mile_per_hour: miles per hour
+      imperial_gallon: imperial gallons
+      us_gallon: US gallons
+      cubic_inch: cubic inches
+      pound: pounds
+      miles_per_imperial_gallon: miles per imperial gallon
+      miles_per_us_gallon: miles per US gallon
+      mile: miles
+      pound_per_square_inch: pounds per square inch
+      rotations_per_minute: revolutions per minute
+      hour: hours
+      kilowatt_hour: kilowatt-hour
+      ampere_hour: ampère-hour
+      watt: watt
+      inch: inch
+      gram_per_kilometre: grammes par kilomètre
+      second: seconde
+      metre: mètre
+      gram_per_mile: gram per mile
+      foot: foot
+    unit_symbols:
+      kilowatt: kW
+      newton_metre: Nm
+      kilometre_per_hour: km/h
+      litre: L
+      cubic_centimetre: cc
+      kilogram: kg
+      litres_per_100_kilometres: L/100 km
+      kilometre: km
+      bar: bar
+      millimetre: mm
+      horsepower_eu: ch
+      horsepower_uk: ch (UK)
+      horsepower_us: ch (US)
+      foot_pounds: ft.lb
+      mile_per_hour: mph
+      imperial_gallon: gallon (UK)
+      us_gallon: gallon (US)
+      cubic_inch: cu in
+      pound: lb
+      miles_per_imperial_gallon: mpg (UK)
+      miles_per_us_gallon: mpg (US)
+      mile: mi
+      pound_per_square_inch: psi
+      rotations_per_minute: rpm
+      hour: h
+      kilowatt_hour: kWh
+      ampere_hour: Ah
+      watt: W
+      inch: ! '"'
+      gram_per_kilometre: gr/km
+      second: s
+      metre: m
+      gram_per_mile: gr/mi
+      foot: ft

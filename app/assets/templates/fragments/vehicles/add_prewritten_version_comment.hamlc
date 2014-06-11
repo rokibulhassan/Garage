@@ -1,0 +1,5 @@
+%select.version-add-prewritten-comment-select{name: 'version[prewritten_version_comment]'}
+  %option{value: '0'}= I18n.t('choose_comment', scope: 'tabs.identification_content')
+  - @comments.each (comment) =>
+    - body = comment.get("body_#{I18n.locale}")
+    %option{value: comment.id, selected: body is @currentCommentOnVersionByUser?["body_#{I18n.locale}"]}= body

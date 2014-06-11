@@ -1,0 +1,31 @@
+%h4= @part.get('label')
+
+%table.table.table-bordered.table-striped
+  %tbody
+    %tr
+      %td #{@brand?.get('label')} reference
+      %td= @part.get('manufacturer_reference')
+
+    %tr
+      %td Quantity
+      %td= @purchase.get('quantity')
+
+    %tr
+      %td Unit price
+      %td= @purchase.get('price')
+
+    %tr
+      %td Date
+      %td= @purchase.get('bought_at')
+
+    %tr
+      %td Vendor
+      %td
+        %a.show-vendor{ href: "/vendors/#{@vendor.id}" }
+          = @vendor.get('name')
+
+
+%p
+  %a.btn.show-listing
+    %i.icon-circle-arrow-left
+    Return to the listing

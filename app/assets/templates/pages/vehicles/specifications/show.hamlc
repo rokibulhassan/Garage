@@ -1,0 +1,11 @@
+#import-tool
+
+-unless @importToolAvailable
+  - if @showControls
+    %a.view-properties{ href: '#' }=I18n.t('back_to_view', scope: 'tabs.specifications_content')
+  - else
+    %a.edit-properties{ href: '#' }=I18n.t((if @approved then 'suggest_corrections' else 'edit_specs'), scope: 'tabs.specifications_content')
+
+#vehicle-specs
+  #vehicle-engine-specs.datasheet-properties
+  #vehicle-chassis-specs.datasheet-properties

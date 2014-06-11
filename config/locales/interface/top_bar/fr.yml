@@ -1,0 +1,39 @@
+fr:
+  top_bar:
+    home: Accueil
+    vehicles: Véhicules
+    bookmarked_vehicles: Favoris
+    all_vehicles: Tous les véhicules
+    all_cars: Toutes les autos
+    all_bikes: Toutes les motos
+    albums: Albums
+    myy_garage: Mon garage
+    my_vehicles: Mes véhicules
+    my_cars: Mes Autos
+    my_bikes: Mes Motos
+    myy_cloud: Mon Dossier
+    imported_content: Contenu Importé
+    my_public_albums: Mes Albums Publiques
+    my_private_albums: Mes Albums Privés
+    forgotten_password: Mot de passe oublié ?
+    new_member_signup:  "S'inscrire"
+    facebook_signup: Facebook connect
+    people: Mes suivis
+    edit_profile: Mon profile
+    sign_out: Me déconnecter
+    comparisons: Comparaisons
+    my_comparisons: Mes Comparaisons
+    recent_comparisons: Comparaisons Récents
+    function_unavailable: Vous devez être connecté pour accéder à cette fonctionnalité. Rejoignez-nous !!
+    all_news: Toutes les actualités
+    my_news: Mon fil d’actualités
+    followings:  Mes suivis
+    followers: Mes suiveurs
+    blocked: Bloqués
+    me: Moi
+    units: Unités
+    message: Des Messages
+    change_unit_system:
+      EU: Europe - système métrique - km/h - l/100 km
+      UK: UK - bhp - mph - mpg impérial
+      US: US - hp - ft.lbs - mph - mpg us

@@ -1,0 +1,8 @@
+%ul.collages
+
+- if @canManage
+  .btn-group.collage-buttons{ style: 'display: none;' }
+    %a.add-collage.btn.btn-success{ href: '#' }
+      %i.icon-plus
+      Add collage
+

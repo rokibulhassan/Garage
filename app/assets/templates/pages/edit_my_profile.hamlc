@@ -1,0 +1,112 @@
+%h4.username= @user.get('username')
+
+%br
+.tabbable
+  %ul.nav.nav-tabs
+    %li.active
+      %a.show-information{ href: '#information', data: { toggle: 'tab' } }
+        =I18n.t 'informations', scope: 'tabs.my_profile'
+    %li
+      %a.show-geolocation{ href: '#geolocation', data: { toggle: 'tab' } }
+        =I18n.t 'geolocation', scope: 'tabs.my_profile'
+    %li
+      %a.show-privacy-settings{ href: '#privacy-settings', data: { toggle: 'tab' } }
+        =I18n.t 'privacy_settings', scope: 'tabs.my_profile'
+
+  .tab-content{ style: 'overflow: inherit;' }
+    #information.tab-pane.active
+      %p.avatar
+        - avatarUrl = @user.get('avatarUrl') || @user.get('gravatarUrl')
+        %img.edit-avatar{ src: avatarUrl, width: 100, height: 100 }
+        - url = "/users/#{@user.get('id')}/update_avatar"
+        %br
+        %a.edit-avatar{ href: '' }=I18n.t 'change_avatar', scope: 'tabs.my_profile.information_content'
+        %input{ type: 'file', name: 'avatar', style: "visibility: hidden;", data: { url: url, type: 'PUT' } }
+
+      %form
+        .information
+          %p.firstName
+            %input{ type: 'text', placeholder: I18n.t('first_name', scope: 'tabs.my_profile.information_content.placeholders'), value: @user.get('first_name'), name: 'first_name' }
+
+          %p.lastName
+            %input{ type: 'text', placeholder: I18n.t('last_name', scope: 'tabs.my_profile.information_content.placeholders'), value: @user.get('last_name'), name: 'last_name' }
+
+          %p.email
+            %input{ type: 'email', placeholder: I18n.t('email', scope: 'tabs.my_profile.information_content.placeholders'), value: @user.get('email'), name: 'email' }
+
+    #geolocation.tab-pane
+      %form
+        %fieldset.geolocation
+          %legend= I18n.t('geolocation', scope: 'tabs.my_profile.geolocation_content')
+
+          %p.country
+            %select#user_country_code{ name: 'country_code', data: { placeholder: I18n.t('country', scope: 'tabs.my_profile.geolocation_content.placeholders') } } }
+              %option
+              - @countries.each (country)=>
+                - selected = @currentUser.get('country_code') == country.get('code')
+                %option{ value: country.get('code'), selected: selected }= country.get('label')
+
+
+          %p.city
+            %input{ type: 'text', name: 'city', placeholder: I18n.t('biggest_town', scope: 'tabs.my_profile.geolocation_content.placeholders'), value: @user.get('city') }
+
+
+        %fieldset.locales
+          %legend= I18n.t('regions_and_languages', scope: 'tabs.my_profile.geolocation_content')
+
+          %p.language
+            %select#user-locale{ name: 'locale', data: { placeholder: I18n.t('locale', scope: 'tabs.my_profile.geolocation_content.placeholders') } }
+              %option
+              - @locales.each (locale)=>
+                - selected = @currentUser.get('locale') == locale.get('code')
+                %option{ value: locale.get('code'), selected: selected }= locale.get('label')
+
+          %p.currency
+            %select#user-currency{ name: 'currency', data: { placeholder: I18n.t('currency', scope: 'tabs.my_profile.geolocation_content.placeholders') } }
+              %option
+              - @currencies.each (currency)=>
+                - selected = @currentUser.get('currency') == currency.get('code')
+                %option{ value: currency.get('code'), selected: selected }= currency.get('label')
+
+          %p.system-of-units
+            %select#user-system-of-units{ name: 'system_of_units', data: { placeholder: I18n.t('system_of_un its', scope: 'tabs.my_profile.geolocation_content.placeholders')} }
+              %option
+              - @systemsOfUnits.each (system)=>
+                - selected = @currentUser.get('system_of_units_code') == system.get('code')
+                %option{ value: system.get('code'), selected: selected }= system.get('label')
+
+    #privacy-settings.tab-pane
+      %form.form-horizontal
+        %fieldset.information
+          %legend= I18n.t('informations', scope: 'tabs.my_profile.privacy_settings_content')
+
+          %label.control-label= I18n.t('first_name', scope: 'tabs.my_profile.privacy_settings_content')
+          .controls
+            %label.checkbox
+              - checked = !!@user.get('first_name_public')
+              %input{ type: 'checkbox', name: 'first_name_public', checked: checked }
+              = I18n.t('public', scope: 'tabs.my_profile.privacy_settings_content')
+
+          %label.control-label= I18n.t('last_name', scope: 'tabs.my_profile.privacy_settings_content')
+          .controls
+            %label.checkbox
+              - checked = !!@user.get('last_name_public')
+              %input{ type: 'checkbox', name: 'last_name_public', checked: checked }
+              = I18n.t('public', scope: 'tabs.my_profile.privacy_settings_content')
+
+          %label.control-label Email
+          .controls
+            %label.checkbox
+              - checked = !!@user.get('emailing_allowed')
+              %input{ type: 'checkbox', name: 'emailing_allowed', checked: checked }
+              = I18n.t('contact_me', scope: 'tabs.my_profile.privacy_settings_content')
+
+        %fieldset.geolocation
+          %legend= I18n.t('geolocation', scope: 'tabs.my_profile.privacy_settings_content')
+
+          %label.control-label= I18n.t('nearby_location', scope: 'tabs.my_profile.privacy_settings_content')
+          .controls
+            %label.checkbox
+              - checked = !!@user.get('city_public')
+              %input{ type: 'checkbox', name: 'city_public', checked: checked }
+              = I18n.t('public', scope: 'tabs.my_profile.privacy_settings_content')

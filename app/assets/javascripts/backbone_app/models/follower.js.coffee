@@ -1,0 +1,1 @@
+class Models.Follower extends Backbone.RelationalModel

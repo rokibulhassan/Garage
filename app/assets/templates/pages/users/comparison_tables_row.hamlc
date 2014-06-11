@@ -1,0 +1,22 @@
+%td.comparison-label-data{style: 'text-align: right;'}
+  %a.comparison-table{ href: "#", data: { id: @comparison.id } }
+    = @comparison.get('label') || "##{@comparison.id}"
+%td
+  %ul.unstyled.comparison-table-vehicles
+    .comparison-table-vehicles-list-items-container
+      - @comparison.get('vehicles').each (vehicle) =>
+        %li.side-view-comparison-vehicle-img
+          %a.vehicle{ href: "#", data: { 'comparison-table-id': @comparison.id, id: vehicle.id  } }
+            %img.vehicle-img{src: vehicle.sideViewUrl(), alt: vehicle.get('label'), title: vehicle.get('label'), data: {toggle: 'tooltip'}}
+%td.comparison-table-statistics
+  .comparison-table-like-stats
+    - if @canLike
+      %a.comparison-table-like-it{href: '#like_it'}= I18n.t('comparison_tables.like_it')
+    %span.num-likes
+      = I18n.t('comparison_tables.num_likes', num: @comparison.get('likes').length)
+
+  .comparison-table-save-stats
+    - if @canSave
+      %a.comparison-table-save-it{href: '#save_it'}= I18n.t('comparison_tables.save_it')
+    %span.num-saves
+      = I18n.t('comparison_tables.num_saves', num: @comparison.get('saves').length)

@@ -1,0 +1,7 @@
+%h4
+  - if @myNews
+    = I18n.t 'my_newsfeed', scope: 'dashboard_content'
+  - else
+    = I18n.t 'newsfeed', scope: 'dashboard_content'
+
+#news

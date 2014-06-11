@@ -1,0 +1,51 @@
+%form.form-horizontal
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3 Add a service
+
+    .modal-body
+      .control-group
+        %label.control-label{ for: 'label' } Label
+        .controls
+          %input#label{ placeholder: 'Label used as reminder' }
+
+
+      .control-group
+        %label.control-label{ for: 'service_type' } Type
+        .controls
+          %select#service_type{ data: { placeholder: 'Service type' }
+            %option
+            - _.each @types, (type)=>
+              %option{ value: type }= type
+
+
+      .control-group
+        %label.control-label{ for: 'vendor' } Shop
+        .controls
+          %select#vendor_id{ data: { placeholder: 'Shop' } }
+            %option
+
+
+      .control-group
+        %label.control-label{ for: 'price' } Price
+        .controls
+          %input#price{ placeholder: 'Price' }
+          €
+
+
+      .control-group
+        %label.control-label{ for: 'date' } Date
+        .controls
+          %input#date{ placeholder: 'DD-MM-YYYY' }
+
+
+      .control-group
+        %label.control-label{ for: 'duration' } Duration
+        .controls
+          %input#duration{ placeholder: 'Duration in hours' }
+
+
+    .modal-footer
+      %button.btn.btn-primary.add-part Add this piece
+      %button.btn{ data: { dismiss: 'modal' } } Cancel

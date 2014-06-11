@@ -1,0 +1,1 @@
+class Models.ChangeSetProperty extends Backbone.RelationalModel

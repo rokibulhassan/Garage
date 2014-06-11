@@ -1,0 +1,10 @@
+%td
+  %a.select-purchase{ href: '' }
+    = @part.get('label')
+
+%td= @purchase.get('bought_at')
+
+%td
+  - if @purchase.get('price')
+    = @purchase.get('price')
+    €

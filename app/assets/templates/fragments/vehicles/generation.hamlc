@@ -1,0 +1,23 @@
+-select_placeholder = I18n.t 'select_placeholder', scope: 'tabs.identification_content'
+- if @showControls
+  %select#generation_number_id.chosen{ name: 'number', data: {placeholder: select_placeholder}}
+    %option
+    - for number in @numbers
+      %option{ value: number, selected: @generation.get('number') is number }= number
+
+  = "#{I18n.t 'generation_from', scope: 'tabs.identification_content'}:"
+
+  %select#generation_started_at_id.chosen.generation-attribute{ name: 'started_at', data: {placeholder: select_placeholder}}
+    %option
+    - for year in @startedAts
+      %option{ value: year, selected: @generation.get('started_at') is year }= year
+
+  = "#{I18n.t 'generation_to', scope: 'tabs.identification_content'}:"
+
+  %select#generation_finished_at_id.chosen.generation-attribute{ name: 'finished_at', data: {placeholder: select_placeholder}}
+    %option
+    - for year in @finishedAts
+      %option{ value: year, selected: @generation.get('finished_at') is year }= year
+
+- else
+  ="#{@generation.get('number') || "?"} (#{@generation.get('started_at') || "?"} - #{@generation.get('finished_at') || "?"})"

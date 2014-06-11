@@ -1,0 +1,12 @@
+.attributes_table.vehicle{ id: "attributes_table_vehicle_#{vehicle.id}__version_properties"}
+  %table
+    %tbody
+      -vehicle.version.properties.each do |property|
+        %tr{id: "version_property_#{property.name}"}
+          %th= property.name
+          =semantic_form_for property, url: admin_version_property_path(property, vehicle_id: vehicle.id) do |f|
+            %td.class{style: 'width: 200px;'}
+              =f.inputs class: 'simple-input-set-hor' do
+                =f.input :value, label: false, wrapper_html: {style: 'margin: 0;'}, input_html: {value: property.value_decorated_for(vehicle.user), style: 'width: 70px;'}
+                =property.units_for(vehicle.user)
+            %td= f.action :submit, label: 'Update', wrapper_html: {class: 'simple-input'}

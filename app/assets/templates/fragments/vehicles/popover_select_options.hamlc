@@ -1,0 +1,16 @@
+%ul.popover-global-selects{data: { attr: @attr }}
+  - for select in @allSelects
+    - if _.include @nonChosenSelects, select
+      %li.add-select-option{data: { option: select }}
+        - if @selectsTranslations
+          = @selectsTranslations[@attr][select]
+        - else
+          = select
+    - else
+      %li.chosen-select-option{data: { option: select }}
+        %a.remove-select-option{:href => "#remove-select"}
+          &times;
+        - if @selectsTranslations
+          = @selectsTranslations[@attr][select]
+        - else
+          = select

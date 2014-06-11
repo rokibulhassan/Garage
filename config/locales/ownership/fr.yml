@@ -1,0 +1,14 @@
+fr:
+  models:
+    ownership:
+      status:
+        build_mine: ma config
+        sold_on: vendu en
+        owned_since: acheté en
+      owner_name:
+        me: moi
+        wife: femme
+        dad: père
+        mum: mère
+        kid_1: enfant 1
+        kid_2: enfant 2

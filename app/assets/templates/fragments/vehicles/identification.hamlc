@@ -1,0 +1,10 @@
+- if @showIdentificationShowLink
+  .identification-edit-to-identification-show
+    %a.show-identification_show{href: '#'}
+      \<
+      = I18n.t('switch_to_identification_show_mode', scope: 'tabs.identification_content')
+
+%table#version{:class => @vehicle.get('type')}
+#picture-container
+  #picture
+

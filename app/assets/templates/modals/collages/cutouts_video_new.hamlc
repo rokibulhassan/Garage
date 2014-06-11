@@ -1,0 +1,21 @@
+%form.form-horizontal
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3 Embed a YouTube video
+    .modal-body
+      .control-group
+        %label.control-label{ for: 'youtube-link' } YouTube URL:
+        .controls
+          %input#youtube-link{ type: 'text', name: 'youtube-link', placeholder: 'Paste YouTube URL here', style: 'width: 300px;' }
+      .preview{ style: 'width: 530px; height: 300px; text-align: center;' }
+        - if @isValid
+          %iframe{ src: @youTubeSrc, type: 'text/html', frameborder: 0, width: 530, height: 300 }
+        - else if @youTubeLink?
+          %p{ style: 'color: #777;' }
+            The video URL you entered above can't be loaded. Please make sure it is correct.
+    .modal-footer
+      %button.embed-video.btn.btn-primary
+        %i.icon-plus
+        Embed video
+      %a.btn{ data: { dismiss: 'modal' } } Cancel

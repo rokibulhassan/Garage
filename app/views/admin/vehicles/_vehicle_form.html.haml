@@ -1,0 +1,48 @@
+=semantic_form_for vehicle.version, url: admin_version_path(vehicle.version, vehicle_id: vehicle.id)  do |f|
+  .attributes_table.vehicle{ id: "attributes_table_vehicle_#{vehicle.id}"}
+    %table
+      %tbody
+        %tr
+          %th User
+          %td= decorated_vehicle.user
+        %tr
+          %th Email
+          %td= vehicle.user.email
+        %tr
+          %th Brand
+          %td= link_to vehicle.brand.name, admin_brand_path(vehicle.brand)
+        %tr
+          %th Model
+          %td= link_to vehicle.model.name, admin_model_path(vehicle.model)
+        %tr
+          %th Body
+          %td= f.input :body, label: false, required: false, wrapper_html: {class: 'simple-input'}
+        %tr
+          %th Version
+          %td= f.input :name, label: false, required: false, wrapper_html: {class: 'simple-input'}
+        %tr
+          %th Market Version
+          %td= f.input :market_version_name, label: false, required: false, wrapper_html: {class: 'simple-input'}
+        %tr
+          %th Model Year
+          %td= f.input :production_year, as: :select, collection: (1900..Time.current.year), label: false, required: false, input_html: {class: 'chosen', style: 'width: 70px;'}, wrapper_html: {class: 'simple-input'}
+        %tr
+          %th Transmission
+          %td= f.input :transmission_numbers, as: :select, collection: Version.value_set_of(:transmission_numbers), label: false, required: false, input_html: {class: 'chosen', style: 'width: 150px;'},wrapper_html: {class: 'simple-input'}
+        %tr
+          %th Production Code
+          %td= f.input :production_code, label: false, required: false, wrapper_html: {class: 'simple-input'}
+        %tr
+          %th Generation
+          %td
+            = f.fields_for :generation do |generation|
+              = generation.inputs class: 'simple-input-set-hor' do
+                = generation.input(:number, as: :string, label: false, required: false, prompt: 'Number', wrapper_html: {class: 'simple-input'}, input_html: {style: 'width: 70px;'})
+                = generation.input(:started_at, as: :select, collection: (1900..Time.current.year), label: false, required: false, prompt: 'Started...', wrapper_html: {class: 'simple-input'}, input_html: {class: 'chosen', style: 'width: 100px;'})
+                = generation.input(:finished_at, as: :select, collection: (1900..Time.current.year), label: false, required: false, prompt: 'Finished...', wrapper_html: {class: 'simple-input'}, input_html: {class: 'chosen', style: 'width: 100px;'})
+        %tr
+          %th Status
+          %td=decorated_vehicle.status
+        %tr
+          %th
+          %td= f.action :submit, label: "Update Vehicle", wrapper_html: {class: 'simple-input'}

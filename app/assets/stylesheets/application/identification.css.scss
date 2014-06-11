@@ -1,0 +1,288 @@
+#identification{
+  font-size: 12px;
+  #version{
+    width: 860px;
+    margin: 0;
+    margin-bottom: 40px;
+    th, td{
+      height: 30px;
+      margin-bottom: 3px;
+      padding: 2px 0 6px 0;
+      select, input{
+        vertical-align: baseline;
+        height: 15px;
+      }
+    }
+    .global-attribute {
+      margin-bottom: 20px;
+    }
+
+    th{
+      text-align: left;
+
+      &.main-info{
+        width: 15%;
+      }
+      &.general-info{
+        width: 15%;
+      }
+    }
+
+    td{
+      padding-left: 10px;
+      vertical-align: middle;
+      #version_body_id, #name_id, #version_transmission_type_id{
+        width: 220px;
+      }
+      #generation_number_id, #market_version_name_id{
+        width: 55px;
+      }
+      #generation_number_id_chzn{
+        margin-right: 5px;
+      }
+      #production_year_id{
+        width: 70px;
+      }
+      #version_transmission_numbers_id{
+        width: 110px;
+      }
+      #production_code_id{
+        width: 110px;
+      }
+      .generation_number_id{
+        width: 100px;
+      }
+      #generation_started_at_id{
+        width: 70px;
+      }
+      #generation_finished_at_id{
+        width: 70px;
+      }
+      &.main-info{
+        width: 18%;
+      }
+      &.general-info{
+        width: 35%;
+      }
+    }
+
+    .wiki{
+      font-size: smaller;
+    }
+    .thead{
+      font-weight: bold;
+    }
+  }
+
+  #version tr#ownership {
+    td.status, th.status-text {
+      padding-top: 40px;
+    }
+
+  }
+
+  #ownership{
+    #ownership_status_id{
+      width: 160px;
+    }
+    #ownership_owner_name_id{
+      width: 110px;
+    }
+    #ownership_year{
+      width: 75px;
+    }
+    .year{
+      display: inline;
+    }
+    th.driver_info {
+      position: absolute;
+      left: 0;
+      bottom: -50px;
+    }
+    td.driver_info {
+      position: absolute;
+      left: 120px;
+      bottom: -48px;
+    }
+  }
+
+
+  #picture{
+    width: 180px;
+    float: right;
+    text-align: center;
+    img{
+      width: 180px;
+      height: 135px;
+    }
+
+
+  }
+
+}
+
+#picture-container {
+  width: 750px;
+  position: relative;
+  top: -120px;
+}
+
+.main-info.model-name {
+  position: relative;
+}
+
+.hide-model-name input {
+  position: absolute;
+  left: 100px;
+  top: 45px;
+}
+
+#vehicle-info-sidebar {
+  width: 485px;
+  padding-left: 15px;
+  padding-top: 15px;
+  float: left;
+  font-size: 12px;
+}
+
+.data-label-sidebar {
+  min-width: 100px;
+  display: block;
+  float: left;
+}
+
+.editable.vehicle-info-row a {
+  display: inline;
+  clear: both;
+  min-width: 118px;
+  text-align: left;
+  position: relative;
+  right: -115px;
+  top: -20px;
+}
+
+.vehicle-rowgroup {
+  margin-bottom: 20px;
+  .data {
+    display: block;
+  }
+}
+
+.mosaic-inner-container {
+  float: left;
+  width: 696px;
+  .picture-pos-1 {
+    float: left;
+  }
+  .picture-pos-2,
+  .picture-pos-3 {
+    float: right;
+  }
+  .picture-pos-2 {
+    margin-bottom: 6px;
+  }
+  .default-pos-1 {
+    &, & img {
+      width: 320px;
+      height: 390px;
+      background: gray;
+      cursor: pointer;
+    }
+  }
+  .default-pos-2 {
+    &, & img {
+      float: left;
+      width: 370px;
+      height: 198px;
+      background: gray;
+      cursor: pointer;
+    }
+  }
+  .default-pos-3 {
+    &, & img {
+      width: 370px;
+      height: 186px;
+      background: gray;
+      float: left;
+      cursor: pointer;
+    }
+  }
+}
+
+#mosaic-container {
+  float: left;
+  width: 700px;
+}
+
+.popover-global-selects {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.add-select-option {
+  cursor: pointer;
+}
+
+.chosen-select-option {
+  position: relative;
+  color: gray;
+}
+
+.add-select-options {
+  cursor: default;
+  color: #08C;
+  z-index: 100;
+}
+
+.remove-select-option {
+  background-color: #555;
+  line-height: normal;
+  color: #fff;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  font-weight: bold;
+  position: absolute;
+  left: -15px;
+  top: 2px;
+}
+
+.doors .add-more-selects-container {
+  width: 115px;
+}
+
+.fr #identification #version.automobile td.body.general-info {
+  left: -200px;
+}
+
+.automobile .doors .add-select-options {
+  position: relative;
+  left: -40px;
+}
+
+.automobile .body .add-select-options {
+  position: relative;
+  right: -50px;
+}
+
+.motorcycle .category .add-select-options {
+  position: relative;
+  right: -50px;
+}
+
+#identification_show {
+  width: 1200px;
+
+  .delete-link {
+    color: #08C;
+    font-size: inherit;
+  }
+}
+
+.wiki.bike-full-name {
+  position: relative;
+  left: -40px;
+  top: -2px;
+}

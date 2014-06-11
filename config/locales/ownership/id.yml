@@ -1,0 +1,14 @@
+id:
+  models:
+    ownership:
+      status:
+        build_mine: build mine
+        sold_on: sold on
+        owned_since: owned since
+      owner_name:
+        me: me
+        wife: wife
+        dad: dad
+        mum: mum
+        kid_1: kid 1
+        kid_2: kid 2

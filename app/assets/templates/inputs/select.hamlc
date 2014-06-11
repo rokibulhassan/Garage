@@ -1,0 +1,8 @@
+.control-group.choice
+  %label.control-label{ for: "input_#{@name}" }= @label
+  .controls
+    %select{ name: @name, id: "input_#{@name}" }
+      %option{ value: '' }
+      - _(@choices).each (choice)=>
+        - selected = @value is choice.value
+        %option{ value: choice.value, selected: selected }= choice.text

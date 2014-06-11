@@ -1,0 +1,20 @@
+.simple-input{
+  list-style: none;
+  width: 150px;
+}
+.simple-input-set-hor{
+  margin: 0;
+  li{
+    margin-right: 50px;
+    display: inline;
+  }
+}
+
+span.full-data{
+  background: mediumturquoise;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 3px 5px 2px 5px !important;
+  font-size: 0.8em !important;
+}

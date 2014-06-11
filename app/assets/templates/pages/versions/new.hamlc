@@ -1,0 +1,19 @@
+%form.form-horizontal
+  .modal
+    .modal-header
+      %button{ class: 'close', data: { dismiss: 'modal' } } ×
+      %h3 Add a version
+
+    .modal-body
+      .control-group
+        %label.control-label{ for: 'modal-label-en' } Version name (EN)
+        .controls
+          %input#modal-label-en{ name: 'label_en', type: 'text' }
+      .control-group
+        %label.control-label{ for: 'modal-label-fr' } Version name (FR)
+        .controls
+          %input#modal-label-fr{ name: 'label_fr', type: 'text' }
+
+    .modal-footer
+      %a.btn.btn-primary.save-version{ href: '#' } Add the version
+      %a.btn{ data: { dismiss: 'modal' } }= I18n.t('cancel')

@@ -1,0 +1,4 @@
+%h3= @group.get('label')
+
+%table.table.table-bordered.table-striped
+  %tbody.attributes

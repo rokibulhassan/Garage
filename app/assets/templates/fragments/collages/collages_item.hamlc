@@ -1,0 +1,16 @@
+.cutouts
+
+- if @modeEdit
+  .carousel-controls{ style: 'display: none;' }
+    %a.carousel-control.left{ href: '#collages-carousel', data: { slide: 'prev' } }&lsaquo;
+    %a.carousel-control.right{ href: '#collages-carousel', data: { slide: 'next' } }&rsaquo;
+  .btn-toolbar{ style: 'position: absolute; bottom: 0; left: 10px;' }
+    %button.delete-collage.edit-controls.btn.btn-danger{ style: 'display: none;' } Delete
+    %button.edit-collage.edit-controls.btn.btn-warning{ style: 'display: none;' } &nbsp;Edit&nbsp;
+    %button.save-collage.carousel-controls.btn.btn-primary{ style: 'display: none;' } Save
+  .btn-toolbar{ style: 'position: absolute; top: 14px; right: 10px;' }
+    .move-higher
+      %span &#xf062
+  .btn-toolbar{ style: 'position: absolute; bottom: 0; right: 10px;' }
+    .move-lower
+      %span &#xf063

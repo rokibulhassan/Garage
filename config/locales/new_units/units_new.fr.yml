@@ -1,0 +1,50 @@
+fr:
+  units_new:
+    units:
+      unitless:
+      undefined:
+      cubic_centimeter:    centimètres cubes
+      cubic_inch:          pouces cubes
+      horsepower_eu:       chevaux
+      horsepower_uk:       chevaux
+      horsepower_us:       chevaux
+      kilogram:            kilograms
+      pound:               livres
+      revolutions_per_min: tours par minute
+      newton_meter:        Newton mètre
+      foot_pound:          livres-pied
+      millimeter:          millimetres
+      inch:                inch
+      kilometer_per_hour:  kilomètres par heure
+      mile_per_hour:       miles par heure
+      second:              seconde
+      meter:               mètre
+      foot:                pied
+      liter_per_100_km:    litres pour 100 kilomètres
+      mile_per_imp_gallon: miles par gallon impérial
+      mile_per_gallon:     miles par gallon US
+      gr_per_kilometer:    gr per kilometer
+    unit_symbols:
+      unitless:            ''
+      undefined:           ''
+      cubic_centimeter:    cc
+      cubic_inch:          cu in
+      horsepower_eu:       ch
+      horsepower_uk:       ch
+      horsepower_us:       ch
+      kilogram:            kg
+      pound:               lb
+      revolutions_per_min: tr/min
+      newton_meter:        Nm
+      foot_pound:          ft.lb
+      millimeter:          mm
+      inch:                '"'
+      kilometer_per_hour:  km/h
+      mile_per_hour:       mph
+      second:              s
+      meter:               m
+      foot:                ft
+      liter_per_100_km:    L/100 km
+      mile_per_imp_gallon: mpg
+      mile_per_gallon:     mpg
+      gr_per_kilometer:    gr/km

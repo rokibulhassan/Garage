@@ -1,0 +1,98 @@
+<% if current_user.present? %>
+    <div class="container">
+      <div class="row">
+        <div class="bs-example bs-example-tabs">
+          <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#inbox" data-toggle="tab">Inbox (<%= current_user.mailbox.inbox.count %>)</a>
+            </li>
+            <li class=""><a href="#sent" data-toggle="tab">Sent</a></li>
+            <li class=""><a href="#trash" data-toggle="tab">Trash</a></li>
+            <li class="pull-right"><a href="#write" data-toggle="tab" class="new-message">+Write</a></li>
+            <li class="pull-right"><a href="#darft" data-toggle="tab">Draft</a></li>
+          </ul>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="inbox">
+              <div>
+                <% mailbox.inbox.each do |inbox| %>
+                    <div class="div1">
+                      <div class="div2 div_v"> <%= image_tag inbox.messages.first.sender.avatar_url, size: '45x45' %> </div>
+                      <div class="div2 div_w"><b><%= inbox.messages.first.sender.full_name %> </b></div>
+                      <div class="div2 div_x"> <%= link_to inbox.subject, "#show-message", :"data-toggle" => "tab", :"message-id" => inbox.id, :class => "show-message" %></div>
+                      <div class="div2 div_y"><%= inbox.created_at.to_date %></div>
+                      <div class="div2 div_z">
+                        <%= link_to([:trash, inbox], method: :post) do %>
+                            <i class="icon-trash icon-white"></i>
+                        <% end %>
+                      </div>
+                    </div>
+                    <br>
+                <% end %>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="sent">
+              <div>
+                <% mailbox.sentbox.each do |sentbox| %>
+                    <div class="div1">
+                      <div class="div2 div_v"><%= image_tag sentbox.messages.first.sender.avatar_url, size: '45x45' %></div>
+                      <div class="div2 div_w"><b><%= sentbox.messages.first.sender.full_name %> </b></div>
+                      <div class="div2 div_x"><%= link_to sentbox.subject, "#show-message", :"data-toggle" => "tab", :"message-id" => sentbox.id, :class => "show-message" %></div>
+                      <div class="div2 div_y"><%= sentbox.created_at.to_date %></div>
+                      <div class="div2 div_z"><%= link_to([:trash, sentbox], method: :post) do %>
+                            <i class="icon-trash icon-white"></i>
+                        <% end %>
+                      </div>
+                    </div>
+                    <br>
+                <% end %>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="trash">
+              <div>
+                <% mailbox.trash.each do |trash| %>
+                    <div class="div1">
+                      <div class="div2 div_v"><%= image_tag trash.messages.first.sender.avatar_url, size: '45x45' %></div>
+                      <div class="div2 div_w"><b><%= trash.messages.first.sender.full_name %> </b></div>
+                      <div class="div2 div_x"><%= link_to trash.subject, "#show-message", :"data-toggle" => "tab", :"message-id" => trash.id, :class => "show-message" %></div>
+                      <div class="div2 div_y"><%= trash.created_at.to_date %></div>
+                      <div class="div2 div_z">
+                        <% if trash.is_completely_trashed?(current_user) %>
+                            <%= link_to([:untrash, trash], method: :post) do %>
+                                <i class="icon-share icon-white"></i>
+                            <% end %>
+                        <% end %>
+                      </div>
+                    </div>
+                    <br>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="write">
+              "Write new message"
+            </div>
+
+            <div class="tab-pane fade" id="show-message">
+              "Show message"
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+<script type="text/javascript">
+    $(".new-message").click(function () {
+        $.ajax({
+            Type: "GET",
+            url: "<%= new_conversation_path %>"
+        });
+    });
+
+    $(".show-message").click(function () {
+        var messageId = $(this).attr('message-id');
+        $.ajax({
+            Type: "GET",
+            url: "/conversations/" + messageId
+        });
+    });
+</script>

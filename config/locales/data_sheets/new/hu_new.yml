@@ -1,0 +1,64 @@
+hu:
+  data_sheets_new:
+    tabs:
+      performance: Performance
+      consumption: Consumption
+      specifications: Specifications
+      costs: Costs
+      users: Users
+      sub_tabs:
+        likers: Likers
+        savers: Savers
+    properties:
+      cylinders: Cylinders
+      displacement: Displacement
+      max_power: Maximum power
+      max_power_frequency: @
+      max_torque: Maximum torque
+      max_torque_frequency: @
+      weight: Weight
+      length: Length
+      width: Width
+      height: Height
+      top_speed: Top speed
+
+      max_speed_on_402:  402 m (1/4 mile)
+      max_speed_on_1000: 1000 m
+      max_speed_on_1609: 1609 m (mile)
+
+      time_on_402:  402 m (1/4 mile)
+      time_on_1000: 1000 m
+      time_on_1609: 1609 m (mile)
+
+      accel_time_0_60_kph:   0 to 60 km/h
+      accel_time_0_100_kph:  0 to 100 km/h
+      accel_time_0_160_kph:  0 to 160 km/h
+      accel_time_0_200_kph:  0 to 200 km/h
+      accel_time_0_300_kph:  0 to 300 km/h
+      accel_time_100_200_kph:  100 to 200 km/h
+      accel_time_200_300_kph:  200 to 300 km/h
+      accel_time_0_96_kph:   0 to 96 km/h (60 mph)
+      accel_time_96_209_kph: 96 to 209 km/h (60-130)
+
+      decel_time_100_0_kph: 100 to 0 km/h
+      decel_time_113_0_kph: 113 to 0 km/h
+      decel_time_200_0_kph: 200 to 0 km/h
+
+      accel_distance_0_60_kph:   0 to 60 km/h
+      accel_distance_0_100_kph:  0 to 100 km/h
+      accel_distance_0_160_kph:  0 to 160 km/h
+      accel_distance_0_200_kph:  0 to 200 km/h
+      accel_distance_0_300_kph:  0 to 300 km/h
+      accel_distance_100_200_kph:  100 to 200 km/h
+      accel_distance_200_300_kph:  200 to 300 km/h
+      accel_distance_0_96_kph:   0 to 96 km/h (60 mph)
+      accel_distance_96_209_kph: 96 to 209 km/h (60-130)
+
+      decel_distance_100_0_kph: 100 to 0 km/h
+      decel_distance_113_0_kph: 113 to 0 km/h (70 mph)
+      decel_distance_200_0_kph: 200 to 0 km/h
+
+      consumption_city: Consumption city
+      consumption_highway: Consumption highway
+      consumption_mixed: Consumption mixed
+      CO2_emissions: CO2 Emissions

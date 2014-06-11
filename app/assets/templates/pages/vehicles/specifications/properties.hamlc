@@ -1,0 +1,8 @@
+%table.table.table-striped.table-condensed
+  %thead
+    %br
+  %tbody
+    %tr
+      %th= @group
+      %th Stock
+      %th Modded

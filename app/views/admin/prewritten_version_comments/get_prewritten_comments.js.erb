@@ -1,0 +1,21 @@
+var lang_class_nme = $("table#prewritten_version_comments th:eq(1)").attr('class').split(' ')[1]
+$("table#prewritten_version_comments th:eq(1)").text("Body <%=params[:locale].capitalize %>")
+
+var data = <%=raw @prewritten_comments.map(&:"body_#{params[:locale]}").compact %> ;
+var id = <%=raw @prewritten_comments.map(&:id) %> ;
+var counter = 0;
+var data_to_send = "";
+var params_locale = "<%=params[:locale] %>";
+
+$("table#prewritten_version_comments tr").each(function(i,val){ 
+  $(this).children('td').each(function(index,value){
+    if($(this).attr('class')==lang_class_nme){
+      data_to_send = "";
+      if(counter<data.length){
+          data_to_send = data_to_send + inline_edit_prewritten_comments(id[counter],data[counter],params_locale) ;
+      }
+      $(this).html(data_to_send);
+      counter++;
+    }        
+  })
+})

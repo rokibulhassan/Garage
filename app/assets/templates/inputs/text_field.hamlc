@@ -1,0 +1,4 @@
+.control-group.text
+  %label.control-label{ for: "input_#{@name}" }= @label
+  .controls
+    %input{ name: @name, value: @value, id: "input_#{@name}" }

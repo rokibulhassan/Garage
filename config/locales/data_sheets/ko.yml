@@ -1,0 +1,382 @@
+ko:
+  data_sheets:
+    approve_fix: Approve
+    suggest_property_fix: Suggest this fix
+    suggested_fixes: Suggested fixes
+    no_suggested_fix_yet: No suggested fix yet.
+    change_property: change
+    you_must_sign_in_to_contribute: You must sign in to contribute.
+    you_already_contributed_to_this_property: You already contributed to this property.
+    groups:
+      electric_powertrain: Electric powertrain
+      internal_combustion_engine: Internal combustion engine
+      electricity_system: Système électrique
+      exhaust_system: Système d'échappement
+      dyno_figures: Dyno figures
+      transmission: Transmission
+      final_drive: Transmission finale
+      body: Carrosserie
+      steering: Direction
+      suspensions: Suspensions
+      brakes: Freins
+      wheels: Roues
+      consumption: Consommation
+      gas_emissions: Émissions de gas
+      accelerations: Accélérations
+      braking_distances: Distances de freinage
+      performances: Performances
+    properties:
+      fuel_type: Fuel type
+      cycle: Engine cycle
+      engine_code: Engine code
+      cylinders_count: Cylinders
+      displacement: Displacement
+      bore_and_stroke: Bore and stroke
+      compression_ratio: Compression ratio
+      valves_count_per_cylinder: Valves per cylinder
+      camshaft: Camshaft
+      diesel_injection: Diesel injection
+      fuel_injection: Fuel injection
+      throttle_bodies_count: Nombre de papillons d'admission
+      throttle_body_diameter: Diamètre des papillons d'admission
+      carburetor: Carburetor
+      carburetors_count: Nombre de carburateurs
+      carburetor_diameter: Diamètre des carburateurs
+      carburetor_brand: Marque du carburateur
+      carburetor_cubic_feet_per_minute: CFM carburateur
+      reed_valve: Reed valve
+      rotary_disc: Rotary disc
+      turbocharged: Turbocharged
+      turbochargers_count: Nombre de turbo
+      variable_turbine_geometry: Turbines à géométrie variable
+      supercharged: Compressé
+      intercooler: Échangeur d'air
+      ignition_timing: Avance à l'allumage
+      knock_sensor: Détecteur de cliquetis
+      spark_coils_count: Nombre de bobines d'allumage
+      spark_plugs_count_per_cylinder: Bougies d'allumage par cylindre
+      electric_propulsion_system: Electric propulsion system
+      electric_motors_count: Electric motors
+      total_power_output: Total power output
+      battery_technology: Battery technology
+      quick_charge_duration: Quick charge duration
+      quick_charge_autonomy: Quick charge autonomy
+      slow_charge_duration: Slow charge duration
+      slow_charge_autonomy: Slow charge autonomy
+      capacitor: Capacitor
+      kinetic_energy_recovery_system: Kinetic energy recovery system
+      motor_battery_capacity: Capacité des batteries
+      voltage: Tension
+      battery_capacity: Battery capacity
+      alternator_power: Puissance de l'altérnateur
+      alternator_energy_saving: Altérnateur avec gestion d'économie d'énergie
+      start_and_stop: Start-and-stop
+      catalysators_count: Nombre de catalyseurs
+      oxygen_sensors_count: Nombre de capteurs d'oxygène
+      variable_exhaust_system: Système d'échappement variable
+      electric_exhaust_cutout: Commande d'ouverture d'échappement
+      diesel_particulate_filter: Filtre à particule
+      maximal_power: Maximal power
+      maximal_torque: Maximal torque
+      transmission: Transmission
+      transmission_type: Type de transmission
+      coupler: Coupleur
+      clutch_actuation: Commande d'embrayage
+      gears_count: Démultiplication rapport 1
+      gear_1_ratio: Démultiplication rapport 2
+      gear_2_ratio: Démultiplication rapport 3
+      gear_3_ratio: Démultiplication rapport 4
+      gear_4_ratio: Démultiplication rapport 5
+      gear_5_ratio: Démultiplication rapport 6
+      gear_6_ratio: Démultiplication rapport 7
+      gear_7_ratio: Démultiplication rapport 8
+      gear_8_ratio: Démultiplication rapport 9
+      low_range_gears: Rapports courts
+      final_drive_type: Type de transmission finale
+      final_drive_ratio: Rapport de transmission finale
+      pinion_size: Nombre de dents du pignon
+      rear_sprocket_size: Nombre de dents de la couronne
+      shape: Carrosserie
+      construction: Construction
+      material: Matériau
+      doors_count: Nombre de portes
+      seats_count: Nombre de sièges
+      length: Longueur
+      width: Largeur
+      height: Hauteur
+      wheelbase: Empatement
+      front_track: Voie avant
+      rear_track: Voie avant
+      steering_architecture: Type de direction
+      steering_turning_circle: Diamètre de braquage
+      steering_power_assist: Assistance de direction
+      steering_variable_assist: Assistance variable
+      steering_variable_ratio: Démultiplication variable
+      suspension_front_type: Type de suspensions avant
+      suspension_front_springs_type: Types de ressorts avant
+      suspension_front_leaf_type: Matériau des lames avant
+      suspension_front_dampers: Type d'amortisseurs avant
+      suspension_front_roll_bars_type: Type de barre anti-roulis avant
+      suspension_rear_type: Type de suspensions arrière
+      suspension_rear_springs_type: Types de ressorts arrière
+      suspension_rear_leaf_type: Matériau des lames arrière
+      suspension_rear_dampers: Type d'amortisseurs arrière
+      suspension_rear_roll_bars_type: Type de barre anti-roulis arrière
+      brake_front_type: Type de freins avant
+      brake_front_count: Nombre de disques avant
+      brake_front_diameter: Diamètre des disques avant
+      brake_front_drum_command: Commande des tambours avant
+      brake_front_disc_material: Matériau des disques avant
+      brake_front_disc_thickness: Épaisseur des disques avant
+      brake_front_disc_pistons_count: Nombre de pistons avant
+      brake_rear_type: Type de freins arrière
+      brake_rear_count: Nombre de disques arrière
+      brake_rear_diameter: Diamètre des disques arrière
+      brake_rear_drum_command: Commande des tambours arrière
+      brake_rear_disc_material: Matériau des disques arrière
+      brake_rear_disc_thickness: Épaisseur des disques arrière
+      brake_rear_disc_pistons_count: Nombre de pistons arrière
+      abs: ABS
+      stability_control: Contrôle de stabilité
+      wheel_construction: Type de roues
+      rim_bolt: Diamètre d'entraxe
+      rim_bolt_pattern: Entraxe
+      rim_bolt_circle: Diamètre de perçage
+      tubeless: Sans chambre à air
+      centerbore: Rayon de centrage
+      tire_speed_index: Indice de vitesse
+      tire_front: Pneu avant
+      tire_front_load_index: Indice de charge avant
+      tire_rear: Pneu arrière
+      tire_rear_load_index: Indice de charge arrière
+      tire_width: Largeur
+      tire_height: Hauteur
+      rim_front: Jante avant
+      rim_front_offset: Déport jante avant
+      rim_rear: Jante arrière
+      rim_rear_offset: Déport jante arrière
+      rim_diameter: Diamètre
+      rim_width: Largeur
+      consumption_city: Ville
+      consumption_highway: Autoroute
+      consumption_combined: Mixte
+      tank_capacity: Contenance du réservoir
+      emissions_nox: Oxyde d'azote
+      emissions_co2: Dioxyde de carbone
+      emission_standards: Standard
+      top_speed: Vitesse maximale
+      acceleration_0_100_kmh_duration: 0 à 100 km/h
+      acceleration_0_100_kmh_distance: 0 à 100 km/h (distance)
+      acceleration_100_200_kmh_duration: 100 à 200 km/h
+      acceleration_100_200_kmh_distance: 100 à 200 km/h (distance)
+      acceleration_0_160_kmh_duration: 0 à 160 km/h
+      acceleration_0_160_kmh_distance: 0 à 160 km/h (distance)
+      acceleration_0_200_kmh_duration: 0 à 200 km/h
+      acceleration_0_200_kmh_distance: 0 à 200 km/h (distance)
+      acceleration_0_300_kmh_duration: 0 à 300 km/h
+      acceleration_0_300_kmh_distance: 0 à 300 km/h (distance)
+      acceleration_0_60_mph_duration: 0 à 60 mph
+      acceleration_0_60_mph_distance: 0 à 60 mph (distance)
+      acceleration_60_130_mph_duration: 60 à 130 mph
+      acceleration_60_130_mph_distance: 60 à 130 mph (distance)
+      acceleration_1000_metre_duration: 1000 mètres
+      acceleration_1000_metre_speed: 1000 mètres (vitesse)
+      acceleration_1_4_mile_duration: 400 mètres
+      acceleration_1_4_mile_speed: 400 mètres (vitesse)
+      acceleration_mile_duration: 1 mile
+      acceleration_mile_speed: 1 mile (vitesse)
+      braking_60_0_mph_distance: 60 à 0 mph
+      braking_60_0_mph_duration: 60 à 0 mph (durée)
+      braking_100_0_mph_distance: 100 à 0 mph
+      braking_100_0_mph_duration: 100 à 0 mph (durée)
+      braking_100_0_kmh_distance: 100 à 0 km/h
+      braking_100_0_kmh_duration: 100 à 0 km/h (durée)
+      braking_200_0_kmh_distance: 200 à 0 km/h
+      braking_200_0_kmh_duration: 200 à 0 km/h (durée)
+      braking_300_0_kmh_distance: 300 à 0 km/h
+      braking_300_0_kmh_duration: 300 à 0 km/h (durée)
+      throttle_bodies: Throttle bodies (count and diameter)
+      carburetor_count: Carburators count
+    values:
+      electric_propulsion_system:
+        electric: Electric
+        hybrid: Hybrid
+      battery_technology:
+        lithium_ion: Lithium-ion
+        lead: Lead
+        gel: Gel
+      fuel_type:
+        diesel: Diesel
+        petrol: Petrol
+        lpg: LPG
+        hydrogen: Hydrogen
+        natural_gas: Natural gas
+        bio_ethanol_e85: Bio Ethanol E85
+      cycle:
+        2_stroke: 2 stroke
+        4_stroke: 4 stroke
+        rotary: Rotary
+      camshaft:
+        ohv: OHV
+        sohc: SOHC
+        dohc: DOHC
+        desmodromic: Desmodromic
+      diesel_injection:
+        mechanical_indirect: Mécanique indirecte
+        electronic_indirect: Électrique indirecte
+        common_rail_electronic_direct: Rampe commune
+        direct_pump_electronic_injector: Injecteur pompe
+      fuel_injection:
+        mechanical_indirect: Mécanique indirecte
+        electronic_indirect: Électrique indirecte
+        electronic_direct: Électrique directe
+      voltage:
+        6v: 6V
+        12v: 12V
+        24v: 24V
+      transmission:
+        front_wheel_drive: front_wheel_drive
+        rear_wheel_drive: rear_wheel_drive
+        all_wheel_drive: all_wheel_drive
+      transmission_type:
+        manual: manual
+        mechanic_sequential: mechanic_sequential
+        mechanic_robotised: mechanic_robotised
+        automatic_double_clutch: automatic_double_clutch
+        automatic_torque_converter: automatic_torque_converter
+        continuous_variable_transmission: continuous_variable_transmission
+      coupler:
+        mono_disc_dry: mono_disc_dry
+        dual_disc_dry: dual_disc_dry
+        multi_plate_dry: multi_plate_dry
+        multi_plate: multi_plate
+        wet: wet
+        centrifugal: centrifugal
+        hydraulic_converter: hydraulic_converter
+      clutch_actuation:
+        cable: cable
+        hydraulic: hydraulic
+        robotised: robotised
+      differential:
+        standard: standard
+        limited_slip: limited_slip
+        torsen: torsen
+      final_drive_type:
+        shaft_drive: shaft_drive
+        chain: chain
+        belt: belt
+      shape:
+        limousine: limousine
+        small_car: small_car
+        estate_car: estate_car
+        roadster: roadster
+        sports_car: sports_car
+        suv: suv
+        pick_up: pick_up
+        mpv: mpv
+        hatchback: hatchback
+      construction:
+        unibody: unibody
+        frame_body: frame_body
+      material:
+        steel: steel
+        aluminium_steel: aluminium_steel
+        aluminium: aluminium
+        composite: composite
+      steering_architecture:
+        front_wheels: front_wheels
+        front_and_rear_wheels: front_and_rear_wheels
+      steering_power_assist:
+        hydraulic: hydraulic
+        electrohydraulic: hydraulic
+        electric: electric
+      suspension_front_type:
+        mc_pherson: mc_pherson
+        a_arms: a_arms
+      suspension_rear_type:
+        trailing_arms: trailing_arms
+        multi_link: multi_link
+        a_arms: a_arms
+      suspension_front_springs_type:
+        helicoidal: helicoidal
+        coil_overs: coil_overs
+        leaf: leaf
+        hydropneumatic: hydropneumatic
+      suspension_rear_springs_type:
+        helicoidal: helicoidal
+        coil_overs: coil_overs
+        leaf: leaf
+        hydropneumatic: hydropneumatic
+      suspension_front_leaf_type:
+        steel: steel
+        transversal_composite: transversal_composite
+      suspension_rear_leaf_type:
+        steel: steel
+        transversal_composite: transversal_composite
+      suspension_front_dampers:
+        standard: standard
+        manually_adjustable: manually_adjustable
+        electronically_adjustable: electronically_adjustable
+      suspension_rear_dampers:
+        standard: standard
+        manually_adjustable: manually_adjustable
+        electronically_adjustable: electronically_adjustable
+      suspension_front_roll_bars_type:
+        manually_adjustable: manually_adjustable
+        electronically_adjustable: electronically_adjustable
+      suspension_rear_roll_bars_type:
+        manually_adjustable: manually_adjustable
+        electronically_adjustable: electronically_adjustable
+      brake_front_type:
+        drum: drum
+        disc: disc
+        ventilated_disc: ventilated_disc
+        disc_inboard: disc_inboard
+      brake_rear_type:
+        drum: drum
+        disc: disc
+        ventilated_disc: ventilated_disc
+        disc_inboard: disc_inboard
+      brake_front_drum_command:
+        simple_cam: simple_cam
+        double_cam: double_cam
+      brake_rear_drum_command:
+        simple_cam: simple_cam
+        double_cam: double_cam
+      brake_front_disc_material:
+        steel: steel
+        iron: iron
+        ceramic: ceramic
+      brake_rear_disc_material:
+        steel: steel
+        iron: iron
+        ceramic: ceramic
+      wheel_construction:
+        wire_wheel: wire_wheel
+        steel: steel
+        aluminium: aluminium
+        composite: composite
+        magnesium_alloy: magnesium_alloy
+      tire_speed_index:
+        m: M
+        n: N
+        p: P
+        q: Q
+        r: R
+        s: S
+        t: T
+        u: u
+        h: H
+        v: V
+        z: Z
+        w: W
+        w_plus: (W)
+        y: Y
+        y_plus: (Y)
+      emission_standards:
+        euro1: Euro 1
+        euro2: Euro 2
+        euro3: Euro 3
+        euro4: Euro 4
+        euro5: Euro 5
+        euro6: Euro 6

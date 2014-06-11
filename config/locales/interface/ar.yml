@@ -1,0 +1,242 @@
+ar:
+  tabs:
+    galleries:      المعارض
+    galleries_content:
+      collages_list: قائمة الفن التصويري
+      private: خاص
+      add_pictures: إضافة الصور
+      delete_gallery: حذف معرض
+      edit_collages: تحرير الفن التصويري
+      exit_edit_collages: خروج تحرير الفن التصويري
+      mosaic_label: فسيفساء
+      placeholders:
+        gallery_title: عنوان تحرير معرض هنا
+    specifications: مواصفات
+    specifications_content:
+      suggest_corrections: تشير التصحيحات
+      edit_specs: تحرير المواصفات
+      back_to_view: إلى طريقة العرض
+      build_datasheet: بناء من ورقة البيانات
+      choose_version: "اختيار واحد الذي يتوافق مع الخاص <B> {{brand}} </b>. إذا لزم الأمر، يمكنك تغيير بعض دتس."
+      or: أو
+      fill_own: ملء الخاص بك
+      wiki: ويكي
+      engine: محرك
+      power: قوة
+      torque: طوق معدني للعنق
+      transmission: انتقال
+      type: نوع
+      weight: الوزن
+      dimensions: أبعاد
+      version: الإصدار
+      model_year: نموذج عام
+      market: سوق
+      import_datasheet: استيراد ورقة البيانات
+      see: شاهد
+    performances:   الأداء
+    performances_content:
+      current: حالي
+      gain: ربح
+      stock: الأوراق المالية
+      suggest_corrections: تشير التصحيحات
+      back_to_view: إلى طريقة العرض
+    modifications:  التعديلات
+    version_comments: تعليقات
+    modifications_content:
+      delete: حذف
+      combine_mods: الجمع بين تعديل و
+      set_current: تعيين الحالي
+      add_change_set: إضافة مجموعة التغيير
+      change_set_name: تغيير اسم مجموعة
+      all_mods: كل تعديل و
+      new_change_set: مجموعة التغيير الجديد
+      add_new_modification: إضافة تعديل جديد
+    expenses:       نفقات
+    identification_show: تحديد
+    identification: تحديد (تحرير)
+    identification_content:
+      brand: علامة تجارية
+      doors: الأبواب
+      category: فئة
+      body: هيئة
+      model: نموذج
+      second_model_name: اسم 2
+      version: الإصدار
+      category: فئة
+      engine: محرك
+      energy: طاقة
+      model_year: سنة الصنع
+      generation: جيل
+      transmission: علبة السرعة
+      transmission_type: نوع
+      selector: منتقى
+      model_type: نموذج
+      transmission_details: انتقال
+      transmission_numbers: علبة السرعة
+      production_code: رمز الإنتاج
+      market_version: الأصل
+      generation_from: من
+      generation_to: إلى
+      owner_name: سائق
+      driver: سائق
+      status: حالة
+      select_placeholder: اختر ...
+      switch_to_identification_show_mode: العودة إلى وضع العرض
+      change_vehicle_picture: تغيير الصورة
+      add_more_selects: + إضافة
+      choose_comment: إضافة تعليق
+    identification_show_content:
+      editing: التحرير
+      data_link: معطيات
+      photos_link: الصور
+      silhouette_link: خيال
+      thumbnail_link: المصغرات
+      delete_link: حذف
+    profile_content:
+      mods: تعديل و
+      photos: الصور
+      block_comments: كتلة
+      wall: جدار
+      vehicles: المركبات
+      comparisons: مقارنات
+      edit_collages: تحرير الفن التصويري
+      exit_edit_collages: خروج تحرير الفن التصويري
+      follow: تابع
+      unfollow: فولو
+      delete: حذف
+      add_bookmark: الصوت العربي الحر.
+      delete_bookmark: الصوت العربي الحر.
+      change_side_view: 'تغيير&nbsp;خيال'
+    imported_content: المحتويات المستوردة
+    public_galleries: المعارض العامة
+    private_galleries: المعارض الخاصة
+    software_setup: الإعداد البرمجيات
+    my_profile:
+      informations: المعلومات
+      information_content:
+        change_avatar: تغيير الصورة الرمزية
+        placeholders:
+          first_name: الاسم الأول
+          last_name: اسم العائلة
+          email: البريد الإلكتروني
+      geolocation: Geolocation
+      geolocation_content:
+        geolocation: تحديد الموقع الجغرافي
+        placeholders:
+          country: بلد
+          biggest_town: أكبر بلدة قريبة
+          locale: مكان
+          currency: عملة
+          system_of_units: نظام الوحدات
+        regions_and_languages: المناطق واللغات
+      privacy_settings: إعدادات الخصوصية
+      privacy_settings_content:
+        informations: المعلومات
+        first_name: الاسم الأول
+        last_name: اسم العائلة
+        public: جمهور
+        contact_me: تسمح للناس في الاتصال بي
+        geolocation: تحديد الموقع الجغرافي
+        nearby_location: مكان قريب
+    people_content:
+      followings: يلي
+      followers: أتباع
+      blocked: مسدود
+  modals:
+    side_views:
+      no_more_available: 'لا أكثر العناصر المتاحة!'
+    signup:
+      signup: الاشتراك
+      username: اسم المستخدم
+      email: البريد الإلكتروني
+      password: كلمة السر
+      password_confirmation: تأكيد كلمة السر
+      terms_of_service: شروط الخدمة
+      cancel: إلغاء
+      register: تسجيل
+      placeholders:
+        username: ملء المستخدم، يرجى
+        email: ملء البريد الإلكتروني، يرجى
+        password: ملء كلمة السر، يرجى
+        password_confirmation: ملء تأكيد كلمة السر، يرجى
+  performances:
+    table:
+      top_speed:    السرعة القصوى
+      acceleration: تسارع
+      deceleration: تباطؤ
+      emissions:    انبعاثات
+      consumption:  استهلاك
+  vehicles:
+    search:
+      custom_search: '[بحث مخصص]'
+      text_search_field: 'النص الحر حقل البحث:'
+      brand_select: 'العلامة التجارية إذا المختارة:'
+      exclude_brand_select: 'العلامة التجارية مستبعد (ق):'
+      country_select: 'البلد إذا المختارة:'
+      exclude_country_select: 'البلد استبعاد المنشأ:'
+      search_btn: بحث
+    vehicles:
+      all_vehicles: جميع المركبات
+      add_vehicle: إضافة مركبة
+    new:
+      new_vehicle: مركبة جديدة
+      automobile: سيارة
+      motorcycle: دراجة نارية
+      brand: علامة تجارية
+      model: نموذج
+      engine: محرك
+      create_vehicle: إنشاء مركبة
+    bookmarked_vehicles: السيارات المفضلة
+    galleries:
+      add_gallery: إضافة معرض
+      gallery: رواق
+      untitled_gallery: معرض بدون اسم
+  dashboard_content:
+    newsfeed: التزويد بالمعلومات
+    my_newsfeed: بلدي التزويد بالمعلومات
+    photo: صور
+    newsfeed_events:
+      create_gallery: إنشاء معرض جديد
+      create_modification: إنشاء التشكيل الجديد
+      create_part_purchase: اشترى %{label} من %{vendor}
+      create_gallery_picture: وأضاف جديدة %{photo_link}
+      create_comment: خلقت تعليق جديد
+      create_comparison_table: خلق مقارنة جديدة
+      start_comparison_table: بدأت المقارنة
+      add_pictures_to_gallery: وأضاف صور جديدة لمعرض
+      create_motorcycle: وأضافت دراجة نارية
+      create_automobile: وأضافت سيارة
+      add_comments_to_picture: الصورة تلقى %{num_comments} تعليقات جديدة
+      add_comment_to_picture: تلقت الصورة تعليق جديد
+
+  breadcrumb:
+    garage: كراج
+    myy_garage: MYY المرآب
+    myy_vehicles: بلدي المركبات
+    cars: السيارات
+    automobiles: السيارات
+    bikes: الدراجات
+    motorcycles: الدراجات
+    myy_cars: MYY سيارات
+    myy_automobiles: MYY سيارات
+    myy_bikes: دراجات MYY
+    myy_motorcycles: دراجات MYY
+    wall: جدار
+    myy_wall: جدار
+    vehicles: المركبات
+    comparisons: Comparaisons
+    me: أنا
+    myy_cloud: MYY الغيمة
+    imported_content: المحتوى Inported
+    public_galleries: الجمهور فنية
+    private_galleries: فنية خاصة
+    software_setup: إعداد البرامج
+    galleries: المعارض 12
+    albums: البوم
+    untitled_gallery: معرض بدون اسم
+    version_comments: تعليقات
+  pages:
+    new_profile_pictures:
+      cancel: إلغاء
+      confirm_import: تأكيد استيراد صور
+      caption: ضبط أسطورة كل صورة ثم قم بتأكيد الاستيراد

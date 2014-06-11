@@ -1,0 +1,42 @@
+%td.main-part
+  %input.main.attribute{ disabled: !@showControls, type: 'checkbox', checked: @main }
+
+%td.quantity
+  -if @showControls
+    %input.quantity.attribute{ type: 'text', value: @quantity }
+  -else
+    = @quantity
+
+%td.part
+  -if @showControls
+    %select.part.attribute{ name: 'part_id', data: { placeholder: 'Part' } }
+      %option
+      - @parts.each (part)=>
+        %option{ value: part.id, selected: part == @part }= part.get 'label'
+  -else
+    = @part?.get 'label'
+
+%td.price
+  -if @showControls
+    %input.price.attribute{ name: 'price', type: 'text', value: @price, placeholder: I18n.t('modifications.parts.optional_price') }
+    €
+  -else if @price
+    = @price
+    €
+
+%td.vendor
+  -if @showControls
+    %select.vendor.attribute{ name: 'vendor_id', data: { placeholder: 'Vendor' } }
+      %option
+      - @vendors.each (vendor)=>
+        %option{ value: vendor.id, selected: vendor == @vendor }
+          = vendor.get('name')
+    %div
+      %a.create-new-vendor{ href: '' }= I18n.t('modifications.parts.create_new_vendor')
+  -else
+    = @vendor.get('name')
+
+-if @showControls
+  %td.actions
+    %button.remove.btn
+      %i.icon-trash

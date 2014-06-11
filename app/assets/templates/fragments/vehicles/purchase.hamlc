@@ -1,0 +1,20 @@
+%td
+  - if @part
+    %a.show-part{ href: "/parts/#{@part.id}" }= @part.get('label')
+
+%td
+  = @part?.get('manufacturer_reference')
+
+%td
+  = @purchase.get('quantity')
+
+%td
+  = @purchase.get('price')
+  €
+
+%td
+  = @purchase.get('bought_at') || 'dd/mm/yy'
+
+%td
+  - if @vendor
+    %a.show-vendor{ href: "/vendors/#{@vendor.id}" }= @vendor.get('name')

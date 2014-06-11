@@ -1,0 +1,3 @@
+-unless @canManage
+  -klass = if @canFollow then 'follow' else 'unfollow'
+  %a{ href: '#', class: klass }= I18n.t(klass, scope: 'tabs.profile_content')

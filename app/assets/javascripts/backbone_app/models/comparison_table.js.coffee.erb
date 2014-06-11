@@ -1,0 +1,49 @@
+class Models.ComparisonTable extends Backbone.RelationalModel
+  relations: [
+    {
+      type:           Backbone.HasMany
+      key:            'vehicles'
+      relatedModel:   'Models.Vehicle'
+      collectionType: 'Collections.Vehicles'
+      includeInJSON:  'id'
+      keyDestination: 'vehicle_ids'
+    }
+    {
+      type:           Backbone.HasMany
+      key:            'likers'
+      relatedModel:   'Models.User'
+      includeInJSON:  'id'
+      keyDestination: 'liker_ids'
+    }
+    {
+      type:           Backbone.HasMany
+      key:            'savers'
+      relatedModel:   'Models.User'
+      includeInJSON:  'id'
+      keyDestination: 'saver_ids'
+    }
+    {
+      type:           Backbone.HasOne
+      key:            'user'
+      relatedModel:   'Models.User'
+      includeInJSON:  'id'
+    }
+  ]
+
+  toJSON: ->
+    json = super()
+    delete json['comparison_attributes']
+    delete json['properties']
+
+    json
+  
+  @trackImgUrl: (size) ->
+    if size is 'large'
+      <%= asset_path('comparisons_track_5x577.png').inspect %>
+    else
+      <%= asset_path('comparisons_track_5x215.png').inspect %>
+  @trackImgWidth: (size) ->
+    if size is 'large'
+      577
+    else
+      215

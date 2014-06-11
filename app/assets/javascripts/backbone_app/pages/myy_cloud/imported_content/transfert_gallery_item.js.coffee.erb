@@ -1,0 +1,35 @@
+class Pages.MyyCloud.TransfertGalleryItem extends Pages.MyyCloud.GalleryItem
+
+  initialize: ({@pictures, @galleryPrivacy})->
+
+  events:
+    'click a.show-gallery' : 'goToGallery'
+
+
+  serializeData: ->
+    if @model.isNew()
+      title: "Create New Gallery"
+      hasUrl: 'no-url'
+      source: '<%= image_path('galleries/blue-cross.png') %>'
+      altText: "Create New Gallery"
+    else
+      super
+
+  goToGallery: ->
+
+    if @model.isNew()
+      @model.save {picture_ids: @pictures.map((p)=> p.id), privacy: @galleryPrivacy},
+        success: (album)->
+          MyApp.layout.content.show new Pages.MyyCloud.Gallery gallery: album
+          MyApp.modal.close()
+    else
+      activeRequests = @pictures.length
+      @pictures.each (picture)=>
+        picture.save {gallery_id: @model.id},
+          success: =>
+            activeRequests -= 1
+            if activeRequests is 0
+              @viewGallery()
+              MyApp.modal.close()
+
+    false

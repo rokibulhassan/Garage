@@ -1,0 +1,112 @@
+#comparisons {
+  .tabbable {
+    overflow-x: hidden;
+  }
+  .tab-content {
+    overflow: visible;
+  }
+  .properties-row {
+    margin-bottom: 40px;
+    list-style-type: none;
+
+    .property-cell {
+      .vehicle-row {
+        margin-bottom: 20px;
+        position:      relative;
+        width:         600px;
+        display: inline-block;
+
+        .bar {
+          text-align:  left;
+          display: inline-block;
+          vertical-align: bottom;
+          img {
+            position: absolute;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .vehicle-link {
+    position: relative;
+  }
+}
+
+.side-view-comparison-vehicle-img {
+  display: inline;
+}
+.comparison_tables .vehicle-side-view {
+  overflow-x: hidden;
+  img {
+    position: relative;
+    max-width: none;
+  }
+}
+
+a.remove-vehicle {
+  display: inline;
+}
+
+.bar-data {
+  position: absolute;
+  bottom: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.comparison-tables td {
+  position: relative;
+  padding: 0 0;
+  ul {
+    margin-bottom: 0;
+  }
+  a.comparison-table {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+  }
+}
+
+.side-view-comparison-vehicle-img img {
+  vertical-align: text-bottom;
+}
+
+.comparison-table-statistics {
+  width: 150px;
+  font-size: 12px;
+}
+.comparison-table-like-stats,
+.comparison-table-save-stats {
+  margin-left: 15px;
+  a, a:hover {
+    color: inherit;
+  }
+  .num-likes, .num-saves {
+    color: #888888;
+  }
+}
+
+ul.comparison-table-vehicles {
+  min-height: 50px;
+  min-width: 450px;
+  .comparison-table-vehicles-list-items-container {
+    position: absolute;
+    bottom: 3px;
+    margin-left: 10px;
+  }
+}
+
+.comparison-table-liker-saver-item {
+  margin-bottom: 10px;
+}
+
+#comparisons .users-tab {
+  float: right;
+}
+
+.comparison-label-data {
+  min-width: 150px;
+  position: relative;
+  text-align: right;
+}

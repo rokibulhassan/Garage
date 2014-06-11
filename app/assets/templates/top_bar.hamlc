@@ -1,0 +1,111 @@
+-if @currentUser?
+-  klass = ''
+-  title = ''
+-else
+-  klass = 'disabled'
+-  title = I18n.t('function_unavailable', scope: 'top_bar')
+#top-bar.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %ul.nav
+        %li.dropdown
+          %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' } }= I18n.t 'home', scope: 'top_bar'
+            %ul.dropdown-menu
+              %li
+                %a.all-news{ href: '#' }= I18n.t 'all_news', scope: 'top_bar'
+              %li{class: klass}
+                %a.my-news{ href: '#', title: title }= I18n.t 'my_news', scope: 'top_bar'
+              %li
+                %a.albums{ href: '#' }= I18n.t 'albums', scope: 'top_bar'
+
+        %li.dropdown
+          %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' } }= I18n.t 'vehicles', scope: 'top_bar'
+          %ul.dropdown-menu
+            %li
+              %a.users-vehicles{ href: '#' }= I18n.t 'all_vehicles', scope: 'top_bar'
+            %li
+              %a.users-cars{ href: '#' }= I18n.t 'all_cars', scope: 'top_bar'
+            %li
+              %a.users-bikes{ href: '#' }= I18n.t 'all_bikes', scope: 'top_bar'
+            %li{class: klass}
+              %a.bookmarks{ href: '#', title: title }= I18n.t 'bookmarked_vehicles', scope: 'top_bar'
+
+        %li.dropdown
+          %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' } }= I18n.t 'comparisons', scope: 'top_bar'
+          %ul.dropdown-menu
+            %li{class: klass}
+              %a.my-comparisons{ href: '#' }= I18n.t 'my_comparisons', scope: 'top_bar'
+            %li
+              %a.recent-comparisons{ href: '#' }= I18n.t 'recent_comparisons', scope: 'top_bar'
+
+        %li.dropdown.myy-garage-dropdown
+          %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' } }= I18n.t 'myy_garage', scope: 'top_bar'
+          %ul.dropdown-menu
+            %li{class: klass}
+              %a.my-profile{ href: '#', title: title }= I18n.t 'my_vehicles', scope: 'top_bar'
+            %li{class: klass}
+              %a.my-cars{ href: '#', title: title }= I18n.t 'my_cars', scope: 'top_bar'
+            %li{class: klass}
+              %a.my-bikes{ href: '#', title: title }= I18n.t 'my_bikes', scope: 'top_bar'
+
+        %li.dropdown
+          %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' } }= I18n.t 'myy_cloud', scope: 'top_bar'
+          %ul.dropdown-menu
+            %li{class: klass}
+              %a.imported-content{ href: '#', title: title }= I18n.t 'imported_content', scope: 'top_bar'
+            %li{class: klass}
+              %a.my-public-albums{ href: '#', title: title }= I18n.t 'my_public_albums', scope: 'top_bar'
+            %li{class: klass}
+              %a.my-private-albums{ href: '#', title: title}= I18n.t 'my_private_albums', scope: 'top_bar'
+
+
+        - if !@currentUser
+          .sign-in.pull-right
+            %form.navbar-form.pull-right{ action: '/sign_in', method: 'POST' }
+              %input.span2{ type: 'text', name: 'session[identifier]', placeholder: 'Username or email…' }
+              %input.span2{ type: 'password', name: 'session[password]', placeholder: 'Password…' }
+              %input{:type => 'hidden', :name => 'authenticity_token', :value => $('meta[name=csrf-token]').attr('content') }
+              %input.btn{ type: 'submit', value: 'Submit' }
+
+            %div.links
+              %a.signup{ href: '#' }= I18n.t 'new_member_signup', scope: 'top_bar'
+              %a.facebook_signup{ href: '/facebook_sessions', method: 'POST' }= I18n.t 'facebook_signup', scope: 'top_bar'
+              %a.forgotten_password{ href: '#' }= I18n.t 'forgotten_password', scope: 'top_bar'
+        - else
+          %ul.nav.pull-right
+
+            %li.dropdown
+              %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' } }= I18n.t 'people', scope: 'top_bar'
+                %i.icon-user.icon-white
+              %ul.dropdown-menu
+                %li{class: klass}
+                  %a.followings{ href: '#', title: title }= I18n.t 'followings', scope: 'top_bar'
+                %li{class: klass}
+                  %a.followers{ href: '#', title: title }= I18n.t 'followers', scope: 'top_bar'
+                %li{class: klass}
+                  %a.blocked{ href: '#', title: title}= I18n.t 'blocked', scope: 'top_bar'
+                %li{class: klass}
+                  %a#sucks-message.message{ href: '/conversations', title: title, target: "_blank"}= I18n.t 'message', scope: 'top_bar'
+                    %span.badge.badge-danger{:style => "background-color: red;"}= @unreadMessages
+            %li.dropdown
+              %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' } }
+                = I18n.t 'me', scope: 'top_bar'
+                %b.caret
+
+              %ul.dropdown-menu.user-dropdown
+                %li
+                  %a.edit-my-profile{ href: '/my/profile/edit' }= I18n.t 'edit_profile', scope: 'top_bar'
+                %li
+                  %a.sign-out{ href: '/' }= I18n.t 'sign_out', scope: 'top_bar'
+
+            %li.dropdown
+              %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' } }
+                = I18n.t 'units', scope: 'top_bar'
+                %b.caret
+              - selected = @currentUser.get('system_of_units_code')
+              - unitSystems = ['EU', 'UK', 'US']
+              %ul.dropdown-menu
+                - for sys in unitSystems
+                  %li.unit-system-change{'class': (if selected is sys then 'active' else 'inactive')}
+                    %a.unit-system-change-link{ href: '#', data: { 'unit-system': sys } }= I18n.t sys, scope: 'top_bar.change_unit_system'
+

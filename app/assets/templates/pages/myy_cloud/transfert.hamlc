@@ -1,0 +1,19 @@
+#transfert-modal.modal
+  .modal-header
+    %button{ class: 'close', data: { dismiss: 'modal' } } ×
+    %h4= "Transfer selected pictures to album:"
+
+  .modal-body
+    .navigation
+      %ul#tabs-bar.nav.nav-tabs
+        %li.transfert-tab.active
+          %a.private-galleries{ href: '#', data: { target: '#transfert_private_galleries' } }= I18n.t('private_galleries', scope: 'tabs')
+        %li.transfert-tab
+          %a.public-galleries{ href: '#', data: { target: '#transfert_public_galleries' } }= I18n.t('public_galleries', scope: 'tabs')
+
+    .tab-content
+      #transfert_private_galleries.tab-pane.active
+      #transfert_public_galleries.tab-pane
+
+  .modal-footer
+    %a.btn{ data: { dismiss: 'modal' } } Cancel

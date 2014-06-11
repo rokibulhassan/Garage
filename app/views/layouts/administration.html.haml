@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %meta{ charset: 'utf-8' }
+    %title MyyGarage
+
+    /[if lt IE 9]
+      = javascript_include_tag 'html5'
+
+    = stylesheet_link_tag 'administration'
+    = javascript_include_tag 'administration'
+    = yield :additional_headings
+    = csrf_meta_tags
+
+  %body
+    .container
+      .row
+        .span2
+          %ul.nav.nav-list
+            %li.nav-header
+              %i.icon-cog
+              Menu
+
+            %li= link_to 'Brands',            :administration_brands
+            %li= link_to 'Models',            :administration_models
+            %li= link_to 'Units',             :administration_units
+            %li= link_to 'Field definitions', :administration_field_definitions
+
+        .span10
+          = yield

@@ -1,0 +1,12 @@
+%td.side-view
+  %img{src: @vehicle.sideViewUrl(), alt: @vehicle.get('label')}
+%td= "#{@dataSheet.get('cylinders').value || 'n/a'}/#{@dataSheet.get('displacement').value || 'n/a'}"
+%td= "#{@dataSheet.get('max_power').value || 'n/a'}@#{@dataSheet.get('max_power_frequency').value || 'n/a'}"
+%td= "#{@dataSheet.get('max_torque').value || 'n/a'}@#{@dataSheet.get('max_torque_frequency').value || 'n/a'}"
+%td= @version.get('transmission_numbers')
+%td= @version.get('transmission_type')
+%td= @dataSheet.get('weight').value || 'n/a'
+%td= "#{@dataSheet.get('length').value || 'n/a'}-#{@dataSheet.get('width').value || 'n/a'}-#{@dataSheet.get('height').value || 'n/a'}"
+%td= @version.get('name')
+%td= @version.get('production_year')
+%td= @version.get('market_version_name')

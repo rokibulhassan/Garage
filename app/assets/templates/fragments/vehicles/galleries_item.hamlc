@@ -1,0 +1,6 @@
+%a.show-gallery.thumbnail{ href: '#gallery' }
+  - source = @gallery.get('cover_picture_url')
+  - altText = @gallery.get('cover_picture_alt') || "#{I18n.t('gallery', scope: 'vehicles.galleries')} #{@gallery.id}"
+  - hasUrl = if @gallery.get('cover_picture_url') then 'has-url' else 'no-url'
+  %img{ class: hasUrl, src: source, alt: altText, style: 'width: 180px; height: 135px;' }
+  %h5{ style: "text-align: center" }= @gallery.get('title') || I18n.t('untitled_gallery', scope: 'vehicles.galleries')

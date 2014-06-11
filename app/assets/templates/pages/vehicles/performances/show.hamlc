@@ -1,0 +1,13 @@
+#import-tool
+
+- if @showControls
+  %a.view-properties{ href: '#' }= I18n.t('back_to_view', scope: 'tabs.performances_content')
+- else
+  %a.edit-properties{ href: '#' }= I18n.t('suggest_corrections', scope: 'tabs.performances_content')
+
+#vehicle-specs
+  #vehicle-top_speed-specs.datasheet-properties
+  #vehicle-acceleration-specs.datasheet-properties
+  #vehicle-deceleration-specs.datasheet-properties
+  #vehicle-emissions-specs.datasheet-properties
+  #vehicle-consumption-specs.datasheet-properties

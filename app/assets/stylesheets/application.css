@@ -1,0 +1,90 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require ./bootstrap_and_overrides
+ *= require bootstrap/datepicker
+ *= require ./font-awesome
+ *= require_self
+ *= require chosen
+ *= require jcrop
+ *= require_tree ./application
+*/
+
+.tooltip-inner {
+  color: black;
+  background-color: white;
+}
+
+.clear {
+  clear: both
+}
+
+.datepicker.right-side:before {
+  left: auto;
+  right: 6px;
+}
+.datepicker.right-side:after {
+  left: auto;
+  right: 7px;
+}
+
+#content.signed-out {
+  margin-top: 15px;
+}
+
+.div1 {
+    width: 99%;
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.div2 {
+    margin: 0 2px;
+    display: inline-block;
+}
+
+.div3 {
+    width: 80%;
+    padding: 2px 0;
+}
+
+.div1:hover {
+    background-color: #AAAAAA;
+}
+
+.div_t {
+    width: 65%;
+    text-align: left;
+}
+
+.div_u {
+    width: 65%;
+    text-align: right;
+}
+
+.div_v {
+    width: 5%;
+}
+
+.div_w {
+    width: 14%;
+}
+
+.div_x {
+    width: 45%;
+}
+
+.div_y {
+    width: 20%;
+}
+
+.div_z {
+    width: 10%;
+}
